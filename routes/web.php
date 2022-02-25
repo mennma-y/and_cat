@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/form', function () {
+    return view('form');
+});
+Route::get('/application', function () {
+    return view('application');
+});
