@@ -1,0 +1,485 @@
+.main {
+    max-width: 700px;
+    min-width: 700px;
+    margin: auto;
+}
+
+/**
+保護猫プロフィール
+****/
+.image-box {
+    margin: 30px 0;
+}
+
+.image-box .image-main {
+    width: 400px;
+    position: relative;
+    margin: auto;
+}
+
+.image-box .image-main::before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+}
+
+.image-box .image-sub-box {
+    display: flex;
+    justify-content: center;
+}
+
+.image-box .image-sub-box .image-sub {
+    width: 200px;
+    position: relative;
+    text-align: center;
+    margin: 15px;
+}
+
+.image-box .image-sub-box .image-sub::before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+}
+
+.image-box .image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.image-box .image img {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    -webkit- transform: translateY(-50%) translateX(-50%);
+    height: 100%;
+    object-fit: contain;
+}
+
+.pink-box {
+    display: flex;
+}
+
+.pink-box .like-box {
+    width: 170px;
+    height: 60px;
+    background-color: #FAE7F6;
+    padding: 5px 30px;
+    color: #FA00E7;
+    border-radius: 40px;
+    margin: 50px 30px;
+}
+
+.pink-box .name-box {
+    width: 300px;
+    height: 200px;
+    background-color: #FAE7F6;
+    border-radius: 40px;
+    padding: 10px 40px;
+}
+
+.pink-box .name-box p {
+    margin-bottom: 10px;
+}
+
+.pink-box .name-box span {
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.pink-box .name-box span.name {
+    font-size: 20px;
+}
+
+.pink-box .name-box span.gender-icon {
+    color: #FA00E7;
+}
+
+.profile-box {
+    border: 1px solid #333;
+    width: 100%;
+    max-width: 600px;
+    height: 400px;
+    margin: 50px auto 5px;
+    border-radius: 5%;
+    position: relative;
+}
+
+.profile-box .profile-text {
+    padding: 30px 20px;
+}
+
+.profile-box .profile-text p.main {
+    font-weight: bold;
+}
+.profile-box .profile-text a{
+    color:#333;
+}
+.profile-box .profile-text .user-home{
+    background-color: #FAE7F6;
+    width: 200px;
+    height: 70px;
+    border-radius: 20px;
+    display: flex;
+    position: absolute;
+    bottom: 30px;
+    right: 20px;
+    justify-content: center;
+}
+.profile-box .profile-text .user-home p{
+    line-height: 70px;
+    font-weight: bold;
+    font-size: 17px;
+    margin-right: 5px;
+}
+.profile-box .profile-text .user-home .black-cat{
+    width: 35px;
+    line-height: 60px;
+}
+.profile-box .profile-text .user-home .black-cat img{
+    width: 100%;
+}
+
+.green-box {
+    margin-bottom: 100px;
+}
+
+.green-box .arrow {
+    position: relative;
+    height: 30px;
+    width: 70px;
+    background-color: #84D9D0;
+    margin: auto;
+}
+
+.green-box .arrow::before {
+    position: absolute;
+    content: "";
+    border: solid 70px transparent;
+    border-top: solid 50px #84D9D0;
+    top: 30px;
+    left: -35px;
+}
+
+.green-box a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.green-box .next-form {
+    background-color: #84D9D0;
+    margin: auto;
+    margin-top: 80px;
+    width: 200px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+/**
+保護猫お気に入り
+****/
+.like-top {
+    margin-top: 50px;
+    border-bottom: 1px solid #333;
+}
+
+.like-top h2 {
+    text-align: center;
+    font-size: 20px;
+}
+
+.like-top .page {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.like-top .page span {
+    font-size: 15px;
+    font-weight: normal;
+    margin-left: 20px;
+}
+
+.likes-box {
+}
+
+.likes-box .like-box {
+    width: 100%;
+    height: 200px;
+    border-bottom: 1px solid #333;
+    display: flex;
+}
+
+.likes-box .like-box .cat-image {
+    width: 150px;
+    height: 150px;
+    margin: 20px 0 20px 100px;
+}
+
+.likes-box .like-box .cat-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 0.2px solid #ddd;
+}
+
+.likes-box .like-box .cat-text {
+    width: 250px;
+    text-align: center;
+    margin: 20px 10px;
+}
+
+.likes-box .like-box .cat-text p.cat-name {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.likes-box .like-box .cat-text span {
+    color: #FA00E7;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.likes-box .like-box .button-box {
+    width: calc(100% - 520px);
+    text-align: right;
+    position: relative;
+}
+
+.likes-box .like-box .button-box a {
+    text-decoration: none;
+    color: #212529;
+    font-weight: bold;
+}
+
+.likes-box .like-box .button-box .arrow {
+    position: absolute;
+    right: 70px;
+    height: 70px;
+    width: 80px;
+    margin: auto;
+    background-color: #FAE7F6;
+    margin-top: 40px;
+    line-height: 70px;
+}
+
+.likes-box .like-box .button-box .arrow::before {
+    position: absolute;
+    content: "";
+    border: solid 60px transparent;
+    border-left: solid 60px #FAE7F6;
+    top: -25px;
+}
+
+.likes-box .like-box .button-box .arrow p {
+}
+
+.likes-box .like-box .button-box button {
+    background-color: #84D9D0;
+    border-color: #84D9D0;
+    position: absolute;
+    bottom: 10px;
+    right: 60px;
+}
+
+.likes-box .like-box .button-box button:focus {
+    box-shadow: none;
+}
+
+/**
+保護猫検索
+****/
+.form-select:focus {
+    box-shadow: none;
+    border-color: #84CCC9;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: #84CCC9;
+}
+
+.form-check-input:focus {
+    box-shadow: none;
+}
+
+.search-top {
+    text-align: center;
+}
+
+.search-top h3 {
+    margin: 50px 0 30px;
+    font-size: 20px;
+}
+
+.search-top .forms-box {
+}
+
+.search-top .forms-box .form-box {
+    display: flex;
+    justify-content: center;
+    margin: 15px 0;
+}
+
+.search-top .forms-box .form-box span {
+    margin-bottom: 8px;
+}
+
+.search-top .forms-box .form-box .custom-label {
+    width: 100px;
+    margin-top: 8px;
+    text-align: left;
+}
+
+.search-top .forms-box .form-box .custom-box {
+    width: 200px;
+}
+
+.search-top .forms-box .form-box .radio-box {
+    margin-top: 8px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.search-top .forms-box button {
+    background-color: #84CCC9;
+    width: 170px;
+    padding: 10px;
+    border-radius: 40px;
+    color: #ffffff;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.new {
+    display: flex;
+    margin: 10px 0;
+}
+
+.new .square {
+    background-color: #84CCC9;
+    width: 30px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.new p {
+    line-height: 40px;
+}
+
+.cats-box {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cats-box .cat-box {
+    width: calc(100% / 3);
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.cats-box .cat-box .cat-image {
+    width: 150px;
+    height: 150px;
+    margin: 10px auto;
+}
+
+.cats-box .cat-box .cat-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 0.2px solid #ddd;
+}
+
+.cats-box .cat-box .text {
+}
+
+.cats-box .cat-box .text p {
+    margin: 5px 0;
+}
+
+.cats-box .cat-box .text span {
+    color: #ff60af;
+}
+
+.cats-box .cat-box .text .green-box {
+    background-color: #BAF8E0;
+    width: 80%;
+    margin: auto;
+    height: 80px;
+    border-radius: 30px;
+    padding: 5px;
+}
+
+.cats-box .cat-box .text .green-box .name {
+    font-size: 18px;
+}
+
+.cats-box .cat-box .text .like-box {
+    background-color: #FAE7F6;
+    width: 60%;
+    margin: auto;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 30px;
+    color: #FA00E7;
+}
+
+/**
+保護猫新規登録
+****/
+.register-box {
+    width: 70%;
+    margin: auto;
+}
+
+.register-box h3 {
+    text-align: center;
+    margin: 30px 0;
+    font-size: 20px;
+}
+
+.register-box .form-group {
+    margin-bottom: 20px;
+}
+
+.register-box .form-group .cat-image-box {
+    background-color: #FAE7F6;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.register-box .form-group p {
+    margin: 10px 0 5px;
+}
+
+.register-box .form-group .gender {
+    display: flex;
+}
+
+.register-box .form-group .gender .gender-box {
+    width: 70px;
+}
+
+.register-box .form-group textarea {
+    height: 500px;
+}
+
+.register-box .button-box {
+    text-align: center;
+    margin: 20px auto;
+}
+
+.register-box .button-box button {
+    background-color: #84D9D0;
+    color: #ffffff;
+    font-weight: bold;
+}
