@@ -14,3 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['middleware'=>'auth'],function(){
+    Route::get('/user','UserController@show')->name('user.show');
+    Route::post('/user/update/','UserController@update')->name('user.update');
+});
