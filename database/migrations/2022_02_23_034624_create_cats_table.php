@@ -16,9 +16,11 @@ class CreateCatsTable extends Migration
         Schema::create('cats', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('user_id')->unsigned()->index();
+            $table->string('name');
             $table->string('type')->index();
-            $table->string('gender')->index();
+            $table->integer('gender')->unsigned()->index();
             $table->string('age')->index();
+            $table->integer('age_about')->unsigned()->nullable()->default(null);
             $table->string('area')->index();
             $table->string('slogan');
             $table->text('introduction');
