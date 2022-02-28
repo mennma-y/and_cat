@@ -39,3 +39,11 @@ Route::get('/admin/cat/register', function () {
 });
 
 Route::post('/admin/cat/register', 'CatController@catRegister');
+
+Route::get('/form', function () {
+    return view('form');
+});
+Route::get('/application', function () {
+    return view('application');
+});
+
