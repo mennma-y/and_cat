@@ -4,10 +4,13 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
-use App\Models\User;
+use App\User;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class RegisterController extends Controller
 {
@@ -57,17 +60,63 @@ class RegisterController extends Controller
     }
 
     /**
+     * Handle a registration request for the application.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function register(Request $request)
+    {
+        $this->validator($request->all())->validate();
+
+        event(new Registered($user = $this->create($request)));
+
+        $this->guard()->login($user);
+
+        return $this->registered($request, $user)
+                        ?: redirect($this->redirectPath());
+    }
+
+
+    /**
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
      * @return \App\User
      */
-    protected function create(array $data)
+    protected function create(Request $request)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
+        $data = $request->all();
+        //ファイル名作成=>保存場所を設けて、画像パスを作成する。画像がなければデフォルト画像を設置する。
+
+            if(isset($data['image'])){
+                $fileName = $request->file('image')->getClientOriginalName();
+                Storage::putFileAs('public/images',$request->file('image'),$fileName);       //リクエストされたファイルを$fileNameという名でpublic/imagesに保存する
+                $fullFilePath = '/storage/images/'.$fileName;
+            }else{
+                $fullFilePath = '/storage/images/defaultImage.png';
+            }
+
+
+
+
+
+        if(isset($data['admin_confirmation'])){
+            return User::create([
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'password' => Hash::make($data['password']),
+                'admin_confirmation'=>1,
+                'img_url'=>$fullFilePath,
+            ]);
+        }else{
+            return User::create([
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'password' => Hash::make($data['password']),
+                'admin_confirmation'=>0,
+                'img_url'=>$fullFilePath,
+            ]);
+        }
     }
 }
