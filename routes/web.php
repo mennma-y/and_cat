@@ -11,12 +11,22 @@
 |
 */
 
+use Illuminate\Support\Facades\Route;
+
 Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/form', function () {
     return view('form');
 });
-Route::get('/application', function () {
-    return view('application');
+
+Route::get('/admin', function () {
+    return view('admin');
+});
+Route::get('/admin', 'FormController@index');
+Route::post('/send', 'FormController@store');
+Route::get('/question', 'QuestionController@index');
+Route::post('/send_question', 'QuestionController@store');
+Route::get('/cat',function(){
+    return view('cat_profile');
 });

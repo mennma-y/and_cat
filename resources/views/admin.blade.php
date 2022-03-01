@@ -1,0 +1,19 @@
+<html>
+    <head></head>
+    <body>
+        <table>
+            <tr>
+                <th>名前</th>
+                <th>電話</th>
+                <th>メール</th>
+           <th>備考</th>
+            </tr>
+            @foreach($forms as $form)
+            <tr>{{$form->name}}</tr>
+            <tr>{{$form->telephone}}</tr>
+            <tr>{{$form->user->email}}</tr>
+            <tr>{{$form->memo}}</tr>
+            @endforeach
+        </table>
+    </body>
+</html>
