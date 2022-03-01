@@ -1,5 +1,8 @@
+@extends('nishiyama')
+
+@section('main')
 <div class="like-top">
-    <p class="like">お気に入り</p>
+    <h2>お気に入り</h2>
     <p class="page">すべて  <span>1～2件（2件）</span></p>
 </div>
 <div class="likes-box">
@@ -9,14 +12,16 @@
         </div>
         <div class="cat-text">
             <p>雑種</p>
-            <p>【関東】オス<span>♂</span>3歳</p>
+            <p>【関東】  オス<span>♂</span>3歳</p>
             <p class="cat-name">太郎くん</p>
             <p>遊ぶのが大好き！</p>
         </div>
         <div class="button-box">
-            <div class="arrow">
-                <p>もっと見る</p>
-            </div>
+            <a href="">
+                <div class="arrow">
+                    <p>もっと見る</p>
+                </div>
+            </a>
             <button class="btn btn-success">キャンセル</button>
         </div>
     </div>
@@ -26,16 +31,19 @@
         </div>
         <div class="cat-text">
             <p>雑種</p>
-            <p>【関東】メス<span>♀</span>2歳</p>
+            <p>【関東】  メス<span>♀</span>2歳</p>
             <p class="cat-name">みかんちゃん</p>
             <p>人懐っこい猫ちゃん</p>
         </div>
         <div class="button-box">
-            <div class="arrow">
-                <p>もっと見る</p>
-            </div>
+            <a href="">
+                <div class="arrow">
+                    <p>もっと見る</p>
+                </div>
+            </a>
             <button class="btn btn-success">キャンセル</button>
         </div>
     </div>
 </div>
+@endsection
 
