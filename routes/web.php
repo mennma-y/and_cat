@@ -11,10 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/home1', function () {
+    return view('home1');
 });
 
+// Route::get('/info',[App\Http\ControllersInfoController::class, 'index'])->name('info');
 
 Auth::routes();
 
@@ -54,5 +59,3 @@ Route::get('/form', function () {
 Route::get('/application', function () {
     return view('application');
 });
-
-

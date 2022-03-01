@@ -88,20 +88,20 @@ class RegisterController extends Controller
     {
         $data = $request->all();
         //ファイル名作成=>保存場所を設けて、画像パスを作成する。画像がなければデフォルト画像を設置する。
-            
+
             if(isset($data['image'])){
                 $fileName = $request->file('image')->getClientOriginalName();
                 Storage::putFileAs('public/images',$request->file('image'),$fileName);       //リクエストされたファイルを$fileNameという名でpublic/imagesに保存する
-                $fullFilePath = '/storage/images/'.$fileName; 
+                $fullFilePath = '/storage/images/'.$fileName;
             }else{
                 $fullFilePath = '/storage/images/defaultImage.png';
-            }      
-            
-        
+            }
 
-        
-        
-        if(isset($data['admin_confirmation'])){  
+
+
+
+
+        if(isset($data['admin_confirmation'])){
             return User::create([
                 'name' => $data['name'],
                 'email' => $data['email'],
@@ -115,7 +115,7 @@ class RegisterController extends Controller
                 'email' => $data['email'],
                 'password' => Hash::make($data['password']),
                 'admin_confirmation'=>0,
-                'img_url'=>$fullFilePath,  
+                'img_url'=>$fullFilePath,
             ]);
         }
     }
