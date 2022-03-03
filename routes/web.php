@@ -11,8 +11,21 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/home1', function () {
+    return view('home1');
+});
+
+// Route::get('/info',[App\Http\ControllersInfoController::class, 'index'])->name('info');
+
+Auth::routes();
+
+Route::group(['middleware'=>'auth'],function(){
+    Route::get('/user','UserController@show')->name('user.show');
+    Route::post('/user/update/','UserController@update')->name('user.update');
 });
 
 Route::get('/home', function () {
@@ -46,4 +59,3 @@ Route::get('/form', function () {
 Route::get('/application', function () {
     return view('application');
 });
-
