@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Question;
+use Validator;
+use Dotenv\Validator as DotenvValidator;
 
 class QuestionController extends Controller
 {
@@ -16,7 +18,7 @@ class QuestionController extends Controller
     public function store(Request $request)
     {
         $rules = [
-            'question' => 'required|max255',
+            'question' => 'required|string|max255',
 
         ];
         $message = [
@@ -29,8 +31,8 @@ class QuestionController extends Controller
                 ->withErrors($validator);
         }
         $questions = new Question;
-        $questions->quetion = $request->input('question');
+        $questions->question = $request->input('question');
         $questions->save();
-        return redirect('/form');
+        return redirect('/question');
     }
 }

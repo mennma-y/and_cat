@@ -58,9 +58,7 @@ Route::get('/form', function () {
     return view('form');
 });
 
-Route::get('/admin', function () {
-    return view('admin');
-});
+
 Route::get('/admin', 'FormController@index');
 Route::post('/send', 'FormController@store');
 Route::get('/question', 'QuestionController@index');

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Form;
 use Dotenv\Validator as DotenvValidator;
@@ -12,6 +12,7 @@ class FormController extends Controller
     public function index()
     {
         $forms = Form::all();
+       
         return view('admin', compact('forms'));
     }
     public function store(Request $request)

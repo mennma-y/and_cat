@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'a@a.test',
             'email_verified_at' => '2021-07-15 11:13:08',
             'password' => Hash::make('testtest'), // testtest
+            'img_url' =>'test'
         ]);
     }
 }

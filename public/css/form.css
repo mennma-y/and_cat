@@ -1,0 +1,45 @@
+h1 {
+    text-align: left;
+    border-bottom: 50px solid;
+    border-color: #40e0d0;
+    border-width: 900%;
+
+}
+
+section {
+    text-align: center;
+    background-color: #FFCCFF;
+    border-radius: 30px;
+    font-family: "ヒラギノ丸ゴ Pro W4", "ヒラギノ丸ゴ Pro", "Hiragino Maru Gothic Pro";
+    margin-right: 20%;
+    margin-left: 20%;
+    font-size: 25px;
+}
+
+input {
+    border-radius: 15px;
+    height: 50px;
+}
+
+textarea {
+    border-radius: 15px;
+    text-align: center;
+    margin-bottom: 40px;
+    margin-left: 145px;
+}
+
+.Confirm {
+    background-color: #40e0d0;
+}
+
+
+.form-danger {
+    text-align: center;
+    list-style-type: none;
+    background-color: #e75151;
+    margin-left: 20%;
+    margin-right: 20%;
+    border-radius: 15px;
+    color: white;
+    padding: 40px;
+}

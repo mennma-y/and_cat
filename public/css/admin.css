@@ -1,0 +1,23 @@
+h1{
+
+        text-align: center;
+        border-bottom: 50px solid;
+        border-color: #40e0d0;
+        border-width: 900%;
+    
+
+
+}
+.form{
+    display: flex;
+}
+
+table,td,th{
+    margin-top: 10%;
+    text-align: center;
+    margin-left: 10%;
+    border: 2px #808080 solid;
+    width: 75%;
+    table-layout: fixed;
+    background-color: #FFEDFB;
+}
