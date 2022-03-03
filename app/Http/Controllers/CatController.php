@@ -160,4 +160,31 @@ class CatController extends Controller
 
         return redirect('/admin/cat/register');
     }
+
+    /**
+     *  保護猫編集
+     * 
+     *  @param Request $request
+     *  @return Response
+     */
+    public function catEdit(Request $request)
+    {
+
+        $this->validate($request, Cat::$rules);
+        $cat = Cat::find($request->id);
+        $cat->type = $request->type;
+        $cat->gender = $request->gender;
+        $cat->age = $request->age;
+        $cat->area = $request->area;
+        $cat->slogan = $request->slogan;
+        $cat->introduction = $request->introduction;
+
+        if(isset($request->age_about)){
+            $cat->age_about = 1;
+        }
+
+        $cat->save();
+
+        return redirect('/admin/cat/edit');
+    }
 }
