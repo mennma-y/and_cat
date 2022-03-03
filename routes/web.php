@@ -32,6 +32,7 @@ Route::group(['middleware'=>'auth'],function(){
     Route::post('/user/update/','UserController@update')->name('user.update');
 });
 
+// 個人閲覧ページ
 Route::get('/home', function () {
     return view('main.home');
 });
@@ -48,11 +49,20 @@ Route::get('/search', function () {
     return view('main.search');
 });
 
+// 保護猫団体閲覧ページ
 Route::get('/admin/cat/register', function () {
     return view('admin.cat_register');
 });
 
 Route::post('/admin/cat/register', 'CatController@catRegister');
+
+Route::get('/admin/cat/edit/{id}', function () {
+    return view('admin.cat_edit');
+});
+
+Route::post('/admin/cat/edit', 'CatController@catEdit');
+
+
 
 Route::get('/form', function () {
     return view('form');

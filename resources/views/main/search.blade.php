@@ -123,7 +123,7 @@
                 <p class="name">太郎くん</p>
                 <p>遊ぶのが大好き！</p>
             </div>
-            <div class="like-box">
+            <div class="like-box like-js" data-cat-id="#" data-like-id="#">
                 <p>☆お気に入り登録</p>
             </div>
         </div>
