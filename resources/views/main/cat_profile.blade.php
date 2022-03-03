@@ -26,7 +26,7 @@
     </div>
 </div>
 <div class="pink-box">
-    <div class="like-box">
+    <div class="like-box like-js" data-cat-id="#" data-like-id="#">
         <p class="pink">☆お気に入りに追加する</p>
     </div>
     <div class="name-box">
