@@ -74,6 +74,12 @@
     margin: 50px 30px;
 }
 
+.pink-box .btn-reverse {
+    background-color: #FA00E7;
+    color: #FAE7F6;
+    font-weight: bold;
+}
+
 .pink-box .name-box {
     width: 300px;
     height: 200px;
@@ -116,10 +122,12 @@
 .profile-box .profile-text p.main {
     font-weight: bold;
 }
-.profile-box .profile-text a{
-    color:#333;
+
+.profile-box .profile-text a {
+    color: #333;
 }
-.profile-box .profile-text .user-home{
+
+.profile-box .profile-text .user-home {
     background-color: #FAE7F6;
     width: 200px;
     height: 70px;
@@ -130,17 +138,20 @@
     right: 20px;
     justify-content: center;
 }
-.profile-box .profile-text .user-home p{
+
+.profile-box .profile-text .user-home p {
     line-height: 70px;
     font-weight: bold;
     font-size: 17px;
     margin-right: 5px;
 }
-.profile-box .profile-text .user-home .black-cat{
+
+.profile-box .profile-text .user-home .black-cat {
     width: 35px;
     line-height: 60px;
 }
-.profile-box .profile-text .user-home .black-cat img{
+
+.profile-box .profile-text .user-home .black-cat img {
     width: 100%;
 }
 
@@ -204,9 +215,6 @@
     font-size: 15px;
     font-weight: normal;
     margin-left: 20px;
-}
-
-.likes-box {
 }
 
 .likes-box .like-box {
@@ -431,6 +439,12 @@
     line-height: 30px;
     border-radius: 30px;
     color: #FA00E7;
+}
+
+.cats-box .cat-box .text .btn-reverse {
+    background-color: #FA00E7;
+    color: #FAE7F6;
+    font-weight: bold;
 }
 
 /**

@@ -11,10 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/home1', function () {
+    return view('home1');
 });
 
+// Route::get('/info',[App\Http\ControllersInfoController::class, 'index'])->name('info');
 
 Auth::routes();
 
@@ -32,30 +37,33 @@ Route::group(['middleware'=>'auth'],function(){
 
 });
 
-Route::get('/home', function () {
-    return view('main.home');
-});
+// 個人閲覧ページ
+Route::get('/home', 'CatController@getHome');
 
-Route::get('/cat/profile', function () {
-    return view('main.cat_profile');
-});
+Route::get('/cat/profile', 'CatController@getCatProfile');
 
 Route::get('/like', function () {
     return view('main.like');
 });
 
-Route::get('/search', function () {
-    return view('main.search');
-});
+Route::get('/search', 'CatController@getSearch');
 
 
 
-
+// 保護猫団体閲覧ページ
 Route::get('/admin/cat/register', function () {
     return view('admin.cat_register');
 });
 
 Route::post('/admin/cat/register', 'CatController@catRegister');
+
+Route::get('/admin/cat/edit/{id}', function () {
+    return view('admin.cat_edit');
+});
+
+Route::post('/admin/cat/edit', 'CatController@catEdit');
+
+
 
 Route::get('/form', function () {
     return view('form');
@@ -63,5 +71,3 @@ Route::get('/form', function () {
 Route::get('/application', function () {
     return view('application');
 });
-
-

@@ -2,22 +2,9 @@
 
 @section('main')
 <div class="register-box">
-    <h3>保護猫新規登録</h3>
-    <form action="/admin/cat/register" method="post">
+    <h3>保護猫編集</h3>
+    <form action="/admin/cat/edit" method="post">
         @csrf
-        <div class="form-group">
-            <p>写真</p>
-            <div class="cat-image-box">
-                <label for="image" class="form-label">メイン</label>
-                <input type="file" class="form-control" name="cat_image_main" id="image" enctype="multipart/form-data" accept=".jpeg, .jpg, .png" required>
-                <p>サブ</p>
-                <div class="sub-image">
-                    <input type="file" class="form-control" name="cat_image[]" id="image2" enctype="multipart/form-data" accept=".jpeg, .jpg, .png">
-                    <input type="file" class="form-control" name="cat_image[]" id="image3" enctype="multipart/form-data" accept=".jpeg, .jpg, .png">
-                    <input type="file" class="form-control" name="cat_image[]" id="image4" enctype="multipart/form-data" accept=".jpeg, .jpg, .png">
-                </div>
-            </div>
-        </div>
 
         <div class="form-group">
             <label for="name" class="form-label">名前</label>
@@ -149,7 +136,7 @@
             <textarea name="introduction" class="form-control" id="introduction">{{ old('introduction') }}</textarea>
         </div>
         <div class="button-box">
-            <button type="submit" class="btn">新規登録</button>
+            <button type="submit" class="btn">編集</button>
         </div>
     </form>
 </div>

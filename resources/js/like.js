@@ -30,7 +30,7 @@ $(function () {
                     // いいね！ボタンをデフォルトにする
                     this_obj.removeClass('btn-reverse');
                     // いいね！ボタンの文言変更
-                    this_obj.text('お気に入り登録');
+                    this_obj.text('☆お気に入り登録');
                 })
                 .fail((data) => {
                     alert('処理中にエラーが発生しました。');
@@ -57,7 +57,7 @@ $(function () {
                     // いいね！ボタンを濃くする
                     this_obj.addClass('btn-reverse');
                     // いいね！ボタンの文言変更
-                    this_obj.text('お気に入り済');
+                    this_obj.text('★お気に入り');
                 })
                 .fail((data) => {
                     alert('処理中にエラーが発生しました。');
