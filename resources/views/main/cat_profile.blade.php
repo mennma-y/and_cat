@@ -4,43 +4,53 @@
 <div class="image-box">
     <div class="image-main">
         <div class="image">
-            <img src="{{ asset('/img/post1.jpg') }}" class="cat-main" alt="メインフォト">
+            <img src="{{ Storage::url($image_main->image_path) }}" class="cat-main" alt="メインフォト">
         </div>
     </div>
     <div class="image-sub-box">
+        @foreach($images_sub as $image_sub)
         <div class="image-sub">
             <div class="image">
-                <img src="{{ asset('/img/post2.jpg') }}" class="cat-sub" alt="サブフォト">
+                <img src="{{ Storage::url($image_sub->image_path) }}" class="cat-sub" alt="サブフォト">
             </div>
         </div>
-        <div class="image-sub">
-            <div class="image">
-                <img src="{{ asset('/img/post3.jpg') }}" class="cat-sub" alt="サブフォト">
-            </div>
-        </div>
-        <div class="image-sub">
-            <div class="image">
-                <img src="{{ asset('/img/post4.jpg') }}" class="cat-sub" alt="サブフォト">
-            </div>
-        </div>
+        @endforeach
     </div>
 </div>
 <div class="pink-box">
-    <div class="like-box like-js" data-cat-id="#" data-like-id="#">
+    <div class="like-box like-js" data-cat-id="{{ $cat->id }}" data-like-id="#">
         <p class="pink">☆お気に入りに追加する</p>
     </div>
+    @if($cat->gender === 0)
     <div class="name-box">
-        <p>名前：<span class="name">はなちゃん</span></p>
-        <p>譲渡エリア：<span>関東</span></p>
-        <p>性別：<span>メス</span><span class="gender-icon">♀</span></p>
-        <p>年齢：<span>1歳</span></p>
-        <p>種類：<span>雑種</span></p>
+        <p>名前：<span class="name">{{ $cat->name }}くん</span></p>
+        <p>譲渡エリア：<span>{{ $cat->area }}</span></p>
+        <p>性別：<span>オス</span><span class="gender-icon">♂</span></p>
+        @if(isset($cat->age_about))
+        <p>年齢：<span>推定{{ $cat->age }}</span></p>
+        @else
+        <p>年齢：<span>{{ $cat->age }}</span></p>
+        @endif
+        <p>種類：<span>{{ $cat->type }}</span></p>
     </div>
+    @elseif($cat->gender === 1)
+    <div class="name-box">
+        <p>名前：<span class="name">{{ $cat->name }}ちゃん</span></p>
+        <p>譲渡エリア：<span>{{ $cat->area }}</span></p>
+        <p>性別：<span>メス</span><span class="gender-icon">♀</span></p>
+        @if(isset($cat->age_about))
+        <p>年齢：<span>推定{{ $cat->age }}</span></p>
+        @else
+        <p>年齢：<span>{{ $cat->age }}</span></p>
+        @endif
+        <p>種類：<span>{{ $cat->type }}</span></p>
+    </div>
+    @endif
 </div>
 <div class="profile-box">
     <div class="profile-text">
         <p class="main">●自己紹介</p>
-        <p>こんにちは！はなちゃんです！<br>いつも元気いっぱい走り回っています！</p>
+        <p>{{ $cat->introduction }}</p>
         <a href="#">
             <div class="user-home">
                 <p>保護団体のHPへ</p>

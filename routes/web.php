@@ -29,21 +29,15 @@ Route::group(['middleware'=>'auth'],function(){
 });
 
 // 個人閲覧ページ
-Route::get('/home', function () {
-    return view('main.home');
-});
+Route::get('/home', 'CatController@getHome');
 
-Route::get('/cat/profile', function () {
-    return view('main.cat_profile');
-});
+Route::get('/cat/profile', 'CatController@getCatProfile');
 
 Route::get('/like', function () {
     return view('main.like');
 });
 
-Route::get('/search', function () {
-    return view('main.search');
-});
+Route::get('/search', 'CatController@getSearch');
 
 
 
