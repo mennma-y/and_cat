@@ -6,77 +6,43 @@
     <p>新着の保護猫</p>
 </div>
 <div class="cats-box">
+    @foreach($cats as $cat)  
     <div class="cat-box">
-        <a href="">
+        <a href="/cat/profile/{{ $cat->id }}">
             <div class="cat-image">
-                <img src="{{ asset('/img/post1.jpg') }}" class="cat-main" alt="メインフォト">
+                <img src="{{ Storage::url($cat->catImageMain()) }}" class="cat-main" alt="メインフォト">
             </div>
         </a>
+        @if($cat->gender === 0)
         <div class="text">
-            <p>雑種</p>
-            <p>【関東】 オス<span>♂</span>  3歳</p>
+            <p>{{ $cat->type }}</p>
+            @if(isset($cat->age_about))
+            <p>【{{ $cat->area }}】 オス<span>♂</span>  推定{{ $cat->age }}</p>
+            @else
+            <p>【{{ $cat->area }}】 オス<span>♂</span>  {{ $cat->age }}</p>
+            @endif
             <div class="green-box">
-                <p class="name">太郎くん</p>
-                <p>遊ぶのが大好き！</p>
+                <p class="name">{{ $cat->name }}くん</p>
+                <p>{{ $cat->slogan }}</p>
             </div>
-            <div class="like-box js-like" data-cat-id="#" data-like-id="#">
+            <div class="like-box js-like" data-cat-id="{{ $cat->id }}" data-like-id="#">
                 <p>☆お気に入り登録</p>
             </div>
         </div>
-    </div>
-    <div class="cat-box">
-        <a href="">
-            <div class="cat-image">
-                <img src="{{ asset('/img/post2.jpg') }}" class="cat-main" alt="メインフォト">
-            </div>
-        </a>
+        @elseif($cat->gender === 1)
         <div class="text">
-            <p>雑種</p>
-            <p>【関東】 メス<span>♀</span>  2歳</p>
+            <p>{{ $cat->type }}</p>
+            <p>【{{ $cat->area }}】 メス<span>♀</span>  {{ $cat->age }}</p>
             <div class="green-box">
-                <p class="name">みかんちゃん</p>
-                <p>人懐っこい猫ちゃん</p>
+                <p class="name">{{ $cat->name }}ちゃん</p>
+                <p>{{ $cat->slogan }}</p>
             </div>
-            <div class="like-box">
+            <div class="like-box js-like" data-cat-id="{{ $cat->id }}" data-like-id="#">
                 <p>☆お気に入り登録</p>
             </div>
         </div>
+        @endif
     </div>
-    <div class="cat-box">
-        <a href="">
-            <div class="cat-image">
-                <img src="{{ asset('/img/post3.jpg') }}" class="cat-main" alt="メインフォト">
-            </div>
-        </a>
-        <div class="text">
-            <p>雑種</p>
-            <p>【関東】 オス<span>♂</span>  3歳</p>
-            <div class="green-box">
-                <p class="name">太郎くん</p>
-                <p>遊ぶのが大好き！</p>
-            </div>
-            <div class="like-box">
-                <p>☆お気に入り登録</p>
-            </div>
-        </div>
-    </div>
-    <div class="cat-box">
-        <a href="">
-            <div class="cat-image">
-                <img src="{{ asset('/img/post4.jpg') }}" class="cat-main" alt="メインフォト">
-            </div>
-        </a>
-        <div class="text">
-            <p>雑種</p>
-            <p>【関東】 オス<span>♂</span>  3歳</p>
-            <div class="green-box">
-                <p class="name">太郎くん</p>
-                <p>遊ぶのが大好き！</p>
-            </div>
-            <div class="like-box">
-                <p>☆お気に入り登録</p>
-            </div>
-        </div>
-    </div>
+    @endforeach
 </div>
 @endsection
