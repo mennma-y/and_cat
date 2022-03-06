@@ -15,9 +15,23 @@
 //     return view('welcome');
 // });
 
-Route::get('/home1', function () {
-    return view('home1');
+
+Route::get('home2', function () {
+    return view('home2');
 });
+
+Route::get('/head', function () {
+    return view('/head');
+});
+
+Route::get('/head1', function () {
+    return view('/head1');
+});
+
+Route::get('/andcat', function () {
+    return view('/andcat');
+});
+
 
 // Route::get('/info',[App\Http\ControllersInfoController::class, 'index'])->name('info');
 
