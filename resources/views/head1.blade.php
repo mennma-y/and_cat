@@ -31,14 +31,14 @@
                 <div class="box text1"><a>猫の里親募集情報サイト</a><br><p>保護猫と飼い主をつなぐ</p></div>
                 <div class="box text2"><img src="img/man.png">
                    <ul>
-                    <li>ニックネームさん</li>
-                    <li>会員情報</li>
-                    <li><a> ☆ お気に入り</li>
+                    <li ><a class="name">ニックネームさん</li>
+                    <li ><a href="{{ url('') }}" class="member">会員情報</a></li>
+                    <li ><a href="{{ url('') }}" class="like" >☆お気に入り</a></li>
                    </ul>
                 </div>
         </div>
 
-        <div class="nav"><p>ホーム<p></div>
+        <div class="nav"><div class="pan"><a>ホーム</a></div></div>
 
          <div class="main-photo">
          <img src="img/main1.jpg" alt="">
@@ -49,7 +49,7 @@
             <div class="logo"><img src="img/logo1.png"  alt="アンドキャットのロゴです"></div>
             <div class="box box1"><a href="#" target="_blank">アンドキャット<br>とは</a></div>
             <div class="box box2"><ul><li><img src="img/serch.png"></li><li><a href="#">保護猫を探す</li></div>
-            <div class="box box3"><ul><li><img src="img/serch.png"></li><li><a href="#">譲渡会<br>イベントを探す</li></a></div>
+            <div class="box box3"><ul><li><img src="img/serch.png"></li><li><a href="#">譲渡会<br>イベントを探す</a></li></div>
             <div class="box box4"><ul><li><img src="img/hogoneko.png"></li><li><a href="#">保護猫団体の方へ</a></li></div>
         </div>
 
@@ -69,4 +69,5 @@
             </div>
         </div>
 </body>
+
 

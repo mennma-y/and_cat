@@ -16,8 +16,8 @@
 // });
 
 
-Route::get('home2', function () {
-    return view('home2');
+Route::get('home1', function () {
+    return view('home1');
 });
 
 Route::get('/head', function () {

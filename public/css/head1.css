@@ -68,48 +68,63 @@ body{
 }
 .text2 ul{
     flex-direction: column;
-    margin-top: 2px;
+    margin-top: 6px;
     margin-right: 2px;
+    list-style: none;
 
 }
 
-.text2 li{
-    list-style: none;
+.text2 li .name{
     text-align: center;
     font-size: 14px;
+    color: black;
+
 }
 
-.text2 li a{
-    margin-top: 1px;
-    border: 1px solid hsl(174, 53%, 68%); /*線の太さ・色*/
-    background-color:rgba(); /*背景色*/
-    border-radius: 10px;
-    display: flex;
+.text2 li .member{
+    text-align: center;
+    font-size: 14px;
+    color: black;
+    text-decoration: none;
+
+}
+
+.text2 li .like{
+    text-align: center;
+    font-size: 14px;
+    color: black;
+    text-decoration: none;
 
 }
 
 /* .text2 li a{
-    list-style: none;
-    font-family: none;
-    font-size: smaller;
-    /* border-radius: 10%;
-    /* background-color: #FAE7F6; */
 
-.nav
-{
+    /* border: 1px solid ;線の太さ・色 */
+    /* background-color:rgba(); /*背景色*/
+    /* border-radius: 10px;
+    display: flex;
+    width: fit-content; */
+/* } */
+
+body .nav{
     background-color:#84D9D0;
     height: 40px;
     width: 100%;
-    align-items: flex-start;
+
+
 }
 
-.nav p{
-    margin: 0 auto;
+body .nav .pan{
     width: 900px;
-    vertical-align: 15px;
-    padding-top: 8px;
+    height: 40px;
+    margin: 0 auto;
+    vertical-align: middle;
+}
+
+body .nav .pan a{
     font-size: small;
-    /* align-items: flex-start; */
+    text-decoration: none;
+    align-items: flex-start;
 }
 
 .main-photo img{
