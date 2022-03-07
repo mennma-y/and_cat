@@ -21,33 +21,59 @@
         </form>
         <form action="{{route('event.update', $event->id)}}" method="POST" style="width: 60%; margin:auto;">
             @csrf
+            @if(count($errors) > 0)
+                <p><span style="color:red; font-weight:bold;">※エラー部分を修正してください</span></p>
+            @endif
             <div class="mb-3" style="margin-top:40px;">
                 <label for="organize" class="form-label">団体名</label>
-                <input type="text" class="form-control" value="{{($event->organize)}}" id="organize" name="organize" required>
+                <input type="text" class="form-control" value="{{($event->organize)}}" id="organize" name="organize">
+                @error('organize')
+                    <p class="perror"><span style="color:red;">{{$message}}</span></p>
+                @enderror
+
+                
             </div>
             <div class="mb-3">
                 <label for="category" class="form-label">内容</label>
-                <input type="text" class="form-control" value="{{$event->category}}" id="category" name="category" required>
+                <input type="text" class="form-control" value="{{$event->category}}" id="category" name="category">
+                @error('category')
+                    <p class="perror"><span style="color:red;">{{$message}}</span></p>
+                @enderror
             </div>
             <div class="mb-3">
                 <label for="place" class="form-label">場所</label>
-                <input type="text" class="form-control" value="{{$event->place}}" id="place" name="place" placeholder="例：松山" required>
+                <input type="text" class="form-control" value="{{$event->place}}" id="place" name="place" placeholder="例：松山">
+                @error('place')
+                    <p class="perror"><span style="color:red;">{{$message}}</span></p>
+                @enderror
             </div>
             <div class="mb-3">
                 <label for="event_date" class="form-label">日時</label>
-                <input type="text" class="form-control" id="event_date" value="{{$event->event_date}}" name="event_date" placeholder="例：2022-02-11" required>
+                <input type="text" class="form-control" id="event_date" value="{{$event->event_date}}" name="event_date" placeholder="例：2022-02-11">
+                @error('event_date')
+                    <p class="perror"><span style="color:red;">{{$message}}</span></p>
+                @enderror
             </div>
             <div class="mb-3">
                 <label for="address" class="form-label">住所</label>
-                <input type="text" class="form-control" id="adress" value="{{$event->address}}" name="address" placeholder="例：愛媛県松山市山越2丁目1番6号" required>
+                <input type="text" class="form-control" id="adress" value="{{$event->address}}" name="address" placeholder="例：愛媛県松山市山越2丁目1番6号">
+                @error('address')
+                    <p class="perror"><span style="color:red;">{{$message}}</span></p>
+                @enderror
             </div>
             <div class="mb-3">
                 <label for="parttime" class="form-label">イベント時間</label>
-                <input type="text" class="form-control" id="parttime" value="{{$event->parttime}}" name="parttime" placeholder="例：13:00~15:00" required>
+                <input type="text" class="form-control" id="parttime" value="{{$event->parttime}}" name="parttime" placeholder="例：13:00~15:00">
+                @error('parttime')
+                    <p class="perror"><span style="color:red;">{{$message}}</span></p>
+                @enderror
             </div>
             <div class="mb-3">
                 <label for="detail" class="form-label">詳細</label>
-                <textarea class="form-control" id="detail" name="detail" rows="4" required>{{$event->detail}}</textarea>
+                <textarea class="form-control" id="detail" name="detail" rows="4">{{$event->detail}}</textarea>
+                @error('detail')
+                    <p class="perror"><span style="color:red;">{{$message}}</span></p>
+                @enderror
             </div>
             <div class="double-button" style="display: flex;align-items:flex-end;">
                 <div class="create-button" style="padding: 20px 0 0 0;">

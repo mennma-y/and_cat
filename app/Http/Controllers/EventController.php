@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\EventRequest;
 use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Event;
@@ -10,9 +11,10 @@ use App\Event;
 class EventController extends Controller
 {
     //
-    public function index()
+    public function index()  
     {
-        $events=Event::orderBy('created_at','desc')->get();
+        $events=Event::orderBy('created_at','desc')->paginate(5);
+        
         $user=Auth::user();
         
         return view('event.event', ['events'=>$events, 'user'=>$user]);
@@ -21,7 +23,7 @@ class EventController extends Controller
     public function show($id)
     {   
         
-        $events=Event::orderBy('created_at','desc')->get();
+        $events=Event::orderBy('created_at','desc')->paginate(5);  
         $event = Event::find($id);   
         
 
@@ -35,7 +37,7 @@ class EventController extends Controller
         return view('event.create_event', ['user' => $user]);
     }
 
-    public function store(Request $request)
+    public function store(EventRequest $request)
     {   
 
         $event = new Event();
@@ -62,7 +64,7 @@ class EventController extends Controller
 
     }
 
-    public function update(Request $request ,$id, Event $event)
+    public function update(EventRequest $request ,$id, Event $event)
     {
         $event =Event::find($id);
         $event->organize = $request->organize;
@@ -84,6 +86,13 @@ class EventController extends Controller
         $event->delete();
 
         return redirect()->route('event.index',['id'=>$event->id]);
+    }
+
+    public function form($id)  
+    {   
+        $event = Event::find($id);
+        $user = Auth::user();
+        return view('event.event_form',['id'=>$event->id],['event'=>$event])->with(['user'=>$user]);
     }
 
 }
