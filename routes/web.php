@@ -24,8 +24,10 @@ Route::get('/home1', function () {
 Auth::routes();
 
 Route::group(['middleware'=>'auth'],function(){
+    //自分のプロフィールページ
     Route::get('/user','UserController@show')->name('user.show');
     Route::post('/user/update/','UserController@update')->name('user.update');
+    //イベントページ
     Route::get('/event','EventController@index')->name('event.index');
     Route::get('/event/show/{id}','EventController@show')->name('event.show');
     Route::get('/event/create','EventController@create')->name('event.create');
@@ -33,7 +35,7 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('/event/edit/{id}','EventController@edit')->name('event.edit');
     Route::post('/event/update/{id}','EventController@update')->name('event.update');
     Route::post('/event/delete/{id}','EventController@delete')->name('event.delete');
-
+    Route::get('/event/form/{id}','EventController@form')->name('event.form');
 
 });
 

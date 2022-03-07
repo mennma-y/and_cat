@@ -90,6 +90,9 @@
                         
             </div>
             @include('common.table')
+            <div class="event-pagination" style="width: 20%; margin:30px auto;">
+                {{$events->links()}} 
+            </div>
         </div>
         <div class="font-yajirusi" style="text-align: center;height:125px;">
             <p style="font-size: 100px; font-weight:bold;">↓</p>
@@ -97,7 +100,7 @@
         <div class="event-form-button" style="text-align: center;">
             <div class="event-form-button-detail"  style="width:60%; margin:auto; border: solid 1px #eef;padding: 20px; border-radius: 30px; 
                 background-color: #84D9D0;">
-                <a href="#" style="text-decoration: none; color:#fff; font-size:20px; font-weight:bold;">参加応募フォームへ</a>
+                <a href="{{route('event.form',['id'=>$event->id])}}" style="text-decoration: none; color:#fff; font-size:20px; font-weight:bold;">参加応募フォームへ</a>
             </div>
         </div>
 
