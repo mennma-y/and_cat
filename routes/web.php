@@ -16,7 +16,6 @@
 // });
 
 
-<<<<<<< HEAD
 Route::get('/home1', function () {
     return view('/home1');
 });
@@ -33,24 +32,6 @@ Route::get('/andcat', function () {
     return view('/andcat');
 });
 
-=======
-Route::get('home2', function () {
-    return view('home2');
-});
-
-Route::get('/head', function () {
-    return view('/head');
-});
-
-Route::get('/head1', function () {
-    return view('/head1');
-});
-
-Route::get('/andcat', function () {
-    return view('/andcat');
-});
-
->>>>>>> 798f5accd1bc30775d53b8d2bc3d54474a245b98
 
 // Route::get('/info',[App\Http\ControllersInfoController::class, 'index'])->name('info');
 
