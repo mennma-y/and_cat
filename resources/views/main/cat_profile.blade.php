@@ -53,10 +53,46 @@
 </div>
 <div class="green-box">
     <div class="arrow"></div>
-    <a href="#">
+    <a href="{{ url('/form') }}">
         <div class="next-form">
             <p>応募フォームへ</p>
         </div>
     </a>
 </div>
+
+<div class="question-box">
+
+    <h2 class="question-title">質問はこちらから</h2>
+    @if ($errors->any())
+    <div class="alert-danger">
+        <ul class="form-danger">
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
+    <form action="/question_send" method="post">
+        @csrf
+        <input type="text" name="question" class="question">
+        <input type="submit" value="質問する">
+    </form>
+    @foreach($questions as $question)
+        <div class="card w-75 mx-auto rounded-pill mt-5">
+      
+            <div class="card-body">
+                <form action="">
+                    <input type="text">
+<input type="submit" value="返信">
+</form>
+                {{$question ->user->name}}
+                {{$question -> question}}
+
+
+            </div>
+       
+        </div>
+        @endforeach
+</div>
+
 @endsection

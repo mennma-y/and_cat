@@ -71,8 +71,8 @@ Route::get('/form', function () {
 
 Route::get('/admin', 'FormController@index');
 Route::post('/send', 'FormController@store');
-Route::get('/question', 'QuestionController@index');
-Route::post('/send_question', 'QuestionController@store');
+Route::get('/cat_profile', 'QuestionController@index');
+Route::post('/question_send', 'QuestionController@store');
 
 Route::get('/application', function () {
     return view('application');

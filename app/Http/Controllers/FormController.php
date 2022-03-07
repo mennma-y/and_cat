@@ -11,8 +11,12 @@ class FormController extends Controller
 {
     public function index()
     {
-        $forms = Form::all();
-       
+      
+        $forms = Form::Join('cats', 'forms.cat_id', '=',  'cats.id')
+        ->where('cats.user_id',  Auth::id())
+            ->select('forms.id', 'forms.name', 'cats.user_id', 'forms.memo', 'forms.telephone')
+            ->get();
+    
         return view('admin', compact('forms'));
     }
     public function store(Request $request)
@@ -37,12 +41,13 @@ class FormController extends Controller
         }
         $forms = new Form;
         // ログイン機能出来次第ユーザーid変更
-        $forms->user_id = 1;
+        $forms->user_id = 4;
         $forms->name = $request->input('name');
         $forms->telephone = $request->input('telephone');
         $forms->memo = $request->input('memo');
+        $forms->cat_id =1;
         $forms->save();
         return redirect('/form');
     }
-
+    
 }

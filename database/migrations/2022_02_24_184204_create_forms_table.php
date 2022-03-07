@@ -17,6 +17,7 @@ class CreateFormsTable extends Migration
             $table->increments('id')->index();
             $table->unsignedBigInteger('user_id')->comment('ユーザ-id')->index();
             $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('cat_id')->comment('catテーブルのid');
             $table->string('name');
             $table->string('telephone')->comment('電話番号');
             $table->string('memo')->comment('備考');

@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="{{ asset('css/form.css') }}">
 </head>
 <header>
-    <h1>    <img src="{{ asset('img/moji_logo.png') }}" alt="" style="width:10%;"></h1>
+    <h1> <img src="{{ asset('img/moji_logo.png') }}" alt="" style="width:10%;"></h1>
 
 
     @if ($errors->any())
