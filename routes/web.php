@@ -17,8 +17,8 @@
 
 
 <<<<<<< HEAD
-Route::get('home1', function () {
-    return view('home1');
+Route::get('/home1', function () {
+    return view('/home1');
 });
 
 Route::get('/head', function () {
