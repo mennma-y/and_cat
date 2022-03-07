@@ -6,8 +6,6 @@
     <form action="/admin/cat/edit" method="post">
         @csrf
 
-        
-
         <div class="form-group">
             <label for="name" class="form-label">名前</label>
             <input type="text" class="form-control" name="name" id="name" placeholder="「くん」「ちゃん」抜きで記入してください" value="{{ old('name') }}">

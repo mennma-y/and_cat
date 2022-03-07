@@ -51,4 +51,12 @@ class Cat extends Model
             return $query->where('age', $str);
         }
     }
+
+    public function catImageMain()
+    {
+        $cat_main = $this->images()->where('status', 'main')->first();
+        $cat_image_main = $cat_main->image_path;
+
+        return $cat_image_main;
+    }
 }

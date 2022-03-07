@@ -91,9 +91,13 @@ class CatController extends Controller
     public function getCatProfile(Request $request)
     {
         $cat = Cat::find($request->id);
+        $image_main = $cat->images()->where('status', 'main')->first();
+        $images_sub = $cat->images()->where('status', 'sub')->orderBy('created_at', 'desc')->get();
 
         return view('main.cat_profile', [
             'cat' => $cat,
+            'image_main' => $image_main,
+            'images_sub' => $images_sub,
         ]);
     }
 
@@ -128,7 +132,7 @@ class CatController extends Controller
     {
 
         //ファイルの保存
-        if(isset($request->cat_image)){
+        if(isset($request->cat_image_main)){
             $this->validate($request, Cat::$rules);
             $cat = new Cat;
             $cat->user_id = Auth::id();
@@ -145,6 +149,15 @@ class CatController extends Controller
 
             $cat->save();
 
+            $cat_image_main = $request->file('cat_image_main');
+            $image_name = Str::random(20).'.'.$cat_image_main->getClientOriginalExtension();
+            \Image::make($cat_image_main)->resize(400, null, function ($constraint) {$constraint->aspectRatio();})->save(public_path('storage/cat_images/' . $image_name));
+            
+            $image = new Image;
+            $image->image_path = 'cat_images/' . $image_name;
+            $image->cat_id = $cat->id;
+            $image->save();
+
             $cat_images = $request->file('cat_image');
             foreach($cat_images as $cat_image){
                 $image_name = Str::random(20).'.'.$cat_image->getClientOriginalExtension();
@@ -153,6 +166,7 @@ class CatController extends Controller
                 $image = new Image;
                 $image->image_path = 'cat_images/' . $image_name;
                 $image->cat_id = $cat->id;
+                $image->status = 'sub';
                 $image->save();
             }
 

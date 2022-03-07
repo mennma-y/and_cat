@@ -15,8 +15,8 @@
                 <td style="background-color: #fff; font-size:18px;">{{$user->name}}</td>
                 </tr>  
                 <tr>
-                <th style="background-color: #FFB6C1;">メールアドレス</th>
-                <td>{{$user->email}}</td>
+                <th style="background-color: #FAE7F6;">メールアドレス</th>
+                <td>{{$user->email}}</td>  
                 </tr>    
                 
                 

@@ -9,7 +9,7 @@
             <p>写真</p>
             <div class="cat-image-box">
                 <label for="image" class="form-label">メイン</label>
-                <input type="file" class="form-control" name="cat_image[]" id="image" enctype="multipart/form-data" accept=".jpeg, .jpg, .png" required>
+                <input type="file" class="form-control" name="cat_image_main" id="image" enctype="multipart/form-data" accept=".jpeg, .jpg, .png" required>
                 <p>サブ</p>
                 <div class="sub-image">
                     <input type="file" class="form-control" name="cat_image[]" id="image2" enctype="multipart/form-data" accept=".jpeg, .jpg, .png">

@@ -79,7 +79,7 @@
                             <label for="admin-confirmation" class="col-md-4 col-form-label text-md-right">保護猫団体の方はこちら</label>
 
                             <div class="col-md-6">
-                                <input type="radio"style="margin-top: 15px;" id="admin-comfirmation" name="admin_confirmation" value="admin_confirmation">
+                                <input type="radio"id="admin-comfirmation" name="admin_confirmation" value="admin_confirmation">
                             </div>
                         </div>
 
