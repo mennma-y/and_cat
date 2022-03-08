@@ -41,7 +41,8 @@ class FormController extends Controller
         }
         $forms = new Form;
         // ログイン機能出来次第ユーザーid変更
-        $forms->user_id = 4;
+        // $forms->user_id = 4;
+        $forms->user_id = Auth::user()->id;
         $forms->name = $request->input('name');
         $forms->telephone = $request->input('telephone');
         $forms->memo = $request->input('memo');

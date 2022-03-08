@@ -20,7 +20,7 @@ class CreateFormsTable extends Migration
             $table->unsignedBigInteger('cat_id')->comment('catテーブルのid');
             $table->string('name');
             $table->string('telephone')->comment('電話番号');
-            $table->string('memo')->comment('備考');
+            $table->string('memo')->nullable()->comment('備考');
             $table->timestamps();
         });
     }
