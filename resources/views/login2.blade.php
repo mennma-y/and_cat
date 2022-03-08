@@ -20,24 +20,12 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
         <!-- Styles -->
-        <link href="{{ asset('css/home1.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/login2.css') }}" rel="stylesheet">
 
     </head>
 
 <body>
-
-        <div class="container">
-                <div class="logomoji"><ruby><img src="img/logomoji.png" alt="アンドキャットのロゴです"><rt>アンドキャット</rt></ruby></div>
-                <div class="box text1"><a>猫の里親募集情報サイト</a><br><p>保護猫と飼い主をつなぐ</p></div>
-                <div class="box text2"><img src="img/man.png">
-                   <ul>
-                    <li ><a class="name">ニックネームさん</li>
-                    <li ><a href="{{ url('') }}" class="member">会員情報</a></li>
-                    <li ><a href="{{ url('') }}" class="like" >☆お気に入り</a></li>
-                   </ul>
-                </div>
-        </div>
-
+    <div class="container">
         <div class="nav"><div class="pan"><a>ホーム</a></div></div>
 
          <div class="main-photo">
@@ -53,20 +41,5 @@
             <div class="box box4"><ul><li><img src="img/hogoneko.png"></li><li><a href="#">保護猫団体の方へ</a></li></div>
         </div>
 
-
-        <div class="footer">
-            <div class="info">
-            <ul>
-                <li>運営会社</li><li>｜</li>
-                <li>利用規約</li><li>｜</li>
-                <li>お問い合わせ</li><li>｜</li>
-                <li>プライバシーポリシー</li><li>｜</li>
-                <li>特定表取引に関する表記</li>
-            </ul>
-            </div><br>
-            <div class="mark">
-            <p>2022 ©️ & Cat (アンドキャット)</p>
-            </div>
-        </div>
 </body>
 

@@ -20,7 +20,7 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
         <!-- Styles -->
-        <link href="{{ asset('css/home1.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/dantai.css') }}" rel="stylesheet">
 
     </head>
 
@@ -38,12 +38,18 @@
                 </div>
         </div>
 
-        <div class="nav"><div class="pan"><a>ホーム</a></div></div>
+        <div class="nav"><div class="pan"><a>ホーム</a><a>＞保護猫団体の方へ</div></div>
 
          <div class="main-photo">
-         <img src="img/main1.jpg" alt="">
-         <h1>保護猫を我が家に<br>ねこと暮らす</h1>
+             <img src="img/dantai_main.jpg" alt="">
+                <h1>きっと見つかる、新しい家族。</h1>
+
+                <div class="select">
+                    <div class="cat"><p>保護猫投稿フォームへ<img src="img/kamera.png"></p></div>
+                    <div class="info"><p>譲渡会・イベントなどの<br>投稿フォームへ<img src="img/memo.png"></p></div>
+                </div>
          </div>
+
 
         <div class="container-nav">
             <div class="logo"><img src="img/logo1.png"  alt="アンドキャットのロゴです"></div>
@@ -53,6 +59,20 @@
             <div class="box box4"><ul><li><img src="img/hogoneko.png"></li><li><a href="#">保護猫団体の方へ</a></li></div>
         </div>
 
+        <div class="container-main">
+                <div class="logomoji2"><img src="img/logomoji.png"></div>
+                <div class="name">アンドキャットができること</div>
+        </div>
+
+        <div class="container-text">
+            <p>アンドキャットは、保護犬・保護猫 と迎えたい人を結ぶマッチングサイトです。 保護団体さまも応募者さまも安心して利用できる場所であるために、審査登録制のシステムをとっております。 登録制のシステムをとっております。 募集登録された犬猫たちに家族ができるよう、情報発信をお手伝いします。
+            </p></div>
+
+        <div class="main-text">
+                <a>保護猫の迎え方</a>
+            <div class="flow">
+                <img src="img/flow.png" alt=""></div>
+        </div>
 
         <div class="footer">
             <div class="info">

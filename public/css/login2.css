@@ -1,0 +1,213 @@
+body{
+    height: 100%;
+}
+
+.container{
+    width: 900px;
+    /* margin-bottom: 0px; */
+    display: flex;
+    flex-direction: row;
+    /* flex: 1; */
+    justify-content: flex-start;
+    /* justify-content: space-between; */
+    /* flex-wrap: nowrap; */
+    /* margin-top: 8px; */
+    /* align-content: flex-start; */
+    padding-top: 10px;
+    margin: 0 auto;
+    /* height: 200px; */
+
+}
+
+body .nav{
+    background-color:#84D9D0;
+    height: 40px;
+    width: 100%;
+
+
+}
+
+body .nav .pan{
+    width: 900px;
+    height: 40px;
+    margin: 0 auto;
+    vertical-align: middle;
+}
+
+body .nav .pan a{
+    font-size: small;
+    text-decoration: none;
+    align-items: flex-start;
+}
+
+
+.container-nav{
+    /* margin-left: 200px; */
+    width: 900px;
+    height: auto;
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    /* justify-content: center; */
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    align-content: flex-start;
+    margin: 0 auto;
+}
+
+.container-nav .logo img{
+    width: 130px;
+    height: auto;
+    /* margin-left: 100px; */
+    display: flex ;
+    /* margin: 0 auto; */
+
+}
+
+.container-nav .box:hover {/*ホバー*/
+    background: rgba(225, 250, 1, 0.3);
+}
+
+.container-nav .box ul{
+    flex-direction: column;
+    vertical-align: middle;
+    /* text-align: center; */
+}
+
+.container-nav .box2 li{
+    /* text-decoration: none;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "筑紫B丸ゴシック";
+    width: 200px; */
+    list-style-position: outside;
+    list-style: none;
+    text-align: center;
+    margin-left: -33px;
+    margin-top: 8px;
+
+
+}
+.container-nav .box2 a{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "筑紫B丸ゴシック";
+    width: 200px;
+
+
+    /* list-style-position: outside;
+    list-style: none; */
+
+}
+
+
+
+.container-nav .box3 li{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "筑紫B丸ゴシック";
+    width: 200px;
+    margin-left: -35px;
+    list-style-position: outside;
+    list-style: none;
+    text-align: center;
+
+}
+
+.container-nav .box4 li{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "筑紫B丸ゴシック";
+    width: 200px;
+    margin-left: 3px;
+    margin-top: 5px;
+    list-style-position: outside;
+    list-style: none;
+
+}
+
+.container-nav .box a{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "筑紫B丸ゴシック";
+    text-align: center;
+}
+
+
+.container-nav .box1{
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background-color: #84D9D0;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+
+}
+
+.container-nav .box2{
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background-color: #FAE7F6;
+    /* align-items: center; */
+    justify-content: center;
+    display: flex;
+    /* text-align: center; */
+
+}
+
+.container-nav .box2 img{
+    width: 30px;
+    margin-top: 10px;
+    text-align: center;
+    /* margin-left: 60px; */
+}
+
+.container-nav .box3 img{
+    width: 30px;
+    margin-top: 10px;
+    text-align: center;
+    /* margin-left: 60px; */
+
+}
+
+.container-nav .box3{
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background-color: #84D9D0;
+    /* align-items: center; */
+    justify-content: center;
+    display: flex;
+    /* text-align: center; */
+
+}
+
+.container-nav .box4{
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background-color: #FAE7F6;
+    /* align-items: center; */
+    justify-content: center;
+    display: flex;
+    /* text-align: center; */
+
+}
+
+.container-nav .box4 img{
+    width: 50px;
+    /* margin-top: 10px; */
+    text-align: center;
+    margin-left: 60px;
+}

@@ -20,7 +20,7 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
         <!-- Styles -->
-        <link href="{{ asset('css/home1.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/head.css') }}" rel="stylesheet">
 
     </head>
 
@@ -38,13 +38,7 @@
                 </div>
         </div>
 
-        <div class="nav"><div class="pan"><a>ホーム</a></div></div>
-
-         <div class="main-photo">
-         <img src="img/main1.jpg" alt="">
-         <h1>保護猫を我が家に<br>ねこと暮らす</h1>
-         </div>
-
+        <div class="nav"><div class="pan"><a>ホーム</a><a>＞●●●●</div></div>
         <div class="container-nav">
             <div class="logo"><img src="img/logo1.png"  alt="アンドキャットのロゴです"></div>
             <div class="box box1"><a href="#" target="_blank">アンドキャット<br>とは</a></div>
@@ -53,20 +47,5 @@
             <div class="box box4"><ul><li><img src="img/hogoneko.png"></li><li><a href="#">保護猫団体の方へ</a></li></div>
         </div>
 
-
-        <div class="footer">
-            <div class="info">
-            <ul>
-                <li>運営会社</li><li>｜</li>
-                <li>利用規約</li><li>｜</li>
-                <li>お問い合わせ</li><li>｜</li>
-                <li>プライバシーポリシー</li><li>｜</li>
-                <li>特定表取引に関する表記</li>
-            </ul>
-            </div><br>
-            <div class="mark">
-            <p>2022 ©️ & Cat (アンドキャット)</p>
-            </div>
-        </div>
 </body>
 
