@@ -1,4 +1,4 @@
-@extends('nishiyama')
+@extends('home1')
 
 @section('main')
 <div class="like-top">

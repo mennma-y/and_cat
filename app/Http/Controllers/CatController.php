@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Cat;
+use App\Image;
 
 use Illuminate\Support\Facades\Auth;
 
@@ -91,13 +92,9 @@ class CatController extends Controller
     public function getCatProfile(Request $request)
     {
         $cat = Cat::find($request->id);
-        $image_main = $cat->images()->where('status', 'main')->first();
-        $images_sub = $cat->images()->where('status', 'sub')->orderBy('created_at', 'desc')->get();
 
         return view('main.cat_profile', [
             'cat' => $cat,
-            'image_main' => $image_main,
-            'images_sub' => $images_sub,
         ]);
     }
 
@@ -136,6 +133,7 @@ class CatController extends Controller
             $this->validate($request, Cat::$rules);
             $cat = new Cat;
             $cat->user_id = Auth::id();
+            $cat->name = $request->name;
             $cat->type = $request->type;
             $cat->gender = $request->gender;
             $cat->age = $request->age;

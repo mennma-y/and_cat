@@ -36,6 +36,11 @@ Route::get('/andcat', function () {
     return view('/andcat');
 });
 
+Route::get('/dantai', function () {
+    return view('/dantai');
+});
+
+
 
 // Route::get('/info',[App\Http\ControllersInfoController::class, 'index'])->name('info');
 
@@ -60,7 +65,7 @@ Route::group(['middleware'=>'auth'],function(){
 // 個人閲覧ページ
 Route::get('/home', 'CatController@getHome');
 
-Route::get('/cat/profile', 'CatController@getCatProfile');
+Route::get('/cat/profile/{id}', 'CatController@getCatProfile');
 
 Route::get('/like', function () {
     return view('main.like');
