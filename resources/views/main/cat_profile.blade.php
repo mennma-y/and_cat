@@ -1,17 +1,17 @@
-@extends('nishiyama')
+@extends('home1')
 
 @section('main')
 <div class="image-box">
     <div class="image-main">
         <div class="image">
-            <img src="{{ Storage::url($image_main->image_path) }}" class="cat-main" alt="メインフォト">
+            <img src="{{ Storage::url($cat->catImageMain()->image_path) }}" class="cat-main" alt="メインフォト">
         </div>
     </div>
     <div class="image-sub-box">
-        @foreach($images_sub as $image_sub)
+        @foreach($cat->catImageSub() as $cat_sub)
         <div class="image-sub">
             <div class="image">
-                <img src="{{ Storage::url($image_sub->image_path) }}" class="cat-sub" alt="サブフォト">
+                <img src="{{ Storage::url($cat_sub->image_path) }}" class="cat-sub" alt="サブフォト">
             </div>
         </div>
         @endforeach
@@ -25,7 +25,7 @@
     <div class="name-box">
         <p>名前：<span class="name">{{ $cat->name }}くん</span></p>
         <p>譲渡エリア：<span>{{ $cat->area }}</span></p>
-        <p>性別：<span>オス</span><span class="gender-icon">♂</span></p>
+        <p>性別：<span>オス</span><span class="male-icon">♂</span></p>
         @if(isset($cat->age_about))
         <p>年齢：<span>推定{{ $cat->age }}</span></p>
         @else
@@ -37,7 +37,7 @@
     <div class="name-box">
         <p>名前：<span class="name">{{ $cat->name }}ちゃん</span></p>
         <p>譲渡エリア：<span>{{ $cat->area }}</span></p>
-        <p>性別：<span>メス</span><span class="gender-icon">♀</span></p>
+        <p>性別：<span>メス</span><span class="scalpel-icon">♀</span></p>
         @if(isset($cat->age_about))
         <p>年齢：<span>推定{{ $cat->age }}</span></p>
         @else
