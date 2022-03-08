@@ -61,7 +61,7 @@ Route::group(['middleware'=>'auth'],function(){
 // 個人閲覧ページ
 Route::get('/home', 'CatController@getHome');
 
-Route::get('/cat/profile', 'CatController@getCatProfile');
+Route::get('/cat/profile/{id}', 'CatController@getCatProfile');
 
 Route::get('/like', function () {
     return view('main.like');

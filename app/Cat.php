@@ -24,6 +24,11 @@ class Cat extends Model
         return $this->belongsTo('App\User');
     }
 
+    public function images()
+    {
+        return $this->hasMany('App\Image');
+    }
+
     public function likes()
     {
         return $this->hasMany('App\Like');
@@ -55,8 +60,14 @@ class Cat extends Model
     public function catImageMain()
     {
         $cat_main = $this->images()->where('status', 'main')->first();
-        $cat_image_main = $cat_main->image_path;
 
-        return $cat_image_main;
+        return $cat_main;
+    }
+
+    public function catImageSub()
+    {
+        $cats_sub = $this->images()->where('status', 'sub')->get();
+
+        return $cats_sub;
     }
 }

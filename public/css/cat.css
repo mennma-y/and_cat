@@ -1,7 +1,8 @@
 .main {
-    max-width: 700px;
-    min-width: 700px;
-    margin: auto;
+    max-width: 900px;
+    min-width: 900px;
+    margin: 50px auto;
+    
 }
 
 /**
@@ -62,6 +63,7 @@
 
 .pink-box {
     display: flex;
+    justify-content: center;
 }
 
 .pink-box .like-box {
@@ -101,7 +103,11 @@
     font-size: 20px;
 }
 
-.pink-box .name-box span.gender-icon {
+.pink-box .name-box span.male-icon {
+    color: #009D5B;
+}
+
+.pink-box .name-box span.scalpel-icon {
     color: #FA00E7;
 }
 
@@ -117,10 +123,12 @@
 
 .profile-box .profile-text {
     padding: 30px 20px;
+    height: 100%;
 }
 
 .profile-box .profile-text p.main {
     font-weight: bold;
+    margin: 10px 0;
 }
 
 .profile-box .profile-text a {
@@ -414,7 +422,11 @@
     margin: 5px 0;
 }
 
-.cats-box .cat-box .text span {
+.cats-box .cat-box .text span.male-icon {
+    color: #009D5B;
+}
+
+.cats-box .cat-box .text span.scalpel-icon {
     color: #ff60af;
 }
 
