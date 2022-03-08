@@ -20,25 +20,19 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
         <!-- Styles -->
-        <link href="{{ asset('css/head.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/login2.css') }}" rel="stylesheet">
 
     </head>
 
 <body>
+    <div class="container">
+        <div class="nav"><div class="pan"><a>ホーム</a></div></div>
 
-        <div class="container">
-                <div class="logomoji"><ruby><img src="img/logomoji.png" alt="アンドキャットのロゴです"><rt>アンドキャット</rt></ruby></div>
-                <div class="box text1"><a>猫の里親募集情報サイト</a><br><p>保護猫と飼い主をつなぐ</p></div>
-                <div class="box text2"><img src="img/man.png">
-                   <ul>
-                    <li ><a class="name">ニックネームさん</li>
-                    <li ><a href="{{ url('') }}" class="member">会員情報</a></li>
-                    <li ><a href="{{ url('') }}" class="like" >☆お気に入り</a></li>
-                   </ul>
-                </div>
-        </div>
+         <div class="main-photo">
+         <img src="img/main1.jpg" alt="">
+         <h1>保護猫を我が家に<br>ねこと暮らす</h1>
+         </div>
 
-        <div class="nav"><div class="pan"><a>ホーム</a><a>＞●●●●</div></div>
         <div class="container-nav">
             <div class="logo"><img src="img/logo1.png"  alt="アンドキャットのロゴです"></div>
             <div class="box box1"><a href="#" target="_blank">アンドキャット<br>とは</a></div>

@@ -32,6 +32,11 @@ Route::get('/andcat', function () {
     return view('/andcat');
 });
 
+Route::get('/dantai', function () {
+    return view('/dantai');
+});
+
+
 
 // Route::get('/info',[App\Http\ControllersInfoController::class, 'index'])->name('info');
 
