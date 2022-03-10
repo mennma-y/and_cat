@@ -46,7 +46,7 @@ $(function () {
                 url: '/like',
                 type: 'POST',
                 data: {
-                    'post_id': post_id
+                    'cat_id': cat_id
                 },
                 timeout: 10000
             })

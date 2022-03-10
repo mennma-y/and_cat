@@ -21,13 +21,22 @@
             @else
             <p>【{{ $cat->area }}】 オス<span class="male-icon">♂</span>  {{ $cat->age }}</p>
             @endif
+
             <div class="green-box">
                 <p class="name">{{ $cat->name }}くん</p>
                 <p>{{ $cat->slogan }}</p>
             </div>
-            <div class="like-box js-like" data-cat-id="{{ $cat->id }}" data-like-id="#">
-                <p>☆お気に入り登録</p>
+
+            @if(is_null($cat->cat_like_id()))
+            <div class="like-box js-like" data-cat-id="{{ $cat->id }}" data-like-id="null">
+                <p class="like">☆お気に入り登録</p>
             </div>
+            @else
+            <div class="like-box btn-reverse js-like" data-cat-id="{{ $cat->id }}" data-like-id="{{ $cat->cat_like_id() }}">
+                <p class="like">★お気に入り</p>
+            </div>
+            @endif
+
         </div>
         @elseif($cat->gender === 1)
         <div class="text">
@@ -37,13 +46,22 @@
             @else
             <p>【{{ $cat->area }}】 メス<span class="scalpel-icon">♀</span>  {{ $cat->age }}</p>
             @endif
+
             <div class="green-box">
                 <p class="name">{{ $cat->name }}ちゃん</p>
                 <p>{{ $cat->slogan }}</p>
             </div>
-            <div class="like-box js-like" data-cat-id="{{ $cat->id }}" data-like-id="#">
-                <p>☆お気に入り登録</p>
+
+            @if(is_null($cat->cat_like_id()))
+            <div class="like-box js-like" data-cat-id="{{ $cat->id }}" data-like-id="null">
+                <p class="like">☆お気に入り登録</p>
             </div>
+            @else
+            <div class="like-box btn-reverse js-like" data-cat-id="{{ $cat->id }}" data-like-id="{{ $cat->cat_like_id() }}">
+                <p class="like">★お気に入り</p>
+            </div>
+            @endif
+
         </div>
         @endif
     </div>

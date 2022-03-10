@@ -64,6 +64,10 @@
             <div class="form-group form-box">
                 <span class="custom-label">性別</span>
                 <div class="gender custom-box radio-box">
+                    <div>
+                        <label for="none" class="form-check-label">指定なし</label>
+                        <input type="radio" name="gender" id="none" class="form-check-input" value="">
+                    </div>
                     <div class="male-box">
                         <label for="male" class="form-check-label">オス</label>
                         <input type="radio"  name="gender" id="male" class="form-check-input" value="0">
@@ -79,9 +83,18 @@
                 <div class="custom-box">
                     <select name="age" id="age" class="form-select">
                         <option value="" selected>指定なし</option>
-                        <option value="0～3ヶ月">0～3ヶ月</option>
-                        <option value="4～7ヶ月">4～7ヶ月</option>
-                        <option value="8～11ヶ月">8～11ヶ月</option>
+                        <option value="0ヶ月">0ヶ月</option>
+                        <option value="1ヶ月">1ヶ月</option>
+                        <option value="2ヶ月">2ヶ月</option>
+                        <option value="3ヶ月">3ヶ月</option>
+                        <option value="4ヶ月">4ヶ月</option>
+                        <option value="5ヶ月">5ヶ月</option>
+                        <option value="6ヶ月">6ヶ月</option>
+                        <option value="7ヶ月">7ヶ月</option>
+                        <option value="8ヶ月">8ヶ月</option>
+                        <option value="9ヶ月">9ヶ月</option>
+                        <option value="10ヶ月">10ヶ月</option>
+                        <option value="11ヶ月">11ヶ月</option>
                         <option value="1歳">1歳</option>
                         <option value="2歳">2歳</option>
                         <option value="3歳">3歳</option>
@@ -91,7 +104,17 @@
                         <option value="7歳">7歳</option>
                         <option value="8歳">8歳</option>
                         <option value="9歳">9歳</option>
-                        <option value="10歳～">10歳～</option>
+                        <option value="10歳">10歳</option>
+                        <option value="11歳">11歳</option>
+                        <option value="12歳">12歳</option>
+                        <option value="13歳">13歳</option>
+                        <option value="14歳">14歳</option>
+                        <option value="15歳">15歳</option>
+                        <option value="16歳">16歳</option>
+                        <option value="17歳">17歳</option>
+                        <option value="18歳">18歳</option>
+                        <option value="19歳">19歳</option>
+                        <option value="20歳">20歳</option>
                     </select>
                 </div>
             </div>
@@ -114,36 +137,58 @@
     <div class="cat-box">
         <a href="/cat/profile/{{ $cat->id }}">
             <div class="cat-image">
-                <img src="{{ Storage::url($cat->catImageMain()) }}" class="cat-main" alt="メインフォト">
+                <img src="{{ Storage::url($cat->catImageMain()->image_path) }}" class="cat-main" alt="メインフォト">
             </div>
         </a>
         @if($cat->gender === 0)
         <div class="text">
             <p>{{ $cat->type }}</p>
             @if(isset($cat->age_about))
-            <p>【{{ $cat->area }}】 オス<span>♂</span>  推定{{ $cat->age }}</p>
+            <p>【{{ $cat->area }}】 オス<span class="male-icon">♂</span>  推定{{ $cat->age }}</p>
             @else
-            <p>【{{ $cat->area }}】 オス<span>♂</span>  {{ $cat->age }}</p>
+            <p>【{{ $cat->area }}】 オス<span class="male-icon">♂</span>  {{ $cat->age }}</p>
             @endif
+
             <div class="green-box">
                 <p class="name">{{ $cat->name }}くん</p>
                 <p>{{ $cat->slogan }}</p>
             </div>
-            <div class="like-box js-like" data-cat-id="{{ $cat->id }}" data-like-id="#">
-                <p>☆お気に入り登録</p>
+
+            @if(is_null($cat->cat_like_id()))
+            <div class="like-box js-like" data-cat-id="{{ $cat->id }}" data-like-id="null">
+                <p class="like">☆お気に入り登録</p>
             </div>
+            @else
+            <div class="like-box btn-reverse js-like" data-cat-id="{{ $cat->id }}" data-like-id="{{ $cat->cat_like_id() }}">
+                <p class="like">★お気に入り</p>
+            </div>
+            @endif
+
         </div>
         @elseif($cat->gender === 1)
         <div class="text">
             <p>{{ $cat->type }}</p>
-            <p>【{{ $cat->area }}】 メス<span>♀</span>  {{ $cat->age }}</p>
+            @if(isset($cat->age_about))
+            <p>【{{ $cat->area }}】 メス<span class="scalpel-icon">♀</span>  推定{{ $cat->age }}</p>
+            @else
+            <p>【{{ $cat->area }}】 メス<span class="scalpel-icon">♀</span>  {{ $cat->age }}</p>
+            @endif
+
             <div class="green-box">
                 <p class="name">{{ $cat->name }}ちゃん</p>
                 <p>{{ $cat->slogan }}</p>
             </div>
-            <div class="like-box js-like" data-cat-id="{{ $cat->id }}" data-like-id="#">
-                <p>☆お気に入り登録</p>
+
+            @if(is_null($cat->cat_like_id()))
+            <div class="like-box js-like" data-cat-id="{{ $cat->id }}" data-like-id="null">
+                <p class="like">☆お気に入り登録</p>
             </div>
+            @else
+            <div class="like-box btn-reverse js-like" data-cat-id="{{ $cat->id }}" data-like-id="{{ $cat->cat_like_id() }}">
+                <p class="like">★お気に入り</p>
+            </div>
+            @endif
+
         </div>
         @endif
     </div>
