@@ -20,7 +20,7 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
         <!-- Styles -->
-        <link href="{{ asset('css/login2.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/login3.css') }}" rel="stylesheet">
 
     </head>
 
@@ -34,20 +34,9 @@
             <div class="logo">
                 <img src="img/logo.png">
             </div>
-            <div class="login"><h1>ログイン</h1>
+            <div class="login"><h1>会員登録</h1>
             </div>
 
-        <div class="main">
-
-        </div>
-
-
-         <div class="box-box2">
-            <div class="touroku">
-            <a>会員登録が<br>まだの方はこちら</a>
-            </div>
-        </div>
-    </div>
 
 </body>
 

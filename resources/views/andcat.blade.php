@@ -70,6 +70,12 @@
          </div>
     </div>
 
+    <div class="main-text">
+          <a>保護猫の迎え方</a>
+        <div class="flow">
+        <img src="img/pet.png" alt=""></div>
+    </div>
+
         <div class="main-text">
                 <a>保護猫のいま</a>
             <div class="sub-photo">

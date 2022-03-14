@@ -380,6 +380,48 @@ body .nav .pan a{
     flex-direction: row; */
     margin: 0 auto;
     margin-top: 20px;
+    text-align: center;
+}
+
+.main-text a{
+    font-size: 25px;
+    text-align: left;
+    color: black;
+    font-weight: bold;
+    font-family: "筑紫B丸ゴシック";
+}
+
+.flow {
+    /* width: 600px; */
+    position: relative;
+    display: flex ;
+    justify-content: right;
+    align-items: flex-start;
+    margin-bottom: 100px;
+    justify-content: center;
+    margin-top: 10px;
+
+}
+.flow img{
+    width: 720px;
+} */
+
+/* .main-text1 {
+    font-size: 16px;
+    position: absolute;
+    padding-top: 85px;
+    padding-left: 50px;
+    padding-right: 50px;
+} */
+
+
+.main-text{
+    width: 900px;
+    /* height: auto;
+    flex: 1;
+    flex-direction: row; */
+    margin: 0 auto;
+    margin-top: 20px;
 }
 
 .main-text a{

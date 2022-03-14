@@ -1,4 +1,4 @@
-@extends('nishiyama')
+<!--@extends('nishiyama')-->
 
 @section('main')
 <div class="new">

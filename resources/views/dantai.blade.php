@@ -42,9 +42,13 @@
 
          <div class="main-photo">
              <img src="img/dantai_main.jpg" alt="">
-                <h1>きっと見つかる、新しい家族。</h1>
+                <h3>きっと見つかる、新しい家族。</h3>
 
                 <div class="select">
+                    <div class="dantai"><p>団体登録申請<img src="img/dantai1.png">
+                        <p class="list">団体登録がまだの方は<br><a href="#dantaitouroku">こちら(ここをクリック)</a>を読んで申請してください
+                        </p>
+                    </p></div>
                     <div class="cat"><p>保護猫投稿フォームへ<img src="img/kamera.png"></p></div>
                     <div class="info"><p>譲渡会・イベントなどの<br>投稿フォームへ<img src="img/memo.png"></p></div>
                 </div>
@@ -65,14 +69,14 @@
         </div>
 
         <div class="container-text">
-            <p>アンドキャットは、保護犬・保護猫 と迎えたい人を結ぶマッチングサイトです。 保護団体さまも応募者さまも安心して利用できる場所であるために、審査登録制のシステムをとっております。 登録制のシステムをとっております。 募集登録された犬猫たちに家族ができるよう、情報発信をお手伝いします。
+            <p id="dantaitouroku">アンドキャットは、保護犬・保護猫 と迎えたい人を結ぶマッチングサイトです。 保護団体さまも応募者さまも安心して利用できる場所であるために、審査登録制のシステムをとっております。 登録制のシステムをとっております。 募集登録された犬猫たちに家族ができるよう、情報発信をお手伝いします。
             </p></div>
 
-        <div class="main-text">
+        {{-- <div class="main-text">
                 <a>保護猫の迎え方</a>
             <div class="flow">
-                <img src="img/flow.png" alt=""></div>
-        </div>
+                <img src="img/pet.png" alt=""></div>
+        </div> --}}
 
         <div class="footer">
             <div class="info">

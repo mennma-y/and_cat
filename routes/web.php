@@ -36,6 +36,15 @@ Route::get('/dantai', function () {
     return view('/dantai');
 });
 
+Route::get('/login2', function () {
+    return view('/login2');
+});
+
+Route::get('/login3', function () {
+    return view('/login3');
+});
+
+
 
 
 // Route::get('/info',[App\Http\ControllersInfoController::class, 'index'])->name('info');

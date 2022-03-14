@@ -1,41 +1,10 @@
 body{
-    background-image: url(/img/login.jpg);
+    background-image: url(/img/andcat_second2.jpg);
     background-size: cover;
 
 }
 
-.app{
-
-}
-
-.navbar{
-    width: 100%;
-    height: 40px;
-    background-color: white;
-}
-
-.navbar-nav{
-    margin-left: 70%;
-}
-
-.navbar-nav ul {
-    width: 180px;
-
-    display: flex;
-    justify-content: space-between;
-
-}
-
-.navbar-nav li{
-    list-style: none;
-}
-
-.navbar-nav li a{
-    color: black;
-
-}
-
-.container-main{
+.container{
     width: 580px;
     height: 900px;
     margin: 0 auto;
@@ -45,7 +14,7 @@ body{
 
 }
 
-.container-main .box{
+.container .box{
     width: 580px;
     height: 800px;
     /* margin: 0 auto;
@@ -60,8 +29,6 @@ body{
     /* display: block; */
 
 }
-
-
 
 .box .nav{
     background-color:#84D9D0;
@@ -120,38 +87,5 @@ body{
 .main {
     width: 580;
     height: 450px;
-}
-
-
-.container .box-box2{
-    width: 580;
-    height: auto
-
-}
-
-.box-box2 .touroku{
-    width: 260px;
-    height: 55px;
-    margin: 0 auto;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: #FAE7F6;
-    border-bottom-left-radius: 20px 20px;
-    border-bottom-right-radius: 20px 20px;
-    border-top-left-radius: 20px 20px;
-    border-top-right-radius: 20px 20px;
-    text-align: center;
-    padding-top: 10px;
-
-}
-
-.box-box2 .touroku .a{
-    text-decoration: none;
-    list-style: none;
-    font-size: 20px;
-    font-weight: bold;
-    /* text-align: center; */
-    /* margin: 0 auto; */
-
 }
 
