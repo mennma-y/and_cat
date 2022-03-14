@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Cat;
+use App\Image;
+use App\Like;
 
 use Illuminate\Support\Facades\Auth;
 
@@ -77,9 +79,19 @@ class CatController extends Controller
 
         $cats = $query->orderBy('created_at', 'desc')->simplePaginate(50);
 
-        return view('main.search', [
-            'cats' => $cats,
-        ]);
+        if(isset($area) || isset($gender) || isset($age) || isset($type)){
+            return view('main.search', [
+                'cats' => $cats,
+                'area' => $area,
+                'gender' => $gender,
+                'age' => $age,
+                'type' => $type,
+            ]);
+        }else{
+            return view('main.search', [
+                'cats' => $cats,
+            ]);
+        }
     }
 
     /**
@@ -90,9 +102,11 @@ class CatController extends Controller
      */
     public function getCatProfile(Request $request)
     {
+        $user = Auth::user();
         $cat = Cat::find($request->id);
 
         return view('main.cat_profile', [
+            'user' => $user,
             'cat' => $cat,
         ]);
     }
@@ -108,9 +122,11 @@ class CatController extends Controller
         $user = Auth::user();
         $like_cat_ids = Like::where('status', 'active')->where('user_id', $user->id)->pluck('cat_id');
         $cats = Cat::whereIn('id', $like_cat_ids)->orderBy('created_at', 'desc')->simplePaginate(50);
+        $like_count = $cats->count();
 
         return view('main.like', [
             'cats' => $cats,
+            'like_count' => $like_count,
         ]);
     }
 
@@ -128,10 +144,11 @@ class CatController extends Controller
     {
 
         //ファイルの保存
-        if(isset($request->cat_image)){
+        if(isset($request->cat_image_main)){
             $this->validate($request, Cat::$rules);
             $cat = new Cat;
             $cat->user_id = Auth::id();
+            $cat->name = $request->name;
             $cat->type = $request->type;
             $cat->gender = $request->gender;
             $cat->age = $request->age;
@@ -145,6 +162,15 @@ class CatController extends Controller
 
             $cat->save();
 
+            $cat_image_main = $request->file('cat_image_main');
+            $image_name = Str::random(20).'.'.$cat_image_main->getClientOriginalExtension();
+            \Image::make($cat_image_main)->resize(400, null, function ($constraint) {$constraint->aspectRatio();})->save(public_path('storage/cat_images/' . $image_name));
+            
+            $image = new Image;
+            $image->image_path = 'cat_images/' . $image_name;
+            $image->cat_id = $cat->id;
+            $image->save();
+
             $cat_images = $request->file('cat_image');
             foreach($cat_images as $cat_image){
                 $image_name = Str::random(20).'.'.$cat_image->getClientOriginalExtension();
@@ -153,11 +179,54 @@ class CatController extends Controller
                 $image = new Image;
                 $image->image_path = 'cat_images/' . $image_name;
                 $image->cat_id = $cat->id;
+                $image->status = 'sub';
                 $image->save();
             }
 
         }
 
         return redirect('/admin/cat/register');
+    }
+
+    /**
+     *  保護猫編集ページ表示
+     * 
+     *  @param Request $request
+     *  @return Response
+     */
+    public function getCatEdit(Request $request)
+    {
+        $cat = Cat::find($request->id);
+
+        return view('admin.cat_edit', [
+            'cat' => $cat,
+        ]);
+    }
+
+    /**
+     *  保護猫編集
+     * 
+     *  @param Request $request
+     *  @return Response
+     */
+    public function catEdit(Request $request)
+    {
+
+        $this->validate($request, Cat::$rules);
+        $cat = Cat::find($request->id);
+        $cat->type = $request->type;
+        $cat->gender = $request->gender;
+        $cat->age = $request->age;
+        $cat->area = $request->area;
+        $cat->slogan = $request->slogan;
+        $cat->introduction = $request->introduction;
+
+        if(isset($request->age_about)){
+            $cat->age_about = 1;
+        }
+
+        $cat->save();
+
+        return redirect('/admin/cat/edit');
     }
 }

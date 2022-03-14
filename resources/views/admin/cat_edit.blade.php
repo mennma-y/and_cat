@@ -2,31 +2,19 @@
 
 @section('main')
 <div class="register-box">
-    <h3>保護猫新規登録</h3>
-    <form action="/admin/cat/register" method="post" enctype="multipart/form-data">
+    <h3>保護猫編集</h3>
+    <form action="/admin/cat/edit" method="post">
         @csrf
-        <div class="form-group">
-            <p>写真</p>
-            <div class="cat-image-box">
-                <label for="image" class="form-label">メイン</label>
-                <input type="file" class="form-control" name="cat_image_main" id="image" accept=".jpeg, .jpg, .png" required>
-                <p>サブ</p>
-                <div class="sub-image">
-                    <input type="file" class="form-control" name="cat_image[]" accept=".jpeg, .jpg, .png">
-                    <input type="file" class="form-control" name="cat_image[]" accept=".jpeg, .jpg, .png">
-                    <input type="file" class="form-control" name="cat_image[]" accept=".jpeg, .jpg, .png">
-                </div>
-            </div>
-        </div>
+        <input type="hidden" name="id" value="{{ $cat->id }}">
 
         <div class="form-group">
             <label for="name" class="form-label">名前</label>
-            <input type="text" class="form-control" name="name" id="name" placeholder="「くん」「ちゃん」抜きで記入してください" value="{{ old('name') }}">
+            <input type="text" class="form-control" name="name" id="name" placeholder="「くん」「ちゃん」抜きで記入してください" value="{{ $cat->name }}">
         </div>
 
         <div class="form-group">
             <label for="type" class="form-label">種類</label>
-            <input type="text" class="form-control" name="type" id="type" placeholder="例）雑種" value="{{ old('type') }}">
+            <input type="text" class="form-control" name="type" id="type" placeholder="例）雑種" value="{{ $cat->type }}">
         </div>
         
         <div class="form-group">
@@ -34,11 +22,19 @@
             <div class="gender">
                 <div class="gender-box">
                     <label for="male" class="form-check-label">オス</label>
+                    @if($cat->gender === 0)
+                    <input type="radio" class="form-check-input" name="gender" id="male" value="0" checked>
+                    @else
                     <input type="radio" class="form-check-input" name="gender" id="male" value="0">
+                    @endif
                 </div>
                 <div class="gender-box">
                     <label for="scalpel" class="form-check-label">メス</label>
+                    @if($cat->gender === 1)
+                    <input type="radio" class="form-check-input" name="gender" id="scalpel" value="1" checked>
+                    @else
                     <input type="radio" class="form-check-input" name="gender" id="scalpel" value="1">
+                    @endif
                 </div>
             </div>
         </div>
@@ -46,8 +42,8 @@
         <div class="form-group">
             <label for="age" class="form-label">年齢</label>
             <div class="custom-box">
-                <select name="age" id="age" class="form-select"  value="{{ old('age') }}">
-                    <option value="" selected>選択してください</option>
+                <select name="age" id="age" class="form-select">
+                    <option value="" selected>{{ $cat->age }}</option>
                     <option value="0ヶ月">0ヶ月</option>
                     <option value="1ヶ月">1ヶ月</option>
                     <option value="2ヶ月">2ヶ月</option>
@@ -79,15 +75,19 @@
             </div>
             <div class="form-check">
                 <label for="about" class="form-check-label">推定</label>
+                @if($cat->age_about === 1)
+                <input type="checkbox" name="age_about" id="about" checked>
+                @else
                 <input type="checkbox" name="age_about" id="about">
+                @endif
             </div>
         </div>
         
         <div class="form-group">
             <label for="area" class="form-label">譲渡エリア</label>
             <div class="custom-box">
-                <select name="area" id="area" class="form-select"  value="{{ old('area') }}">
-                    <option value="" selected>選択してください</option>
+                <select name="area" id="area" class="form-select">
+                    <option value="" selected>{{ $cat->area }}</option>
                     <option value="北海道">北海道</option>
                     <option value="青森県">青森県</option>
                     <option value="岩手県">岩手県</option>
@@ -141,15 +141,15 @@
 
         <div class="form-group">
             <label for="slogan" class="form-label">キャッチコピー</label>
-            <input type="text" class="form-control" name="slogan" id="slogan" placeholder="例）元気いっぱいの男の子！"  value="{{ old('slogan') }}">
+            <input type="text" class="form-control" name="slogan" id="slogan" placeholder="例）元気いっぱいの男の子！"  value="{{ $cat->slogan }}">
         </div>
         
         <div class="form-group">
             <label for="introduction" class="form-label">自己紹介文</label>
-            <textarea name="introduction" class="form-control" id="introduction">{{ old('introduction') }}</textarea>
+            <textarea name="introduction" class="form-control" id="introduction">{{ $cat->introduction }}</textarea>
         </div>
         <div class="button-box">
-            <button type="submit" class="btn">新規登録</button>
+            <button type="submit" class="btn">編集</button>
         </div>
     </form>
 </div>
