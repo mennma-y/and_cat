@@ -1,20 +1,20 @@
-@extends('nishiyama')
+@extends('home1')
 
 @section('main')
 <div class="register-box">
     <h3>保護猫新規登録</h3>
-    <form action="/admin/cat/register" method="post">
+    <form action="/admin/cat/register" method="post" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
             <p>写真</p>
             <div class="cat-image-box">
                 <label for="image" class="form-label">メイン</label>
-                <input type="file" class="form-control" name="cat_image_main" id="image" enctype="multipart/form-data" accept=".jpeg, .jpg, .png" required>
+                <input type="file" class="form-control" name="cat_image_main" id="image" accept=".jpeg, .jpg, .png" required>
                 <p>サブ</p>
                 <div class="sub-image">
-                    <input type="file" class="form-control" name="cat_image[]" id="image2" enctype="multipart/form-data" accept=".jpeg, .jpg, .png">
-                    <input type="file" class="form-control" name="cat_image[]" id="image3" enctype="multipart/form-data" accept=".jpeg, .jpg, .png">
-                    <input type="file" class="form-control" name="cat_image[]" id="image4" enctype="multipart/form-data" accept=".jpeg, .jpg, .png">
+                    <input type="file" class="form-control" name="cat_image[]" accept=".jpeg, .jpg, .png">
+                    <input type="file" class="form-control" name="cat_image[]" accept=".jpeg, .jpg, .png">
+                    <input type="file" class="form-control" name="cat_image[]" accept=".jpeg, .jpg, .png">
                 </div>
             </div>
         </div>

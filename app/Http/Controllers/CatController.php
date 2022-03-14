@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Cat;
+use App\Image;
+use App\Like;
 
 use Illuminate\Support\Facades\Auth;
 
@@ -77,9 +79,19 @@ class CatController extends Controller
 
         $cats = $query->orderBy('created_at', 'desc')->simplePaginate(50);
 
-        return view('main.search', [
-            'cats' => $cats,
-        ]);
+        if(isset($area) || isset($gender) || isset($age) || isset($type)){
+            return view('main.search', [
+                'cats' => $cats,
+                'area' => $area,
+                'gender' => $gender,
+                'age' => $age,
+                'type' => $type,
+            ]);
+        }else{
+            return view('main.search', [
+                'cats' => $cats,
+            ]);
+        }
     }
 
     /**
@@ -90,14 +102,12 @@ class CatController extends Controller
      */
     public function getCatProfile(Request $request)
     {
+        $user = Auth::user();
         $cat = Cat::find($request->id);
-        $image_main = $cat->images()->where('status', 'main')->first();
-        $images_sub = $cat->images()->where('status', 'sub')->orderBy('created_at', 'desc')->get();
 
         return view('main.cat_profile', [
+            'user' => $user,
             'cat' => $cat,
-            'image_main' => $image_main,
-            'images_sub' => $images_sub,
         ]);
     }
 
@@ -112,9 +122,11 @@ class CatController extends Controller
         $user = Auth::user();
         $like_cat_ids = Like::where('status', 'active')->where('user_id', $user->id)->pluck('cat_id');
         $cats = Cat::whereIn('id', $like_cat_ids)->orderBy('created_at', 'desc')->simplePaginate(50);
+        $like_count = $cats->count();
 
         return view('main.like', [
             'cats' => $cats,
+            'like_count' => $like_count,
         ]);
     }
 
@@ -136,6 +148,7 @@ class CatController extends Controller
             $this->validate($request, Cat::$rules);
             $cat = new Cat;
             $cat->user_id = Auth::id();
+            $cat->name = $request->name;
             $cat->type = $request->type;
             $cat->gender = $request->gender;
             $cat->age = $request->age;
@@ -173,6 +186,21 @@ class CatController extends Controller
         }
 
         return redirect('/admin/cat/register');
+    }
+
+    /**
+     *  保護猫編集ページ表示
+     * 
+     *  @param Request $request
+     *  @return Response
+     */
+    public function getCatEdit(Request $request)
+    {
+        $cat = Cat::find($request->id);
+
+        return view('admin.cat_edit', [
+            'cat' => $cat,
+        ]);
     }
 
     /**
