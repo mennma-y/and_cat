@@ -14,7 +14,7 @@ class Form extends Model
         'user_id',
         'cat_id',
     ];
-    // forms.user_id -> users.id (*:1)
+
     public function user()
     {
 

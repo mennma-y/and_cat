@@ -509,18 +509,4 @@
     color: #ffffff;
     font-weight: bold;
 }
- /**
-質問欄
-**/
- .question-box{
-text-align: center;
-background-color: #FAE7F6;
-color: black;
-border-radius: 15px;
-padding:20px 0;
-  
-font-family: "Arial Black";
-font-weight: bold;
-text-shadow: 1px 1px 1px
-#212529;
-}
+

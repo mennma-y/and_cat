@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Form;
@@ -11,12 +12,14 @@ class FormController extends Controller
 {
     public function index()
     {
-      
+
         $forms = Form::Join('cats', 'forms.cat_id', '=',  'cats.id')
-        ->where('cats.user_id',  Auth::id())
-            ->select('forms.id', 'forms.name', 'cats.user_id', 'forms.memo', 'forms.telephone')
-            ->get();
-    
+            ->join('users', 'forms.user_id', '=', 'users.id')
+            // ->join('cats','cats.user_id','=','users.id')
+            ->where('cats.user_id',  Auth::id())
+            ->select('users.email', 'forms.id', 'forms.name', 'cats.user_id', 'forms.memo', 'forms.telephone','cats.name as cname','cats.age as cage','cats.type as ctype','cats.type as carea')
+            ->paginate(1);
+      
         return view('admin', compact('forms'));
     }
     public function store(Request $request)
@@ -40,15 +43,13 @@ class FormController extends Controller
                 ->withInput();
         }
         $forms = new Form;
-        // ログイン機能出来次第ユーザーid変更
-        // $forms->user_id = 4;
         $forms->user_id = Auth::user()->id;
         $forms->name = $request->input('name');
         $forms->telephone = $request->input('telephone');
         $forms->memo = $request->input('memo');
-        $forms->cat_id =1;
+        $forms->cat_id = 3;
         $forms->save();
+        $request->session()->regenerateToken();
         return redirect('/form');
     }
-    
 }

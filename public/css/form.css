@@ -1,3 +1,12 @@
+/* ページ送りを中央寄せ */
+.pagination {
+    text-align: center;
+}
+
+/* ページ送りを横並びに */
+.pagination li{
+    display: inline-block;
+}
 h1 {
     text-align: left;
     border-bottom: 50px solid;

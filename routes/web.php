@@ -95,9 +95,10 @@ Route::get('/form', function () {
 
 Route::get('/admin', 'FormController@index')->middleware('auth');
 Route::post('/send', 'FormController@store');
-Route::get('/cat_profile', 'QuestionController@index');
+Route::get('/que', 'QuestionController@index');
 Route::post('/question_send', 'QuestionController@store');
-
+Route::post('/reply', 'QuestionController@replystore');
+Route::post('/delete','QuestionController@delete');
 Route::get('/catda', function () {
     return view('main.cat_profile');
 });
