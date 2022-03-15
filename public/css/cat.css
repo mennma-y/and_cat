@@ -67,13 +67,17 @@
 }
 
 .pink-box .like-box {
-    width: 170px;
+    width: 180px;
     height: 60px;
     background-color: #FAE7F6;
     padding: 5px 30px;
     color: #FA00E7;
     border-radius: 40px;
     margin: 50px 30px;
+    line-height: 50px;
+}
+
+.pink-box .like-box p.pink{
 }
 
 .pink-box .btn-reverse {
@@ -188,6 +192,8 @@
     text-decoration: none;
     color: #ffffff;
     font-weight: bold;
+    display: block;
+    position: relative;
 }
 
 .green-box .next-form {
@@ -257,8 +263,13 @@
     font-weight: bold;
 }
 
-.likes-box .like-box .cat-text span {
-    color: #FA00E7;
+.likes-box .like-box .cat-text span.male-icon {
+    color: #009D5B;
+    font-weight: bold;
+    margin-right: 10px;
+}
+.likes-box .like-box .cat-text span.scalpel-icon {
+    color: #ff60af;
     font-weight: bold;
     margin-right: 10px;
 }
@@ -422,6 +433,10 @@
     margin: 5px 0;
 }
 
+.cats-box .cat-box .text p.like {
+    margin: 0;
+}
+
 .cats-box .cat-box .text span.male-icon {
     color: #009D5B;
 }
@@ -451,12 +466,14 @@
     line-height: 30px;
     border-radius: 30px;
     color: #FA00E7;
+    margin: 5px auto;
 }
 
 .cats-box .cat-box .text .btn-reverse {
     background-color: #FA00E7;
     color: #FAE7F6;
     font-weight: bold;
+    margin: 5px auto;
 }
 
 /**

@@ -2,6 +2,8 @@
 
 namespace App;
 
+use Illuminate\Support\Facades\Auth;
+
 use Illuminate\Database\Eloquent\Model;
 
 class Cat extends Model
@@ -46,15 +48,8 @@ class Cat extends Model
 
     public function scopeAge($query, $str)
     {
-        if($str = '0～3ヶ月'){
-            return $query->whereIn('age', ['0ヶ月', '1ヶ月', '2ヶ月', '3ヶ月']);
-        }elseif($str = '4～7ヶ月'){
-            return $query->whereIn('age', ['4ヶ月', '5ヶ月', '6ヶ月', '7ヶ月']);
-        }elseif($str = '8～11ヶ月'){
-            return $query->whereIn('age', ['8ヶ月', '9ヶ月', '10ヶ月', '11ヶ月']);
-        }else{
-            return $query->where('age', $str);
-        }
+        return $query->where('age', $str);
+
     }
 
     public function catImageMain()
@@ -69,5 +64,19 @@ class Cat extends Model
         $cats_sub = $this->images()->where('status', 'sub')->get();
 
         return $cats_sub;
+    }
+
+    // data-like-idの値
+    public function cat_like_id() 
+    {
+        $user_id = Auth::id();
+        $cat_like = Like::where('status', 'active')->where('user_id', $user_id)->where('cat_id', $this->id)->first();
+
+        if(!empty($cat_like)){
+            //レコードが存在するなら
+            return $cat_like->id;
+        }   
+            //レコードが存在しなければnull
+            return null;
     }
 }

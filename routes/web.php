@@ -65,11 +65,12 @@ Route::group(['middleware'=>'auth'],function(){
 // 個人閲覧ページ
 Route::get('/home', 'CatController@getHome');
 
+Route::get('/like', 'LikeController@like');
+Route::post('/like', 'LikeController@like');
+
 Route::get('/cat/profile/{id}', 'CatController@getCatProfile');
 
-Route::get('/like', function () {
-    return view('main.like');
-});
+Route::get('/cat/like', 'CatController@getCatLike');
 
 Route::get('/search', 'CatController@getSearch');
 
@@ -80,10 +81,9 @@ Route::get('/admin/cat/register', function () {
 
 Route::post('/admin/cat/register', 'CatController@catRegister');
 
-Route::get('/admin/cat/edit/{id}', function () {
-    return view('admin.cat_edit');
-});
+Route::get('/admin/cat/edit/{id}', 'CatController@getCatEdit');
 
+Route::get('/admin/cat/edit', 'CatController@catEdit');
 Route::post('/admin/cat/edit', 'CatController@catEdit');
 
 
