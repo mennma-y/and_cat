@@ -1,12 +1,12 @@
 @extends('home1')
 
-@section('main')
+@section('home')
 <div class="new">
     <div class="square"></div>
     <p>新着の保護猫</p>
 </div>
 <div class="cats-box">
-    @foreach($cats as $cat)  
+    @foreach($cats as $cat)
     <div class="cat-box">
         <a href="/cat/profile/{{ $cat->id }}">
             <div class="cat-image">

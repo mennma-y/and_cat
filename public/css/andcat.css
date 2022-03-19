@@ -97,34 +97,28 @@ body{
 
 }
 
-/* .text2 li a{
-
-    /* border: 1px solid ;線の太さ・色 */
-    /* background-color:rgba(); /*背景色*/
-    /* border-radius: 10px;
-    display: flex;
-    width: fit-content; */
-/* } */
-
 body .nav{
     background-color:#84D9D0;
     height: 40px;
     width: 100%;
-
-
 }
 
 body .nav .pan{
     width: 900px;
     height: 40px;
     margin: 0 auto;
+    display: flex;
     vertical-align: middle;
 }
 
 body .nav .pan a{
     font-size: small;
     text-decoration: none;
-    align-items: flex-start;
+    /* align-items: flex-start;
+    display: flex;  */
+    list-style: none;
+    font-size: 13px;
+    padding-top: 10px;
 }
 
 .main-photo img{
@@ -372,6 +366,48 @@ body .nav .pan a{
 .container-text p{
     font-size: 18px;
 }
+
+.main-text{
+    width: 900px;
+    /* height: auto;
+    flex: 1;
+    flex-direction: row; */
+    margin: 0 auto;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.main-text a{
+    font-size: 25px;
+    text-align: left;
+    color: black;
+    font-weight: bold;
+    font-family: "筑紫B丸ゴシック";
+}
+
+.flow {
+    /* width: 600px; */
+    position: relative;
+    display: flex ;
+    justify-content: right;
+    align-items: flex-start;
+    margin-bottom: 100px;
+    justify-content: center;
+    margin-top: 10px;
+
+}
+.flow img{
+    width: 850px;
+} */
+
+/* .main-text1 {
+    font-size: 16px;
+    position: absolute;
+    padding-top: 85px;
+    padding-left: 50px;
+    padding-right: 50px;
+} */
+
 
 .main-text{
     width: 900px;
