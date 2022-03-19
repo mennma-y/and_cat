@@ -78,12 +78,12 @@
     </div>
     @else
     <div class="next-form">
-        <a href="#">応募フォームへ</a>
+        <a href="/form/{{$cat->id}}">応募フォームへ</a>
     </div>
     @endif
 
 </div>
 
-
-
 @endsection
+
+@include('question')

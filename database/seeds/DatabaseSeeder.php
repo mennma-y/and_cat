@@ -22,8 +22,7 @@ class DatabaseSeeder extends Seeder
         //     'admin_confirmation' =>'0',
         //     'img_url' =>'taro'
         // ]);
-        
-
+       
 
 
 

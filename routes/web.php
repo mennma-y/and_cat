@@ -88,17 +88,11 @@ Route::post('/admin/cat/edit', 'CatController@catEdit');
 
 
 
-Route::get('/form', function () {
-    return view('form');
-});
 
-
+Route::get('/form/{id}', 'FormController@form');
 Route::get('/admin', 'FormController@index')->middleware('auth');
 Route::post('/send', 'FormController@store');
-Route::get('/que', 'QuestionController@index');
-Route::post('/question_send', 'QuestionController@store');
-Route::post('/reply', 'QuestionController@replystore');
-Route::post('/delete','QuestionController@delete');
-Route::get('/catda', function () {
-    return view('main.cat_profile');
-});
+Route::post('/question_send', 'CatController@store');
+Route::post('/reply', 'CatController@replystore');
+Route::post('/delete','CatController@delete');
+

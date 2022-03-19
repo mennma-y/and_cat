@@ -16,12 +16,8 @@ class QuestionController extends Controller
 
     public function index()
     {
-        $questions = Question::join('users', 'questions.user_id', '=', 'users.id')
-            ->where('questions.user_id', Auth::id())
-            ->select('users.name', 'questions.question','questions.reply','questions.id' )
-            ->get();
-     
-        return view('question', compact('questions'));
+  
+        return view('main.cat_profile', compact('questions'));
     }
     public function store(Request $request)
     {
@@ -40,24 +36,12 @@ class QuestionController extends Controller
         }
         $questions = new Question;
         $questions->user_id = Auth::user()->id;
-        $questions->cat_id = 1;
+        $questions->cat_id = 4;
         $questions->question = $request->input('question');
         $questions->save();
         $request->session()->regenerateToken();
         return redirect('/que');
     }
-    public function replystore(Request $request)
-    {
-        $replys = Question::where('id', '=', $request->id)->first();
-        $replys->reply = $request->reply;
-        $replys->save();
-   
-        return redirect('/que');
-    }
-    public function delete(Request $request)
-    {
-        $questions = Question::where('id', '=', $request->id)->first();
-        $questions->delete();
-        return redirect( '/que');
-    }
+    
+ 
 }

@@ -17,13 +17,23 @@ class FormController extends Controller
             ->join('users', 'forms.user_id', '=', 'users.id')
             // ->join('cats','cats.user_id','=','users.id')
             ->where('cats.user_id',  Auth::id())
-            ->select('users.email', 'forms.id', 'forms.name', 'cats.user_id', 'forms.memo', 'forms.telephone','cats.name as cname','cats.age as cage','cats.type as ctype','cats.type as carea')
-            ->paginate(1);
+            ->select('users.email', 'forms.id', 'forms.name', 'cats.user_id', 'forms.memo', 
+            'forms.telephone','cats.name as cname','cats.age as cage','cats.type as ctype','cats.area as carea', 'forms.created_at')
+            ->orderby('forms.created_at', 'desc')
+            ->paginate(5);
       
         return view('admin', compact('forms'));
     }
+    public function form(Request $request)
+    {
+        
+        return view('form',[
+            'id'=>$request->id
+        ]);
+    }
     public function store(Request $request)
     {
+      
         $rules = [
             'name' => 'required',
             'telephone' => ['required', 'numeric', 'digits_between:10,11'],
@@ -38,7 +48,7 @@ class FormController extends Controller
         ];
         $validator = Validator::make($request->all(), $rules, $message);
         if ($validator->fails()) {
-            return redirect('/form')
+            return redirect('/form/'.$request->forid)
                 ->withErrors($validator)
                 ->withInput();
         }
@@ -47,9 +57,11 @@ class FormController extends Controller
         $forms->name = $request->input('name');
         $forms->telephone = $request->input('telephone');
         $forms->memo = $request->input('memo');
-        $forms->cat_id = 3;
+        $forms->cat_id = $request->forid;
+        
         $forms->save();
+      
         $request->session()->regenerateToken();
-        return redirect('/form');
+        return redirect('/form/'.$request->forid);
     }
 }
