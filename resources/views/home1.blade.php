@@ -89,5 +89,13 @@
             <p>2022 ©️ & Cat (アンドキャット)</p>
             </div>
         </div>
+
+        <script>
+            'use strict'
+            document.addEventListener('DOMContentLoaded', function() {
+                $('.js-popover').popover();
+            }, false);
+        </script>
+
 </body>
 

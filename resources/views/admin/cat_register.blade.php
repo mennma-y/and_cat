@@ -21,12 +21,12 @@
 
         <div class="form-group">
             <label for="name" class="form-label">名前</label>
-            <input type="text" class="form-control" name="name" id="name" placeholder="「くん」「ちゃん」抜きで記入してください" value="{{ old('name') }}">
+            <input type="text" class="form-control" name="name" id="name" placeholder="「くん」「ちゃん」抜きで記入してください" value="{{ old('name') }}" required>
         </div>
 
         <div class="form-group">
             <label for="type" class="form-label">種類</label>
-            <input type="text" class="form-control" name="type" id="type" placeholder="例）雑種" value="{{ old('type') }}">
+            <input type="text" class="form-control" name="type" id="type" placeholder="例）雑種" value="{{ old('type') }}" required>
         </div>
         
         <div class="form-group">
@@ -46,35 +46,40 @@
         <div class="form-group">
             <label for="age" class="form-label">年齢</label>
             <div class="custom-box">
-                <select name="age" id="age" class="form-select"  value="{{ old('age') }}">
+                <select name="age" id="age" class="form-select"  value="{{ old('age') }}" required>
                     <option value="" selected>選択してください</option>
-                    <option value="0ヶ月">0ヶ月</option>
-                    <option value="1ヶ月">1ヶ月</option>
-                    <option value="2ヶ月">2ヶ月</option>
-                    <option value="3ヶ月">3ヶ月</option>
-                    <option value="4ヶ月">4ヶ月</option>
-                    <option value="5ヶ月">5ヶ月</option>
-                    <option value="6ヶ月">6ヶ月</option>
-                    <option value="7ヶ月">7ヶ月</option>
-                    <option value="8ヶ月">8ヶ月</option>
-                    <option value="9ヶ月">9ヶ月</option>
-                    <option value="10ヶ月">10ヶ月</option>
-                    <option value="11ヶ月">11ヶ月</option>
-                    <option value="1歳">1歳</option>
-                    <option value="2歳">2歳</option>
-                    <option value="3歳">3歳</option>
-                    <option value="4歳">4歳</option>
-                    <option value="5歳">5歳</option>
-                    <option value="6歳">6歳</option>
-                    <option value="7歳">7歳</option>
-                    <option value="8歳">8歳</option>
-                    <option value="9歳">9歳</option>
-                    <option value="10歳">10歳</option>
-                    <option value="11歳">11歳</option>
-                    <option value="12歳">12歳</option>
-                    <option value="13歳">13歳</option>
-                    <option value="14歳">14歳</option>
-                    <option value="15歳">15歳</option>
+                    <option value="1">0ヶ月</option>
+                    <option value="2">1ヶ月</option>
+                    <option value="3">2ヶ月</option>
+                    <option value="4">3ヶ月</option>
+                    <option value="5">4ヶ月</option>
+                    <option value="6">5ヶ月</option>
+                    <option value="7">6ヶ月</option>
+                    <option value="8">7ヶ月</option>
+                    <option value="9">8ヶ月</option>
+                    <option value="10">9ヶ月</option>
+                    <option value="11">10ヶ月</option>
+                    <option value="12">11ヶ月</option>
+                    <option value="13">1歳</option>
+                    <option value="14">2歳</option>
+                    <option value="15">3歳</option>
+                    <option value="16">4歳</option>
+                    <option value="17">5歳</option>
+                    <option value="18">6歳</option>
+                    <option value="19">7歳</option>
+                    <option value="20">8歳</option>
+                    <option value="21">9歳</option>
+                    <option value="22">10歳</option>
+                    <option value="23">11歳</option>
+                    <option value="24">12歳</option>
+                    <option value="25">13歳</option>
+                    <option value="26">14歳</option>
+                    <option value="27">15歳</option>
+                    <option value="28">16歳</option>
+                    <option value="29">17歳</option>
+                    <option value="30">18歳</option>
+                    <option value="31">19歳</option>
+                    <option value="32">20歳</option>
                 </select>
             </div>
             <div class="form-check">
@@ -86,7 +91,7 @@
         <div class="form-group">
             <label for="area" class="form-label">譲渡エリア</label>
             <div class="custom-box">
-                <select name="area" id="area" class="form-select"  value="{{ old('area') }}">
+                <select name="area" id="area" class="form-select"  value="{{ old('area') }}" required>
                     <option value="" selected>選択してください</option>
                     <option value="北海道">北海道</option>
                     <option value="青森県">青森県</option>
@@ -141,12 +146,12 @@
 
         <div class="form-group">
             <label for="slogan" class="form-label">キャッチコピー</label>
-            <input type="text" class="form-control" name="slogan" id="slogan" placeholder="例）元気いっぱいの男の子！"  value="{{ old('slogan') }}">
+            <input type="text" class="form-control" name="slogan" id="slogan" placeholder="例）元気いっぱいの男の子！"  value="{{ old('slogan') }}" required>
         </div>
         
         <div class="form-group">
             <label for="introduction" class="form-label">自己紹介文</label>
-            <textarea name="introduction" class="form-control" id="introduction">{{ old('introduction') }}</textarea>
+            <textarea name="introduction" class="form-control" id="introduction" required>{{ old('introduction') }}</textarea>
         </div>
         <div class="button-box">
             <button type="submit" class="btn">新規登録</button>

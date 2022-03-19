@@ -17,9 +17,9 @@
         <div class="text">
             <p>{{ $cat->type }}</p>
             @if(isset($cat->age_about))
-            <p>【{{ $cat->area }}】 オス<span class="male-icon">♂</span>  推定{{ $cat->age }}</p>
+            <p>【{{ $cat->area }}】 オス<span class="male-icon">♂</span>  推定{{ $cat->cat_age }}</p>
             @else
-            <p>【{{ $cat->area }}】 オス<span class="male-icon">♂</span>  {{ $cat->age }}</p>
+            <p>【{{ $cat->area }}】 オス<span class="male-icon">♂</span>  {{ $cat->cat_age }}</p>
             @endif
 
             <div class="green-box">
@@ -42,9 +42,9 @@
         <div class="text">
             <p>{{ $cat->type }}</p>
             @if(isset($cat->age_about))
-            <p>【{{ $cat->area }}】 メス<span class="scalpel-icon">♀</span>  推定{{ $cat->age }}</p>
+            <p>【{{ $cat->area }}】 メス<span class="scalpel-icon">♀</span>  推定{{ $cat->cat_age }}</p>
             @else
-            <p>【{{ $cat->area }}】 メス<span class="scalpel-icon">♀</span>  {{ $cat->age }}</p>
+            <p>【{{ $cat->area }}】 メス<span class="scalpel-icon">♀</span>  {{ $cat->cat_age }}</p>
             @endif
 
             <div class="green-box">

@@ -19,7 +19,7 @@ class CreateCatsTable extends Migration
             $table->string('name');
             $table->string('type')->index();
             $table->integer('gender')->unsigned()->index();
-            $table->string('age')->index();
+            $table->integer('age')->unsigned()->index();
             $table->integer('age_about')->unsigned()->nullable()->default(null);
             $table->string('area')->index();
             $table->string('slogan');
