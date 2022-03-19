@@ -4,13 +4,18 @@
 <div class="search-top">
     <h3>絞り込み検索</h3>
     <div class="forms-box">
-        <form action="#" method="get">
+        <form action="/search" method="get">
             @csrf
             <div class="form-group form-box">
                 <label for="area" class="form-label custom-label">譲渡エリア</label>
                 <div class="custom-box">
                     <select name="area" id="area" class="form-select">
+                        @if(isset($area))
+                        <option value="{{ $area }}" selected>{{ $area }}</option>
+                        <option value="">指定なし</option>
+                        @else
                         <option value="" selected>指定なし</option>
+                        @endif
                         <option value="北海道">北海道</option>
                         <option value="青森県">青森県</option>
                         <option value="岩手県">岩手県</option>
@@ -63,10 +68,34 @@
             </div>
             <div class="form-group form-box">
                 <span class="custom-label">性別</span>
+                @if(isset($gender))
                 <div class="gender custom-box radio-box">
                     <div>
                         <label for="none" class="form-check-label">指定なし</label>
                         <input type="radio" name="gender" id="none" class="form-check-input" value="">
+                    </div>
+                    <div class="male-box">
+                        <label for="male" class="form-check-label">オス</label>
+                        @if($gender == 0)
+                        <input type="radio"  name="gender" id="male" class="form-check-input" value="0" checked>
+                        @else
+                        <input type="radio"  name="gender" id="male" class="form-check-input" value="0">
+                        @endif
+                    </div>
+                    <div class="scalpel-box">
+                        <label for="scalpel" class="form-check-label">メス</label>
+                        @if($gender == 1)
+                        <input type="radio" name="gender" id="scalpel" class="form-check-input" value="1" checked>
+                        @else
+                        <input type="radio" name="gender" id="scalpel" class="form-check-input" value="1">
+                        @endif
+                    </div>
+                </div>
+                @else
+                <div class="gender custom-box radio-box">
+                    <div>
+                        <label for="none" class="form-check-label">指定なし</label>
+                        <input type="radio" name="gender" id="none" class="form-check-input" value="" checked>
                     </div>
                     <div class="male-box">
                         <label for="male" class="form-check-label">オス</label>
@@ -77,51 +106,301 @@
                         <input type="radio" name="gender" id="scalpel" class="form-check-input" value="1">
                     </div>
                 </div>
+                @endif
             </div>
             <div class="form-group form-box">
                 <label for="age" class="form-label custom-label">年齢</label>
                 <div class="custom-box">
-                    <select name="age" id="age" class="form-select">
+                    <select name="age_more" id="age" class="form-select">
+                        @if(isset($age_more))
+                        @switch($age_more)
+                            @case(1)
+                                <option value="1" selected>0ヶ月</option>
+                                @break
+                            @case(2)
+                                <option value="2" selected>1ヶ月</option>
+                                @break
+                            @case(3)
+                                <option value="3" selected>2ヶ月</option>
+                                @break
+                            @case(4)
+                                <option value="4" selected>3ヶ月</option>
+                                @break
+                            @case(5)
+                                <option value="5" selected>4ヶ月</option>
+                                @break
+                            @case(6)
+                                <option value="6" selected>5ヶ月</option>
+                                @break
+                            @case(7)
+                                <option value="7" selected>6ヶ月</option>
+                                @break
+                            @case(8)
+                                <option value="8" selected>7ヶ月</option>
+                                @break
+                            @case(9)
+                                <option value="9" selected>8ヶ月</option>
+                                @break
+                            @case(10)
+                                <option value="10" selected>9ヶ月</option>
+                                @break
+                            @case(11)
+                                <option value="11" selected>10ヶ月</option>
+                                @break
+                            @case(12)
+                                <option value="12" selected>11ヶ月</option>
+                                @break
+                            @case(13)
+                                <option value="13" selected>1歳</option>
+                                @break
+                            @case(14)
+                                <option value="14" selected>2歳</option>
+                                @break
+                            @case(15)
+                                <option value="15" selected>3歳</option>
+                                @break
+                            @case(16)
+                                <option value="16" selected>4歳</option>
+                                @break
+                            @case(17)
+                                <option value="17" selected>5歳</option>
+                                @break
+                            @case(18)
+                                <option value="18" selected>6歳</option>
+                                @break
+                            @case(19)
+                                <option value="19" selected>7歳</option>
+                                @break
+                            @case(20)
+                                <option value="20" selected>8歳</option>
+                                @break
+                            @case(21)
+                                <option value="21" selected>9歳</option>
+                                @break
+                            @case(22)
+                                <option value="22" selected>10歳</option>
+                                @break
+                            @case(23)
+                                <option value="23" selected>11歳</option>
+                                @break
+                            @case(24)
+                                <option value="24" selected>12歳</option>
+                                @break
+                            @case(25)
+                                <option value="25" selected>13歳</option>
+                                @break
+                            @case(26)
+                                <option value="26" selected>14歳</option>
+                                @break
+                            @case(27)
+                                <option value="27" selected>15歳</option>
+                                @break
+                            @case(28)
+                                <option value="28" selected>16歳</option>
+                                @break
+                            @case(29)
+                                <option value="29" selected>17歳</option>
+                                @break
+                            @case(30)
+                                <option value="30" selected>18歳</option>
+                                @break
+                            @case(31)
+                                <option value="31" selected>19歳</option>
+                                @break
+                            @case(32)
+                                <option value="32" selected>20歳</option>
+                                @break
+                        @endswitch
+                        <option value="">指定なし</option>
+                        @else
                         <option value="" selected>指定なし</option>
-                        <option value="0ヶ月">0ヶ月</option>
-                        <option value="1ヶ月">1ヶ月</option>
-                        <option value="2ヶ月">2ヶ月</option>
-                        <option value="3ヶ月">3ヶ月</option>
-                        <option value="4ヶ月">4ヶ月</option>
-                        <option value="5ヶ月">5ヶ月</option>
-                        <option value="6ヶ月">6ヶ月</option>
-                        <option value="7ヶ月">7ヶ月</option>
-                        <option value="8ヶ月">8ヶ月</option>
-                        <option value="9ヶ月">9ヶ月</option>
-                        <option value="10ヶ月">10ヶ月</option>
-                        <option value="11ヶ月">11ヶ月</option>
-                        <option value="1歳">1歳</option>
-                        <option value="2歳">2歳</option>
-                        <option value="3歳">3歳</option>
-                        <option value="4歳">4歳</option>
-                        <option value="5歳">5歳</option>
-                        <option value="6歳">6歳</option>
-                        <option value="7歳">7歳</option>
-                        <option value="8歳">8歳</option>
-                        <option value="9歳">9歳</option>
-                        <option value="10歳">10歳</option>
-                        <option value="11歳">11歳</option>
-                        <option value="12歳">12歳</option>
-                        <option value="13歳">13歳</option>
-                        <option value="14歳">14歳</option>
-                        <option value="15歳">15歳</option>
-                        <option value="16歳">16歳</option>
-                        <option value="17歳">17歳</option>
-                        <option value="18歳">18歳</option>
-                        <option value="19歳">19歳</option>
-                        <option value="20歳">20歳</option>
+                        @endif
+                        <option value="1">0ヶ月</option>
+                        <option value="2">1ヶ月</option>
+                        <option value="3">2ヶ月</option>
+                        <option value="4">3ヶ月</option>
+                        <option value="5">4ヶ月</option>
+                        <option value="6">5ヶ月</option>
+                        <option value="7">6ヶ月</option>
+                        <option value="8">7ヶ月</option>
+                        <option value="9">8ヶ月</option>
+                        <option value="10">9ヶ月</option>
+                        <option value="11">10ヶ月</option>
+                        <option value="12">11ヶ月</option>
+                        <option value="13">1歳</option>
+                        <option value="14">2歳</option>
+                        <option value="15">3歳</option>
+                        <option value="16">4歳</option>
+                        <option value="17">5歳</option>
+                        <option value="18">6歳</option>
+                        <option value="19">7歳</option>
+                        <option value="20">8歳</option>
+                        <option value="21">9歳</option>
+                        <option value="22">10歳</option>
+                        <option value="23">11歳</option>
+                        <option value="24">12歳</option>
+                        <option value="25">13歳</option>
+                        <option value="26">14歳</option>
+                        <option value="27">15歳</option>
+                        <option value="28">16歳</option>
+                        <option value="29">17歳</option>
+                        <option value="30">18歳</option>
+                        <option value="31">19歳</option>
+                        <option value="32">20歳</option>
+                    </select>
+                </div>
+            </div>
+            <div>～</div>
+            <div class="form-group form-box">
+                <label for="" class="form-label custom-label"></label>
+                <div class="custom-box">
+                    <select name="age_less" class="form-select">
+                        @if(isset($age_less))
+                        @switch($age_less)
+                            @case(1)
+                                <option value="1" selected>0ヶ月</option>
+                                @break
+                            @case(2)
+                                <option value="2" selected>1ヶ月</option>
+                                @break
+                            @case(3)
+                                <option value="3" selected>2ヶ月</option>
+                                @break
+                            @case(4)
+                                <option value="4" selected>3ヶ月</option>
+                                @break
+                            @case(5)
+                                <option value="5" selected>4ヶ月</option>
+                                @break
+                            @case(6)
+                                <option value="6" selected>5ヶ月</option>
+                                @break
+                            @case(7)
+                                <option value="7" selected>6ヶ月</option>
+                                @break
+                            @case(8)
+                                <option value="8" selected>7ヶ月</option>
+                                @break
+                            @case(9)
+                                <option value="9" selected>8ヶ月</option>
+                                @break
+                            @case(10)
+                                <option value="10" selected>9ヶ月</option>
+                                @break
+                            @case(11)
+                                <option value="11" selected>10ヶ月</option>
+                                @break
+                            @case(12)
+                                <option value="12" selected>11ヶ月</option>
+                                @break
+                            @case(13)
+                                <option value="13" selected>1歳</option>
+                                @break
+                            @case(14)
+                                <option value="14" selected>2歳</option>
+                                @break
+                            @case(15)
+                                <option value="15" selected>3歳</option>
+                                @break
+                            @case(16)
+                                <option value="16" selected>4歳</option>
+                                @break
+                            @case(17)
+                                <option value="17" selected>5歳</option>
+                                @break
+                            @case(18)
+                                <option value="18" selected>6歳</option>
+                                @break
+                            @case(19)
+                                <option value="19" selected>7歳</option>
+                                @break
+                            @case(20)
+                                <option value="20" selected>8歳</option>
+                                @break
+                            @case(21)
+                                <option value="21" selected>9歳</option>
+                                @break
+                            @case(22)
+                                <option value="22" selected>10歳</option>
+                                @break
+                            @case(23)
+                                <option value="23" selected>11歳</option>
+                                @break
+                            @case(24)
+                                <option value="24" selected>12歳</option>
+                                @break
+                            @case(25)
+                                <option value="25" selected>13歳</option>
+                                @break
+                            @case(26)
+                                <option value="26" selected>14歳</option>
+                                @break
+                            @case(27)
+                                <option value="27" selected>15歳</option>
+                                @break
+                            @case(28)
+                                <option value="28" selected>16歳</option>
+                                @break
+                            @case(29)
+                                <option value="29" selected>17歳</option>
+                                @break
+                            @case(30)
+                                <option value="30" selected>18歳</option>
+                                @break
+                            @case(31)
+                                <option value="31" selected>19歳</option>
+                                @break
+                            @case(32)
+                                <option value="32" selected>20歳</option>
+                                @break
+                        @endswitch
+                        <option value="">指定なし</option>
+                        @else
+                        <option value="" selected>指定なし</option>
+                        @endif
+                        <option value="1">0ヶ月</option>
+                        <option value="2">1ヶ月</option>
+                        <option value="3">2ヶ月</option>
+                        <option value="4">3ヶ月</option>
+                        <option value="5">4ヶ月</option>
+                        <option value="6">5ヶ月</option>
+                        <option value="7">6ヶ月</option>
+                        <option value="8">7ヶ月</option>
+                        <option value="9">8ヶ月</option>
+                        <option value="10">9ヶ月</option>
+                        <option value="11">10ヶ月</option>
+                        <option value="12">11ヶ月</option>
+                        <option value="13">1歳</option>
+                        <option value="14">2歳</option>
+                        <option value="15">3歳</option>
+                        <option value="16">4歳</option>
+                        <option value="17">5歳</option>
+                        <option value="18">6歳</option>
+                        <option value="19">7歳</option>
+                        <option value="20">8歳</option>
+                        <option value="21">9歳</option>
+                        <option value="22">10歳</option>
+                        <option value="23">11歳</option>
+                        <option value="24">12歳</option>
+                        <option value="25">13歳</option>
+                        <option value="26">14歳</option>
+                        <option value="27">15歳</option>
+                        <option value="28">16歳</option>
+                        <option value="29">17歳</option>
+                        <option value="30">18歳</option>
+                        <option value="31">19歳</option>
+                        <option value="32">20歳</option>
                     </select>
                 </div>
             </div>
             <div class="form-group form-box">
                 <label for="type" class="form-label custom-label">種類</label>
                 <div class="custom-box">
+                    @if(isset($type))
+                    <input type="text" name="type" id="type" class="form-control" value="{{ $type }}">
+                    @else
                     <input type="text" name="type" id="type" class="form-control">
+                    @endif
                 </div>
                 </div>
             <button class="btn" type="submit">絞り込む</button>
@@ -144,9 +423,9 @@
         <div class="text">
             <p>{{ $cat->type }}</p>
             @if(isset($cat->age_about))
-            <p>【{{ $cat->area }}】 オス<span class="male-icon">♂</span>  推定{{ $cat->age }}</p>
+            <p>【{{ $cat->area }}】 オス<span class="male-icon">♂</span>  推定{{ $cat->cat_age }}</p>
             @else
-            <p>【{{ $cat->area }}】 オス<span class="male-icon">♂</span>  {{ $cat->age }}</p>
+            <p>【{{ $cat->area }}】 オス<span class="male-icon">♂</span>  {{ $cat->cat_age }}</p>
             @endif
 
             <div class="green-box">
@@ -169,9 +448,9 @@
         <div class="text">
             <p>{{ $cat->type }}</p>
             @if(isset($cat->age_about))
-            <p>【{{ $cat->area }}】 メス<span class="scalpel-icon">♀</span>  推定{{ $cat->age }}</p>
+            <p>【{{ $cat->area }}】 メス<span class="scalpel-icon">♀</span>  推定{{ $cat->cat_age }}</p>
             @else
-            <p>【{{ $cat->area }}】 メス<span class="scalpel-icon">♀</span>  {{ $cat->age }}</p>
+            <p>【{{ $cat->area }}】 メス<span class="scalpel-icon">♀</span>  {{ $cat->cat_age }}</p>
             @endif
 
             <div class="green-box">

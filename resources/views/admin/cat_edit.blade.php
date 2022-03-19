@@ -43,34 +43,39 @@
             <label for="age" class="form-label">年齢</label>
             <div class="custom-box">
                 <select name="age" id="age" class="form-select">
-                    <option value="" selected>{{ $cat->age }}</option>
-                    <option value="0ヶ月">0ヶ月</option>
-                    <option value="1ヶ月">1ヶ月</option>
-                    <option value="2ヶ月">2ヶ月</option>
-                    <option value="3ヶ月">3ヶ月</option>
-                    <option value="4ヶ月">4ヶ月</option>
-                    <option value="5ヶ月">5ヶ月</option>
-                    <option value="6ヶ月">6ヶ月</option>
-                    <option value="7ヶ月">7ヶ月</option>
-                    <option value="8ヶ月">8ヶ月</option>
-                    <option value="9ヶ月">9ヶ月</option>
-                    <option value="10ヶ月">10ヶ月</option>
-                    <option value="11ヶ月">11ヶ月</option>
-                    <option value="1歳">1歳</option>
-                    <option value="2歳">2歳</option>
-                    <option value="3歳">3歳</option>
-                    <option value="4歳">4歳</option>
-                    <option value="5歳">5歳</option>
-                    <option value="6歳">6歳</option>
-                    <option value="7歳">7歳</option>
-                    <option value="8歳">8歳</option>
-                    <option value="9歳">9歳</option>
-                    <option value="10歳">10歳</option>
-                    <option value="11歳">11歳</option>
-                    <option value="12歳">12歳</option>
-                    <option value="13歳">13歳</option>
-                    <option value="14歳">14歳</option>
-                    <option value="15歳">15歳</option>
+                    <option value="" selected>{{ $cat->cat_age }}</option>
+                    <option value="1">0ヶ月</option>
+                    <option value="2">1ヶ月</option>
+                    <option value="3">2ヶ月</option>
+                    <option value="4">3ヶ月</option>
+                    <option value="5">4ヶ月</option>
+                    <option value="6">5ヶ月</option>
+                    <option value="7">6ヶ月</option>
+                    <option value="8">7ヶ月</option>
+                    <option value="9">8ヶ月</option>
+                    <option value="10">9ヶ月</option>
+                    <option value="11">10ヶ月</option>
+                    <option value="12">11ヶ月</option>
+                    <option value="13">1歳</option>
+                    <option value="14">2歳</option>
+                    <option value="15">3歳</option>
+                    <option value="16">4歳</option>
+                    <option value="17">5歳</option>
+                    <option value="18">6歳</option>
+                    <option value="19">7歳</option>
+                    <option value="20">8歳</option>
+                    <option value="21">9歳</option>
+                    <option value="22">10歳</option>
+                    <option value="23">11歳</option>
+                    <option value="24">12歳</option>
+                    <option value="25">13歳</option>
+                    <option value="26">14歳</option>
+                    <option value="27">15歳</option>
+                    <option value="28">16歳</option>
+                    <option value="29">17歳</option>
+                    <option value="30">18歳</option>
+                    <option value="31">19歳</option>
+                    <option value="32">20歳</option>
                 </select>
             </div>
             <div class="form-check">
@@ -152,5 +157,25 @@
             <button type="submit" class="btn">編集</button>
         </div>
     </form>
+    <div class="button-box">
+        <button type="submit" class="btn" data-bs-toggle="modal" data-bs-target="#delete-modal-{{ $cat->id }}">削除</button>
+    </div>
+    <div class="modal fade" id="delete-modal-{{ $cat->id }}" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content home-delete-modal">
+                <div class="modal-body">
+                    <p class="text-center delete-text">投稿を削除しますか？</p>
+                </div>
+                <div class="modal-footer">
+                    <form action="/admin/cat/delete" method="post" enctype="multipart/form-data">
+                        @csrf
+                        <input type="hidden" name="id" value="{{ $cat->id }}">
+                        <button class="btn btn-reverse" data-bs-dismiss="modal">キャンセル</button>
+                        <button class="btn" type="submit">削除する</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 @endsection

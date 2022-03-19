@@ -84,6 +84,8 @@ Route::get('/admin/cat/edit/{id}', 'CatController@getCatEdit');
 Route::get('/admin/cat/edit', 'CatController@catEdit');
 Route::post('/admin/cat/edit', 'CatController@catEdit');
 
+Route::post('/admin/cat/delete', 'CatController@catDelete');
+
 
 
 Route::get('/form', function () {

@@ -41,7 +41,7 @@
                    <ul>
                     <li ><a class="name">ニックネームさん</li>
                     <li ><a href="{{ url('') }}" class="member">会員情報</a></li>
-                    <li ><a href="{{ url('') }}" class="like" >☆お気に入り</a></li>
+                    <li ><a href="/cat/like" class="like" >☆お気に入り</a></li>
                    </ul>
                 </div>
         </div>
@@ -56,7 +56,7 @@
         <div class="container-nav">
             <div class="logo"><img src="img/logo1.png"  alt="アンドキャットのロゴです"></div>
             <div class="box box1"><a href="#" target="_blank">アンドキャット<br>とは</a></div>
-            <div class="box box2"><ul><li><img src="img/serch.png"></li><li><a href="#">保護猫を探す</li></div>
+            <div class="box box2"><ul><li><img src="img/serch.png"></li><li><a href="/search">保護猫を探す</li></div>
             <div class="box box3"><ul><li><img src="img/serch.png"></li><li><a href="#">譲渡会<br>イベントを探す</a></li></div>
             <div class="box box4"><ul><li><img src="img/hogoneko.png"></li><li><a href="#">保護猫団体の方へ</a></li></div>
         </div>
@@ -79,5 +79,13 @@
             <p>2022 ©️ & Cat (アンドキャット)</p>
             </div>
         </div>
+        
+        <script>
+            'use strict'
+            document.addEventListener('DOMContentLoaded', function() {
+                $('.js-popover').popover();
+            }, false);
+        </script>
+        
 </body>
 
