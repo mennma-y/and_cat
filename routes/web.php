@@ -16,6 +16,7 @@
 // });
 
 
+
 Route::get('/home1', function () {
     return view('/home1');
 });
@@ -27,27 +28,16 @@ Route::get('/head', function () {
 Route::get('/head1', function () {
     return view('/head1');
 });
-
+//アンドキャットとは（説明）のページ
 Route::get('/andcat', function () {
     return view('/andcat');
 });
-
+//保護猫団体のページ
 Route::get('/dantai', function () {
     return view('/dantai');
 });
 
-Route::get('/login2', function () {
-    return view('/login2');
-});
 
-Route::get('/login3', function () {
-    return view('/login3');
-});
-
-
-
-
-// Route::get('/info',[App\Http\ControllersInfoController::class, 'index'])->name('info');
 
 Auth::routes();
 

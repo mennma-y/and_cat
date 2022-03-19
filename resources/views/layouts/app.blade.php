@@ -27,58 +27,60 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    {{-- <link href="{{ asset('css/login.css') }}" rel="stylesheet"> --}}
 
 </head>
 
-<body style="background-image: url(/img/login.jpg);
-background-size: cover;">
+<body style="background-image: url(/img/login.jpg);background-size: cover;">
+
     <div id="app">
- {{-- <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm"> --}}
-        <div class="navbar" style="width: 100%;
-        height: 40px; background-color: white;" >
 
-            <!-- Right Side Of Navbar -->
-            <div class="navbar-nav"  style="width;100%;  margin-left:75%">
-                <ul style=" display:flex; justify-content: space-between;">
-                 <!-- Authentication Links -->
-                 @guest
-                    <li class="nav-item" style="width:80px; list-style: none">
-                        <a class="nav-link" href="{{ route('login') }}" style="font-size:16px; color: black">ログイン</a>
-                    </li>
-                    @if (Route::has('register'))
-                        <li class="nav-item" style="width:80px; list-style: none">
-                            <a class="nav-link" href="{{ route('register') }}" style="font-size:16px; color: black">会員登録</a>
+        <div class="navbar" style="padding-top:1px; width: 100%; height: 40px; background-color: white; justify-content: space-between;" >
+
+          <div class="container" style="display:flex; justify-content: space-between;">
+              <!-- Side Of Navbar -->
+                <div class="box b1" style="width: 600px"><img src="img/logomoji.png"; style="width:14%; height:auto; margin-left:10px;" alt="アンドキャットのロゴです" ></div>
+                <div class="box b2" style="margin:0 auto; " >
+                    <ul style="margin-bottom:0px; display:flex; flex-direction:row; justify-content: space-between;">
+                    <!-- Authentication Links -->
+                    @guest
+                        <li class="nav-item" style="width:100px; list-style: none">
+                            <a class="nav-link" href="{{ route('login') }}" style="font-size:16px; color: black">ログイン</a>
                         </li>
-                    @endif
-                 @else
-                    <li class="nav-item dropdown" style="list-style: none">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }} <span class="caret"></span>
-                        </a>
-
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item"   href="{{ route('logout') }}"
-                               onclick="event.preventDefault();
-                                             document.getElementById('logout-form').submit();" style="color: black">
-                                {{ __('Logout') }}
+                        @if (Route::has('register'))
+                            <li class="nav-item" style="width:100px; list-style: none">
+                                <a class="nav-link" href="{{ route('register') }}" style="font-size:16px; color: black">会員登録</a>
+                            </li>
+                        @endif
+                    @else
+                        <li class="nav-item dropdown" style="list-style: none;">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" style="color:black; font-size:18px" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ Auth::user()->name }} <span class="caret"></span>さん
                             </a>
 
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                @csrf
-                            </form>
-                        </div>
-                    </li>
-                    @endguest
-                </ul>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item"   href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();" style="color: black">
+                                    {{ __('ログアウト') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
+                        @endguest
+                    </ul>
+                    </div>
+                </div>
             </div>
-        </div>
+          </div>
     </div>
 </nav>
 
 
 
-            <div class="container">
+            {{-- <div class="container"> --}}
                 {{-- <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a> --}}

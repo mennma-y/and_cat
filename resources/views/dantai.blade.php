@@ -25,32 +25,38 @@
     </head>
 
 <body>
+    <div class="container">
+        <div class="logomoji"><ruby><img src="img/logomoji.png" alt="アンドキャットのロゴです"><rt>アンドキャット</rt></ruby></div>
+        <div class="box text1"><a>猫の里親募集情報サイト</a><br><p>保護猫と飼い主をつなぐ</p></div>
+        <div class="box text2">
+        <figure>
 
-        <div class="container">
-                <div class="logomoji"><ruby><img src="img/logomoji.png" alt="アンドキャットのロゴです"><rt>アンドキャット</rt></ruby></div>
-                <div class="box text1"><a>猫の里親募集情報サイト</a><br><p>保護猫と飼い主をつなぐ</p></div>
-                <div class="box text2"><img src="img/man.png">
-                   <ul>
-                    <li ><a class="name">ニックネームさん</li>
-                    <li ><a href="{{ url('') }}" class="member">会員情報</a></li>
-                    <li ><a href="{{ url('') }}" class="like" >☆お気に入り</a></li>
-                   </ul>
-                </div>
+            <img src="{{ Auth::user()->img_url }}">
+
+            <figcaption><a class="name">{{ Auth::user()->name }}</a>さん</figcaption></figure>
+           <ul>
+            <li ><a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                     document.getElementById('logout-form').submit();">
+                        {{ __('ログアウト') }}</a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" >
+                    @csrf
+            </li>
+            <li ><a href="{{ url('user') }}" class="member">プロフィール</a></li>
+            <li ><a href="{{ url('cat/like') }}" class="like" >☆お気に入り</a></li>
+           </ul>
         </div>
+    </div>
 
-        <div class="nav"><div class="pan"><a>ホーム</a><a>＞保護猫団体の方へ</div></div>
+        <div class="nav"><div class="pan"><a href="{{ url('home') }} ">ホーム</a><a href="{{ url('dantai') }} ">>保護猫団体の方へ</a></div></div>
 
          <div class="main-photo">
              <img src="img/dantai_main.jpg" alt="">
                 <h3>きっと見つかる、新しい家族。</h3>
 
                 <div class="select">
-                    <div class="dantai"><p>団体登録申請<img src="img/dantai1.png">
-                        <p class="list">団体登録がまだの方は<br><a href="#dantaitouroku">こちら(ここをクリック)</a>を読んで申請してください
-                        </p>
-                    </p></div>
-                    <div class="cat"><p>保護猫投稿フォームへ<img src="img/kamera.png"></p></div>
-                    <div class="info"><p>譲渡会・イベントなどの<br>投稿フォームへ<img src="img/memo.png"></p></div>
+                    <div class="cat"><a href="">保護猫投稿フォームへ<img src="img/kamera.png"></a></div>
+                    <div class="info"><a href="{{ route('event.create')}}">譲渡会・イベントなどの<br>投稿フォームへ<img src="img/memo.png"></a></div>
+                    <div class="dantai"><a href="">里親応募者さま一覧<img src="img/dantai1.png"></a></div>
                 </div>
          </div>
 
@@ -64,19 +70,49 @@
         </div>
 
         <div class="container-main">
-                <div class="logomoji2"><img src="img/logomoji.png"></div>
-                <div class="name">アンドキャットができること</div>
+                <div class="logomoji2"><img src="img/logomoji.png"><br>アンドキャットが<br>できること</div>
+                {{-- <div class="name">アンドキャットができること</div> --}}
+
+                <div class="word">
+                    <a>アンドキャットは、保護猫 と迎えたい人を結ぶマッチングサイトです。<br>
+                    保護団体さまも応募者さまも、募集登録された犬猫たちに素敵な家族が見つかるよう、情報発信をお手伝いします。</a>
+                <ul>
+                    <li>
+                    保護団体さまと里親を希望される方のコミュニケーションは、アンドキャットのチャット機能を通じて行うことができます。
+                    </li>
+                    <li>
+                    募集中の猫が一覧で見られるだけでなく、イベント情報の発信や、団体のさまの活動紹ページとしてご利用していただくことも可能です。
+                    </li>
+                </ul>
+            </div>
+    </div>
+
+       <div class="container-text" >
+        <div class="title-box2">
+          <div class="title-box2-title">「保護猫登録フォーム」</div>
+          <p>「保護猫登録フォーム」より保護猫の募集登録を行うことができます。登録した保護猫の情報はあとからでも修正が可能です。
+            また、里親を検討されている方々と質問ができるチャット機能もありますので、応募者様と直接繋がることができます。</p>
         </div>
 
-        <div class="container-text">
-            <p id="dantaitouroku">アンドキャットは、保護犬・保護猫 と迎えたい人を結ぶマッチングサイトです。 保護団体さまも応募者さまも安心して利用できる場所であるために、審査登録制のシステムをとっております。 登録制のシステムをとっております。 募集登録された犬猫たちに家族ができるよう、情報発信をお手伝いします。
-            </p></div>
+        <div class="title-box2">
+            <div class="title-box2-title">「譲渡会・イベントなどの投稿フォーム」</div>
+            <p>団体様のさまざまなイベントの情報を発信することができます。
+                「譲渡会・イベントなどの投稿フォームへ」のボタンより、情報発信したいイベントの詳細をご自身で入力ができますので、ご自由にご活用ください。
+                また、登録したイベントの情報は後からでも修正が可能です。</p>
+          </div>
 
-        {{-- <div class="main-text">
-                <a>保護猫の迎え方</a>
-            <div class="flow">
-                <img src="img/pet.png" alt=""></div>
-        </div> --}}
+          <div class="title-box2">
+            <div class="title-box2-title">「里親応募者さま一覧」</div>
+            <p>保護猫団体様が紹介した保護猫へ応募があった方のリストが表示されます。
+                保護猫団体の方は、「里親応募者さま一覧」を常時確認していただき、応募一覧に掲載された応募者のメールアドレス・電話番号から連絡をして、
+                書類審査・お見合いの日程調整・トライアルの調整を行ってください。また、里親希望の方へは、応募フォームから申し込みが入ると、登録したメールアドレスに応募完了のお知らせメールが送信されます。 </p>
+          </div>
+       </div>
+
+
+
+
+
 
         <div class="footer">
             <div class="info">

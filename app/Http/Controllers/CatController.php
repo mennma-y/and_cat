@@ -26,7 +26,7 @@ class CatController extends Controller
 
     /**
      *  ホーム表示
-     * 
+     *
      *  @param Request $request
      *  @return Response
      */
@@ -43,7 +43,7 @@ class CatController extends Controller
 
     /**
      *  保護猫検索表示
-     * 
+     *
      *  @param Request $request
      *  @return Response
      */
@@ -96,7 +96,7 @@ class CatController extends Controller
 
     /**
      *  保護猫プロフィール表示
-     * 
+     *
      *  @param Request $request
      *  @return Response
      */
@@ -113,7 +113,7 @@ class CatController extends Controller
 
     /**
      *  保護猫いいね！済表示
-     * 
+     *
      *  @param Request $request
      *  @return Response
      */
@@ -136,7 +136,7 @@ class CatController extends Controller
 
     /**
      *  保護猫登録
-     * 
+     *
      *  @param Request $request
      *  @return Response
      */
@@ -165,7 +165,7 @@ class CatController extends Controller
             $cat_image_main = $request->file('cat_image_main');
             $image_name = Str::random(20).'.'.$cat_image_main->getClientOriginalExtension();
             \Image::make($cat_image_main)->resize(400, null, function ($constraint) {$constraint->aspectRatio();})->save(public_path('storage/cat_images/' . $image_name));
-            
+
             $image = new Image;
             $image->image_path = 'cat_images/' . $image_name;
             $image->cat_id = $cat->id;
@@ -175,7 +175,7 @@ class CatController extends Controller
             foreach($cat_images as $cat_image){
                 $image_name = Str::random(20).'.'.$cat_image->getClientOriginalExtension();
                 \Image::make($cat_image)->resize(400, null, function ($constraint) {$constraint->aspectRatio();})->save(public_path('storage/cat_images/' . $image_name));
-                
+
                 $image = new Image;
                 $image->image_path = 'cat_images/' . $image_name;
                 $image->cat_id = $cat->id;
@@ -190,7 +190,7 @@ class CatController extends Controller
 
     /**
      *  保護猫編集ページ表示
-     * 
+     *
      *  @param Request $request
      *  @return Response
      */
@@ -205,7 +205,7 @@ class CatController extends Controller
 
     /**
      *  保護猫編集
-     * 
+     *
      *  @param Request $request
      *  @return Response
      */
