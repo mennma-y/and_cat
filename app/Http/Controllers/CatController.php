@@ -26,7 +26,7 @@ class CatController extends Controller
 
     /**
      *  ホーム表示
-     * 
+     *
      *  @param Request $request
      *  @return Response
      */
@@ -43,7 +43,7 @@ class CatController extends Controller
 
     /**
      *  保護猫検索表示
-     * 
+     *
      *  @param Request $request
      *  @return Response
      */
@@ -51,43 +51,33 @@ class CatController extends Controller
     {
         $area = null;
         $gender = null;
-        $age = null;
+        $age_more = null;
+        $age_less = null;
         $type = null;
 
         $area = $request->area;
         $gender = $request->gender;
-        $age = $request->age;
+        $age_more = $request->age_more;
+        $age_less = $request->age_less;
         $type = $request->type;
 
         $query = Cat::query();
 
-        if(isset($area)){
-            $query = Cat::Area($area);
-        }
+        if(isset($area) || isset($gender) || isset($age_more) || isset($age_less) || isset($type)){
+            $cats = $query->Area($area)->Gender($gender)->AgeMore($age_more)->AgeLess($age_less)->Type($type)->orderBy('created_at', 'desc')->simplePaginate(50);
 
-        if(isset($gender)){
-            $query = Cat::Gender($gender);
-        }
 
-        if(isset($age)){
-            $query = Cat::Age($age);
-        }
-
-        if(isset($type)){
-            $query = Cat::where('type', 'LIKE', "%{$type}%");
-        }
-
-        $cats = $query->orderBy('created_at', 'desc')->simplePaginate(50);
-
-        if(isset($area) || isset($gender) || isset($age) || isset($type)){
             return view('main.search', [
                 'cats' => $cats,
                 'area' => $area,
                 'gender' => $gender,
-                'age' => $age,
+                'age_more' => $age_more,
+                'age_less' => $age_less,
                 'type' => $type,
             ]);
         }else{
+            $cats = $query->orderBy('created_at', 'desc')->simplePaginate(50);
+
             return view('main.search', [
                 'cats' => $cats,
             ]);
@@ -96,7 +86,7 @@ class CatController extends Controller
 
     /**
      *  保護猫プロフィール表示
-     * 
+     *
      *  @param Request $request
      *  @return Response
      */
@@ -142,7 +132,7 @@ class CatController extends Controller
     }
     /**
      *  保護猫いいね！済表示
-     * 
+     *
      *  @param Request $request
      *  @return Response
      */
@@ -178,7 +168,7 @@ class CatController extends Controller
 
     /**
      *  保護猫登録
-     * 
+     *
      *  @param Request $request
      *  @return Response
      */
@@ -207,22 +197,24 @@ class CatController extends Controller
             $cat_image_main = $request->file('cat_image_main');
             $image_name = Str::random(20).'.'.$cat_image_main->getClientOriginalExtension();
             \Image::make($cat_image_main)->resize(400, null, function ($constraint) {$constraint->aspectRatio();})->save(public_path('storage/cat_images/' . $image_name));
-            
+
             $image = new Image;
             $image->image_path = 'cat_images/' . $image_name;
             $image->cat_id = $cat->id;
             $image->save();
 
-            $cat_images = $request->file('cat_image');
-            foreach($cat_images as $cat_image){
-                $image_name = Str::random(20).'.'.$cat_image->getClientOriginalExtension();
-                \Image::make($cat_image)->resize(400, null, function ($constraint) {$constraint->aspectRatio();})->save(public_path('storage/cat_images/' . $image_name));
-                
-                $image = new Image;
-                $image->image_path = 'cat_images/' . $image_name;
-                $image->cat_id = $cat->id;
-                $image->status = 'sub';
-                $image->save();
+            if(isset($request->cat_image)){
+                $cat_images = $request->file('cat_image');
+                foreach($cat_images as $cat_image){
+                    $image_name = Str::random(20).'.'.$cat_image->getClientOriginalExtension();
+                    \Image::make($cat_image)->resize(400, null, function ($constraint) {$constraint->aspectRatio();})->save(public_path('storage/cat_images/' . $image_name));
+
+                    $image = new Image;
+                    $image->image_path = 'cat_images/' . $image_name;
+                    $image->cat_id = $cat->id;
+                    $image->status = 'sub';
+                    $image->save();
+                }
             }
 
         }
@@ -232,7 +224,7 @@ class CatController extends Controller
 
     /**
      *  保護猫編集ページ表示
-     * 
+     *
      *  @param Request $request
      *  @return Response
      */
@@ -247,7 +239,7 @@ class CatController extends Controller
 
     /**
      *  保護猫編集
-     * 
+     *
      *  @param Request $request
      *  @return Response
      */
@@ -270,5 +262,17 @@ class CatController extends Controller
         $cat->save();
 
         return redirect('/admin/cat/edit');
+    }
+
+    /**
+     *  保護猫削除
+     *
+     *  @param Request $request
+     *  @return Response
+     */
+    public function catDelete(Request $request)
+    {
+        Cat::find($request->id)->delete();
+        return redirect('/home');
     }
 }

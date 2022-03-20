@@ -4,19 +4,11 @@ body{
 
 .container{
     width: 900px;
-    /* margin-bottom: 0px; */
     display: flex;
     flex-direction: row;
-    /* flex: 1; */
     justify-content: flex-start;
-    /* justify-content: space-between; */
-    /* flex-wrap: nowrap; */
-    /* margin-top: 8px; */
-    /* align-content: flex-start; */
     padding-top: 10px;
     margin: 0 auto;
-    /* height: 200px; */
-
 }
 
 .logomoji ruby img {
@@ -35,7 +27,7 @@ body{
 .text1 a{
     font-size: 20px;
     font-weight: bold;
-    /* font-family: sans-serif; */
+
 }
 
 .text1 p{
@@ -46,7 +38,7 @@ body{
 }
 
 .text2{
-    width: 300px;
+    width: 360px;
     height: 81px;
     margin-top: 0;
     border: 1px solid hsl(174, 53%, 68%); /*線の太さ・色*/
@@ -57,14 +49,25 @@ body{
 
 }
 
+
+.text2 figure{
+    font-size: 14px;
+    margin: 0 1rem;
+}
 .text2 img{
-    width: 63px;
-    height:63px;
+    width: 50px;
+    height:50px;
     margin-top: 8px;
     margin-left: 20px;
     border-radius: 50%;
-    background-color: rgba();
+    border: darkgrey;
+}
 
+
+.text2 a{
+    font-size: 14px;
+    color: black;
+    text-decoration: none;
 }
 .text2 ul{
     flex-direction: column;
@@ -97,20 +100,11 @@ body{
 
 }
 
-/* .text2 li a{
-
-    /* border: 1px solid ;線の太さ・色 */
-    /* background-color:rgba(); /*背景色*/
-    /* border-radius: 10px;
-    display: flex;
-    width: fit-content; */
-/* } */
 
 body .nav{
     background-color:#84D9D0;
     height: 40px;
     width: 100%;
-
 
 }
 
@@ -118,13 +112,17 @@ body .nav .pan{
     width: 900px;
     height: 40px;
     margin: 0 auto;
+    display: flex;
     vertical-align: middle;
 }
 
 body .nav .pan a{
     font-size: small;
     text-decoration: none;
-    align-items: flex-start;
+    color: black;
+    list-style: none;
+    font-size: 13px;
+    padding-top: 10px;
 }
 
 .main-photo img{
@@ -142,6 +140,7 @@ body .nav .pan a{
 .main-photo h1{
     position: absolute;
     font-family: "筑紫B丸ゴシック";
+    font-size: xx-large;
     color: #fff;
     top: 150px;
     right: 28%;
@@ -178,6 +177,8 @@ body .nav .pan a{
 .container-nav .box ul{
     flex-direction: column;
     vertical-align: middle;
+    margin-top: 10%;
+
     /* text-align: center; */
 }
 
@@ -318,6 +319,12 @@ body .nav .pan a{
     text-align: center;
     margin-left: 60px;
 }
+
+.container-nav .box4 p{
+    font-size: 9px;
+    margin-left: 23px;
+}
+
 
 .footer{
     background: #FAE7F6;

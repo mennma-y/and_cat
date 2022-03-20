@@ -521,9 +521,15 @@
     margin: 20px auto;
 }
 
-.register-box .button-box button {
+.register-box button {
     background-color: #84D9D0;
     color: #ffffff;
     font-weight: bold;
 }
-
+.register-box button:hover{
+    color: #ffffff;
+}
+.register-box .delete-text{
+    font-size: 18px;
+    font-weight: bold;
+}
