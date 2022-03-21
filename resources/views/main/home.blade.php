@@ -1,6 +1,6 @@
 @extends('home1')
 
-@section('home')
+@section('main')
 <div class="new">
     <div class="square"></div>
     <p>新着の保護猫</p>

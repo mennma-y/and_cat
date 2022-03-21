@@ -79,6 +79,7 @@ Route::get('/admin/cat/register', function () {
 Route::post('/admin/cat/register', 'CatController@catRegister');
 
 Route::get('/admin/cat/edit/{id}', 'CatController@getCatEdit');
+// Route::get('/admin/cat/edit/{id}', 'CatController@getCatEdit')->name('admin.cat.edit');
 
 Route::get('/admin/cat/edit', 'CatController@catEdit');
 Route::post('/admin/cat/edit', 'CatController@catEdit');
