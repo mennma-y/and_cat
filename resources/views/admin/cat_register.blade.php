@@ -46,7 +46,7 @@
         <div class="form-group">
             <label for="age" class="form-label">年齢</label>
             <div class="custom-box">
-                <select name="age" id="age" class="form-select"  value="{{ old('age') }}" required>
+                <select name="age" id="age" class="form-select" required>
                     <option value="" selected>選択してください</option>
                     <option value="1">0ヶ月</option>
                     <option value="2">1ヶ月</option>
@@ -91,7 +91,7 @@
         <div class="form-group">
             <label for="area" class="form-label">譲渡エリア</label>
             <div class="custom-box">
-                <select name="area" id="area" class="form-select"  value="{{ old('area') }}" required>
+                <select name="area" id="area" class="form-select" required>
                     <option value="" selected>選択してください</option>
                     <option value="北海道">北海道</option>
                     <option value="青森県">青森県</option>
