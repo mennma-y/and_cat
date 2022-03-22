@@ -71,14 +71,19 @@
 </div>
 <div class="green-box">
     <div class="arrow"></div>
+
     @if($user->admin_confirmation === 1 && $user->id === $cat->user_id)
     <div class="next-form">
         <a href="/admin/cat/edit/{{ $cat->id }}">編集</a>
     </div>
     @else
     <div class="next-form">
-        <a href="#">応募フォームへ</a>
+        <a href="/form/{{$cat->id}}">応募フォームへ</a>
     </div>
     @endif
+
 </div>
+
 @endsection
+
+@include('question')

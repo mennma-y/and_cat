@@ -11,6 +11,10 @@
 |
 */
 
+
+use Illuminate\Support\Facades\Route;
+
+
 // Route::get('/', function () {
 //     return view('welcome');
 // });
@@ -54,7 +58,6 @@ Route::group(['middleware'=>'auth'],function(){
     Route::post('/event/update/{id}','EventController@update')->name('event.update');
     Route::post('/event/delete/{id}','EventController@delete')->name('event.delete');
     Route::get('/event/form/{id}','EventController@form')->name('event.form');
-
 });
 
 // 個人閲覧ページ
@@ -68,8 +71,6 @@ Route::get('/cat/profile/{id}', 'CatController@getCatProfile');
 Route::get('/cat/like', 'CatController@getCatLike');
 
 Route::get('/search', 'CatController@getSearch');
-
-
 
 // 保護猫団体閲覧ページ
 Route::get('/admin/cat/register', function () {
@@ -88,9 +89,10 @@ Route::post('/admin/cat/delete', 'CatController@catDelete');
 
 
 
-Route::get('/form', function () {
-    return view('form');
-});
-Route::get('/application', function () {
-    return view('application');
-});
+Route::get('/form/{id}', 'FormController@form');
+Route::get('/admin', 'FormController@index');
+Route::post('/send', 'FormController@store');
+Route::post('/question_send', 'CatController@store');
+Route::post('/reply', 'CatController@replystore');
+Route::post('/delete','CatController@delete');
+

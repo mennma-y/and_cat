@@ -64,6 +64,7 @@
             <div class="box box3"><ul><li><img src="img/serch.png"></li><li><a href="{{ url('event') }}">譲渡会<br>イベントを探す</a></li></div>
             <div class="box box4"><ul><li><img src="img/hogoneko.png"></li><li><a href="{{ url('dantai') }}">保護猫団体の方へ</a></li><li><p>登録団体専用ページです</p></li></div>
         </div>
+@yield('child')
 
 </body>
 

@@ -56,7 +56,7 @@
                 <div class="select">
                     <div class="cat"><a href="/admin/cat/register">保護猫投稿フォームへ<img src="img/kamera.png"></a></div>
                     <div class="info"><a href="{{ route('event.create')}}">譲渡会・イベントなどの<br>投稿フォームへ<img src="img/memo.png"></a></div>
-                    <div class="dantai"><a href="">里親応募者さま一覧<img src="img/dantai1.png"></a></div>
+                    <div class="dantai"><a href="/admin">里親応募者さま一覧<img src="img/dantai1.png"></a></div>
                 </div>
          </div>
 
