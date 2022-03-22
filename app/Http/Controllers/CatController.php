@@ -289,7 +289,8 @@ class CatController extends Controller
 
         $cat->save();
 
-        return redirect('/admin/cat/edit');
+        return redirect()->route('/admin/cat/edit', [$cat]);
+        // return redirect()->route('admin.cat.edit', [$cat]);
     }
 
     /**
