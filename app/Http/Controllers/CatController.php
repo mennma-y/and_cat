@@ -86,7 +86,7 @@ class CatController extends Controller
 
     /**
      *  保護猫プロフィール表示
-     *
+     *  質問表示
      *  @param Request $request
      *  @return Response
      */
@@ -107,8 +107,14 @@ class CatController extends Controller
             'questions' => $questions,
         ]);
     }
+    /**
+     *  質問の保存
+     *  @param Request $request
+     *  @return Response
+     */
     public function store(Request $request)
     {
+     
         $rules = [
             'question' => 'required|string|max:255',
 
@@ -127,7 +133,7 @@ class CatController extends Controller
         $questions->cat_id = $request->id;
         $questions->question = $request->input('question');
         $questions->save();
-        $request->session()->regenerateToken();
+        
         return redirect('/cat/profile/'.$request->id);
     }
     /**
@@ -148,15 +154,37 @@ class CatController extends Controller
             'like_count' => $like_count,
         ]);
     }
+      /**
+     *  質問のリプライ保存
+     *  @param Request $request
+     *  @return Response
+     */
     public function replystore(Request $request)
     { 
-     
+        $rules = [
+            'reply' => 'required|string|max:255',
+
+        ];
+        $message = [
+            'reply.required' => '返信を入力してください',
+            'reply.max:255' => '文字数に制限があります',
+        ];
+        $validator = Validator::make($request->all(), $rules, $message);
+        if ($validator->fails()) {
+            return redirect('/cat/profile/'.$request->reid)
+                ->withErrors($validator);
+        }
         $replys = Question::where('id', '=', $request->id)->first();
         $replys->reply = $request->reply;
         $replys->save();
   
         return redirect('/cat/profile/'.$request->reid);
     }
+    /**
+     *  質問の削除
+     *  @param Request $request
+     *  @return Response
+     */
     public function delete(Request $request)
     {
         $questions = Question::where('id', '=', $request->id)->first();

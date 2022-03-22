@@ -58,7 +58,6 @@ Route::group(['middleware'=>'auth'],function(){
     Route::post('/event/update/{id}','EventController@update')->name('event.update');
     Route::post('/event/delete/{id}','EventController@delete')->name('event.delete');
     Route::get('/event/form/{id}','EventController@form')->name('event.form');
-
 });
 
 // 個人閲覧ページ
@@ -89,9 +88,8 @@ Route::post('/admin/cat/delete', 'CatController@catDelete');
 
 
 
-
 Route::get('/form/{id}', 'FormController@form');
-Route::get('/admin', 'FormController@index')->middleware('auth');
+Route::get('/admin', 'FormController@index');
 Route::post('/send', 'FormController@store');
 Route::post('/question_send', 'CatController@store');
 Route::post('/reply', 'CatController@replystore');

@@ -1,3 +1,4 @@
+
 h2 {
     background-color: #FFCCFF;
     max-width: 80%;
@@ -20,6 +21,7 @@ h2 {
 margin-left: 87%;
 
 }
+
 .question-box {
     text-align: center;
     background-color: #FAE7F6;
@@ -54,13 +56,12 @@ margin-left: 87%;
 
 .question-box .replyhome .card {
     margin-left: 60%;
-    width: 40%;
     margin-bottom: 100px;
-
+    width: 40%;
 }
 
 .input-reply input {
-    margin-left: 100px;
+    margin-left: 80px;
     border-radius: 5px;
     width: 60%;
     border: solid 3px;
@@ -78,6 +79,7 @@ margin-left: 87%;
     font-weight: 900;
     border-radius: 10px;
     font-family: Arial, Helvetica, sans-serif;
+   margin-bottom: 5%;
 }
 
 .question-table {
@@ -89,7 +91,7 @@ margin-left: 87%;
     border-collapse: separate;
 }
 
-.question-table th {
+/* .question-table th {
     border: solid 1px;
 
 }
@@ -97,12 +99,21 @@ margin-left: 87%;
 .question-table td {
     border: solid 1px;
     width: 60%;
+    
+} */
+.question-title{
+
+    white-space: nowrap;
+    word-break:break-word;
 }
+
+
 
 .question-user {
     color: #84D9D0;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 700;
+ 
 }
 
 .question-submit {
@@ -136,11 +147,12 @@ margin-left: 87%;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 900;
     font-size: large;
+    margin-top: 20px;
 }
 .delete input{
    background-color: #FF2D2D;
     border-radius: 15px;
-
+  
    padding-left: 3%;
    padding-right: 3%;
    color: whitesmoke;

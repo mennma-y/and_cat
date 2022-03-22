@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Form;
+
+use App\Cat;
 use Dotenv\Validator as DotenvValidator;
 use Validator;
 
@@ -26,9 +28,10 @@ class FormController extends Controller
     }
     public function form(Request $request)
     {
-        
+        $cat = Cat::find($request->id);
         return view('form',[
-            'id'=>$request->id
+            'id'=>$request->id,
+            'cat' => $cat,
         ]);
     }
     public function store(Request $request)
@@ -61,7 +64,7 @@ class FormController extends Controller
         
         $forms->save();
       
-        $request->session()->regenerateToken();
-        return redirect('/form/'.$request->forid);
+        
+        return redirect('/cat/profile/'.$request->id);
     }
 }

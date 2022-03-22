@@ -20,7 +20,9 @@
         </ul>
     </div>
     @endif
+  
     <form action="/question_send" method="post">
+      
         @csrf
         <textarea name="question" id="" cols="50" rows="4" class="question"></textarea>
         <input type="hidden" name="id" value="{{$cat->id}}">
@@ -29,10 +31,11 @@
         </div>
 
     </form>
+   
     @foreach($questions as $question)
     <div class="card">
         <div class="board">
-            @if(Auth::id()==$question->user_id)
+            @if(Auth::id()==$question->user_id && $question->reply==null)
             <form action="/reply" method="post">
                 @csrf
                 <input type="hidden" name="id" value="{{$question->id}}">
@@ -41,9 +44,15 @@
                     <input type="text" name="reply">
                 </div>
                 <div class="submit">
-                    <input type="submit" value="返信">
+                    <input type="submit" value="返信" >
                 </div>
             </form>
+            @endif
+           
+            <p ><span class="question-user">「{{$question -> name}}」</span>さんからの質問です</p>
+            <p class="questio-title">「{{$question -> question}}」</p>
+       
+            @if(Auth::id()==$question->user_id)
             <form action="/delete" method="post">
                 @csrf
                 <input type="hidden" name="id" value="{{$question->id}}">
@@ -53,8 +62,6 @@
                 </div>
             </form>
             @endif
-            <p><span class="question-user">「{{$question -> name}}」</span>さんからの質問です</p>
-            <p>「{{$question -> question}}」</p>
         </div>
     </div>
     <div class="replyhome">
