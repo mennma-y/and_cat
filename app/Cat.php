@@ -15,9 +15,10 @@ class Cat extends Model
     ];
 
     public static $rules = [
+        'name' => 'required|max:50',
         'type' => 'required|max:50',
         'gender' => 'required|in:0,1',
-        'age' => 'required|max:20',
+        'age' => 'required|between:1,32',
         'area' => 'required|max:10',
         'slogan' => 'required|max:200',
         'introduction' => 'required'
