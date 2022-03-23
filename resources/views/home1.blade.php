@@ -49,6 +49,7 @@
                                 {{ __('ログアウト') }}</a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" >
                             @csrf
+                        </form>
                     </li>
                     <li ><a href="{{ url('user') }}" class="member">プロフィール</a></li>
                     <li ><a href="{{ url('cat/like') }}" class="like" >☆お気に入り</a></li>

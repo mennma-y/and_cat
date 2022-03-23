@@ -3,7 +3,7 @@
 @section('main')
 <div class="register-box">
     <h3>保護猫編集</h3>
-    <form action="/admin/cat/edit" method="post">
+    <form action="/admin/cat/edit" method="post" enctype="multipart/form-data">
         @csrf
         <input type="hidden" name="id" value="{{ $cat->id }}">
 

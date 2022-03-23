@@ -206,6 +206,7 @@ class CatController extends Controller
 
         $this->validate($request, Cat::$rules);
         $cat = Cat::find($request->id);
+        $cat->name = $request->name;
         $cat->type = $request->type;
         $cat->gender = $request->gender;
         $cat->age = $request->age;
@@ -219,8 +220,8 @@ class CatController extends Controller
 
         $cat->save();
 
-        return redirect()->route('/admin/cat/edit', [$cat]);
-        // return redirect()->route('admin.cat.edit', [$cat]);
+        return back();
+        // return redirect()->route('/admin/cat/edit', [$cat]);
     }
 
     /**
