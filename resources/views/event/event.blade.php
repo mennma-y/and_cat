@@ -52,9 +52,9 @@
                 <br>さまざまなベント情報が満載！</p>
         </div>
         
-        @if($user->admin_confirmation === 1)
+        @if($user->admin_confirmation === 1)  
             <div class="create-event">
-                    <a href="{{ route('event.create') }}" class="btn btn-primary">投稿作成</a>  
+                    <a href="{{ route('event.create') }}" class="btn btn-primary">新規作成</a>  
             </div>
         @endif
         
