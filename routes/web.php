@@ -11,9 +11,14 @@
 |
 */
 
+
+use Illuminate\Support\Facades\Route;
+
+
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+
 
 
 Route::get('/home1', function () {
@@ -27,18 +32,16 @@ Route::get('/head', function () {
 Route::get('/head1', function () {
     return view('/head1');
 });
-
+//アンドキャットとは（説明）のページ
 Route::get('/andcat', function () {
     return view('/andcat');
 });
-
+//保護猫団体のページ
 Route::get('/dantai', function () {
     return view('/dantai');
 });
 
 
-
-// Route::get('/info',[App\Http\ControllersInfoController::class, 'index'])->name('info');
 
 Auth::routes();
 
@@ -55,7 +58,6 @@ Route::group(['middleware'=>'auth'],function(){
     Route::post('/event/update/{id}','EventController@update')->name('event.update');
     Route::post('/event/delete/{id}','EventController@delete')->name('event.delete');
     Route::get('/event/form/{id}','EventController@form')->name('event.form');
-
 });
 
 // 個人閲覧ページ
@@ -70,8 +72,6 @@ Route::get('/cat/like', 'CatController@getCatLike');
 
 Route::get('/search', 'CatController@getSearch');
 
-
-
 // 保護猫団体閲覧ページ
 Route::get('/admin/cat/register', function () {
     return view('admin.cat_register');
@@ -80,15 +80,19 @@ Route::get('/admin/cat/register', function () {
 Route::post('/admin/cat/register', 'CatController@catRegister');
 
 Route::get('/admin/cat/edit/{id}', 'CatController@getCatEdit');
+// Route::get('/admin/cat/edit/{id}', 'CatController@getCatEdit')->name('admin.cat.edit');
 
-Route::get('/admin/cat/edit', 'CatController@catEdit');
+// Route::get('/admin/cat/edit', 'CatController@catEdit');
 Route::post('/admin/cat/edit', 'CatController@catEdit');
 
+Route::post('/admin/cat/delete', 'CatController@catDelete');
 
 
-Route::get('/form', function () {
-    return view('form');
-});
-Route::get('/application', function () {
-    return view('application');
-});
+
+Route::get('/form/{id}', 'FormController@form');
+Route::get('/admin', 'FormController@index');
+Route::post('/send', 'FormController@store');
+Route::post('/question_send', 'CatController@store');
+Route::post('/reply', 'CatController@replystore');
+Route::post('/delete','CatController@delete');
+

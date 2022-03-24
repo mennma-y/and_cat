@@ -4,6 +4,8 @@ namespace App;
 
 use Illuminate\Support\Facades\Auth;
 
+use Illuminate\Support\Arr;
+
 use Illuminate\Database\Eloquent\Model;
 
 class Cat extends Model
@@ -13,9 +15,10 @@ class Cat extends Model
     ];
 
     public static $rules = [
+        'name' => 'required|max:50',
         'type' => 'required|max:50',
         'gender' => 'required|in:0,1',
-        'age' => 'required|max:20',
+        'age' => 'required|between:1,32',
         'area' => 'required|max:10',
         'slogan' => 'required|max:200',
         'introduction' => 'required'
@@ -38,17 +41,39 @@ class Cat extends Model
 
     public function scopeArea($query, $str)
     {
-        return $query->where('area', $str);
+        if($str != ''){
+            return $query->where('area', $str);
+        }
     }
 
     public function scopeGender($query, $str)
     {
-        return $query->where('gender', $str);
+        if($str != ''){
+            return $query->where('gender', $str);
+        }
     }
 
-    public function scopeAge($query, $str)
+    public function scopeAgeMore($query, $str)
     {
-        return $query->where('age', $str);
+        if($str != ''){
+            return $query->where('age', '>=', $str);
+        }
+
+    }
+
+    public function scopeAgeLess($query, $str)
+    {
+        if($str != ''){
+            return $query->where('age', '<=', $str);
+        }
+
+    }
+
+    public function scopeType($query, $str)
+    {
+        if($str != ''){
+            return $query->where('type', 'LIKE', "%{$str}%");
+        }
 
     }
 
@@ -78,5 +103,44 @@ class Cat extends Model
         }   
             //レコードが存在しなければnull
             return null;
+    }
+
+    public function getCatAgeAttribute()
+    {
+        $prefs = [
+            '1' => '0ヶ月',
+            '2' => '1ヶ月',
+            '3' => '2ヶ月',
+            '4' => '3ヶ月',
+            '5' => '4ヶ月',
+            '6' => '5ヶ月',
+            '7' => '6ヶ月',
+            '8' => '7ヶ月',
+            '9' => '8ヶ月',
+            '10' => '9ヶ月',
+            '11' => '10ヶ月',
+            '12' => '11ヶ月',
+            '13' => '1歳',
+            '14' => '2歳',
+            '15' => '3歳',
+            '16' => '4歳',
+            '17' => '5歳',
+            '18' => '6歳',
+            '19' => '7歳',
+            '20' => '8歳',
+            '21' => '9歳',
+            '22' => '10歳',
+            '23' => '11歳',
+            '24' => '12歳',
+            '25' => '13歳',
+            '26' => '14歳',
+            '27' => '15歳',
+            '28' => '16歳',
+            '29' => '17歳',
+            '30' => '18歳',
+            '31' => '19歳',
+            '32' => '20歳',
+        ];
+        return Arr::get($prefs, $this->age);
     }
 }

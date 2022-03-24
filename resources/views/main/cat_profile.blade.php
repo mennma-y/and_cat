@@ -35,9 +35,9 @@
         <p>譲渡エリア：<span>{{ $cat->area }}</span></p>
         <p>性別：<span>オス</span><span class="male-icon">♂</span></p>
         @if(isset($cat->age_about))
-        <p>年齢：<span>推定{{ $cat->age }}</span></p>
+        <p>年齢：<span>推定{{ $cat->cat_age }}</span></p>
         @else
-        <p>年齢：<span>{{ $cat->age }}</span></p>
+        <p>年齢：<span>{{ $cat->cat_age }}</span></p>
         @endif
         <p>種類：<span>{{ $cat->type }}</span></p>
     </div>
@@ -47,9 +47,9 @@
         <p>譲渡エリア：<span>{{ $cat->area }}</span></p>
         <p>性別：<span>メス</span><span class="scalpel-icon">♀</span></p>
         @if(isset($cat->age_about))
-        <p>年齢：<span>推定{{ $cat->age }}</span></p>
+        <p>年齢：<span>推定{{ $cat->cat_age }}</span></p>
         @else
-        <p>年齢：<span>{{ $cat->age }}</span></p>
+        <p>年齢：<span>{{ $cat->cat_age }}</span></p>
         @endif
         <p>種類：<span>{{ $cat->type }}</span></p>
     </div>
@@ -71,14 +71,19 @@
 </div>
 <div class="green-box">
     <div class="arrow"></div>
+
     @if($user->admin_confirmation === 1 && $user->id === $cat->user_id)
     <div class="next-form">
         <a href="/admin/cat/edit/{{ $cat->id }}">編集</a>
     </div>
     @else
     <div class="next-form">
-        <a href="#">応募フォームへ</a>
+        <a href="/form/{{$cat->id}}">応募フォームへ</a>
     </div>
     @endif
+
 </div>
+
 @endsection
+
+@include('question')

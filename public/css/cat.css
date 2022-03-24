@@ -67,7 +67,7 @@
 }
 
 .pink-box .like-box {
-    width: 180px;
+    width: 200px;
     height: 60px;
     background-color: #FAE7F6;
     padding: 5px 30px;
@@ -449,7 +449,7 @@
     background-color: #BAF8E0;
     width: 80%;
     margin: auto;
-    height: 80px;
+    height: 100px;
     border-radius: 30px;
     padding: 5px;
 }
@@ -521,8 +521,15 @@
     margin: 20px auto;
 }
 
-.register-box .button-box button {
+.register-box button {
     background-color: #84D9D0;
     color: #ffffff;
+    font-weight: bold;
+}
+.register-box button:hover{
+    color: #ffffff;
+}
+.register-box .delete-text{
+    font-size: 18px;
     font-weight: bold;
 }

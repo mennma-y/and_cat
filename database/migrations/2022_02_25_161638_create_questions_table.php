@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFormsTable extends Migration
+class CreateQuestionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class CreateFormsTable extends Migration
      */
     public function up()
     {
-        Schema::create('forms', function (Blueprint $table) {
+        Schema::create('questions', function (Blueprint $table) {
             $table->increments('id')->index();
-            $table->unsignedBigInteger('user_id')->comment('ユーザ-id')->index();
+            $table->unsignedBigInteger('cat_id')->comment('猫のid');
+            $table->foreign('cat_id')->references('id')->on('cats');
+            $table->unsignedBigInteger('user_id')->comment('ユーザ-id');
             $table->foreign('user_id')->references('id')->on('users');
-            $table->unsignedBigInteger('cat_id')->comment('catテーブルのid');
-            $table->string('name');
-            $table->string('telephone')->comment('電話番号');
-            $table->string('memo')->nullable()->comment('備考');
+            $table->string('question');
+            $table->string('reply')->nullable();
             $table->timestamps();
         });
     }
@@ -32,6 +32,6 @@ class CreateFormsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('forms');
+        Schema::dropIfExists('questions');
     }
 }
