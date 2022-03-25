@@ -64,8 +64,8 @@
         <div class="container-nav">
             <div class="logo"><img src="img/logo1.png"  alt="アンドキャットのロゴです"></div>
             <div class="box box1"><a href="#" target="_blank">アンドキャット<br>とは</a></div>
-            <div class="box box2"><ul><li><img src="img/serch.png"></li><li><a href="#">保護猫を探す</li></div>
-            <div class="box box3"><ul><li><img src="img/serch.png"></li><li><a href="#">譲渡会<br>イベントを探す</a></li></div>
+            <div class="box box2"><ul><li><img src="img/serch.png"></li><li><a href="#">保護猫を探す</li></div>  
+            <div class="box box3"><ul><li><img src="img/serch.png"></li><li><a href="{{route('event.index')}}">譲渡会<br>イベントを探す</a></li></div>
             <div class="box box4"><ul><li><img src="img/hogoneko.png"></li><li><a href="#">保護猫団体の方へ</a></li></div>
         </div>
 

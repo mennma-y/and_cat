@@ -7,7 +7,7 @@ use App\Image;
 use App\Like;
 use App\Question;
 use Illuminate\Support\Facades\Auth;
-use Validator;
+use App\Validator;
 use Illuminate\Support\Str;
 
 use Illuminate\Http\Request;
