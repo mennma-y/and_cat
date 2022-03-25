@@ -114,8 +114,9 @@ body .nav .pan{
     margin: 0 auto;
     display: flex;
     vertical-align: middle;
+    white-space: pre;
 }
-
+/*
 body .nav .pan a{
     font-size: small;
     text-decoration: none;
@@ -123,7 +124,7 @@ body .nav .pan a{
     list-style: none;
     font-size: 13px;
     padding-top: 10px;
-}
+} */
 
 .container-nav{
     width: 900px;
