@@ -1,4 +1,4 @@
-@extends('home1')
+@extends('head')
 
 @section('main')
 <div class="like-top">

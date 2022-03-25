@@ -135,37 +135,7 @@
     margin: 10px 0;
 }
 
-.profile-box .profile-text a {
-    color: #333;
-}
 
-.profile-box .profile-text .user-home {
-    background-color: #FAE7F6;
-    width: 200px;
-    height: 70px;
-    border-radius: 20px;
-    display: flex;
-    position: absolute;
-    bottom: 30px;
-    right: 20px;
-    justify-content: center;
-}
-
-.profile-box .profile-text .user-home p {
-    line-height: 70px;
-    font-weight: bold;
-    font-size: 17px;
-    margin-right: 5px;
-}
-
-.profile-box .profile-text .user-home .black-cat {
-    width: 35px;
-    line-height: 60px;
-}
-
-.profile-box .profile-text .user-home .black-cat img {
-    width: 100%;
-}
 
 .green-box {
     margin-bottom: 100px;

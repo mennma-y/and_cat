@@ -20,7 +20,7 @@ class EventController extends Controller
         return view('event.event', ['events'=>$events, 'user'=>$user]);
     }
 
-    public function show($id)
+    public function show($id)  
     {   
         
         $events=Event::orderBy('created_at','desc')->paginate(5);  

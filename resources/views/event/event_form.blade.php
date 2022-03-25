@@ -51,7 +51,7 @@
         </div>
         <div class="take-part-in-button" style="margin-top: 60px;text-align:center;">
             <form action="#">
-                <input type="submit" style="background-color: #84D9D0; color:#fff; border:1px solid #eef; font-weight:bold;border-radius:30px;padding:20px;" class="btn" value="イベントに参加する">
+                <a href="{{route('event.index')}}" style="background-color: #84D9D0; color:#fff; border:1px solid #eef; font-weight:bold;border-radius:30px;padding:20px;" class="btn">イベントに参加する</a>
             </form>
         </div>
         <div class="return-btn" style="margin-top: 30px; text-align:center;">

@@ -26,7 +26,7 @@
 
 <body>
     <div class="container">
-        <div class="logomoji"><ruby><img src="img/logomoji.png" alt="アンドキャットのロゴです"><rt>アンドキャット</rt></ruby></div>
+        <div class="logomoji"><ruby><img src="/img/logomoji.png" alt="アンドキャットのロゴです"><rt>アンドキャット</rt></ruby></div>
         <div class="box text1"><a>猫の里親募集情報サイト</a><br><p>保護猫と飼い主をつなぐ</p></div>
         <div class="box text2">
         <figure>
@@ -47,45 +47,51 @@
         </div>
     </div>
 
-        <div class="nav"><div class="pan"><a href="{{ url('home') }} ">ホーム</a><a href="{{ url('dantai') }} ">>保護猫団体の方へ</a></div></div>
+        <div class="nav"><div class="pan"><a href="{{ url('home') }} ">ホーム</a><a> > </a><a href="{{ url('dantai') }} ">保護猫団体の方へ</a></div></div>
 
          <div class="main-photo">
-             <img src="img/dantai_main.jpg" alt="">
+             <img src="/img/dantai_main.jpg" alt="">
                 <h3>きっと見つかる、新しい家族。</h3>
 
                 <div class="select">
-                    <div class="cat"><a href="/admin/cat/register">保護猫投稿フォームへ<img src="img/kamera.png"></a></div>
+                    <div class="cat"><a href="/admin/cat/register">保護猫投稿フォームへ<img src="/img/kamera.png"></a></div>
                     <div class="info"><a href="{{ route('event.create')}}">譲渡会・イベントなどの<br>投稿フォームへ<img src="img/memo.png"></a></div>
-                    <div class="dantai"><a href="/admin">里親応募者さま一覧<img src="img/dantai1.png"></a></div>
+                    <div class="dantai"><a href="/admin">里親応募者さま一覧<img src="/img/dantai1.png"></a></div>
                 </div>
          </div>
 
+         <div class="container-nav">
+            <div class="logo"><a href="{{ url('home') }}"><img src="/img/logo1.png"  alt="アンドキャットのロゴです"></div>
+            <div class="box box1"><a href="{{ url('andcat') }} ">アンドキャット<br>とは</a></div>
+            <div class="box box2"><ul><li><img src="/img/serch.png"></li><li><a href="{{ url('search') }}">保護猫を探す</li></div>
+            <div class="box box3"><ul><li><img src="/img/serch.png"></li><li><a href="{{ url('event') }}">譲渡会<br>イベントを探す</a></li></div>
 
-        <div class="container-nav">
-            <div class="logo"><img src="img/logo1.png"  alt="アンドキャットのロゴです"></div>
-            <div class="box box1"><a href="#" target="_blank">アンドキャット<br>とは</a></div>
-            <div class="box box2"><ul><li><img src="img/serch.png"></li><li><a href="#">保護猫を探す</li></div>
-            <div class="box box3"><ul><li><img src="img/serch.png"></li><li><a href="#">譲渡会<br>イベントを探す</a></li></div>
-            <div class="box box4"><ul><li><img src="img/hogoneko.png"></li><li><a href="#">保護猫団体の方へ</a></li></div>
+                @if($user->admin_confirmation === 1)
+                <div class="box box4"><ul><li><img src="/img/hogoneko.png"></li>
+                    <li><a><a href="{{ url('dantai') }}">保護猫団体の方へ</a></li><li><p>登録団体専用ページです</p></li></div>
+                @else
+                <div class="circle box5"><ul><li><img src="/img/people1.png"></li>
+                    <a href="{{ url('home') }}"></a></ul></div>
+                @endif
+
         </div>
 
         <div class="container-main">
-                <div class="logomoji2"><img src="img/logomoji.png"><br>アンドキャットが<br>できること</div>
-                {{-- <div class="name">アンドキャットができること</div> --}}
+                <div class="logomoji2"><img src="/img/logomoji.png"><br>アンドキャットが<br>できること</div>
 
                 <div class="word">
                     <a>アンドキャットは、保護猫 と迎えたい人を結ぶマッチングサイトです。<br>
                     保護団体さまも応募者さまも、募集登録された犬猫たちに素敵な家族が見つかるよう、情報発信をお手伝いします。</a>
-                <ul>
-                    <li>
-                    保護団体さまと里親を希望される方のコミュニケーションは、アンドキャットのチャット機能を通じて行うことができます。
-                    </li>
-                    <li>
-                    募集中の猫が一覧で見られるだけでなく、イベント情報の発信や、団体のさまの活動紹ページとしてご利用していただくことも可能です。
-                    </li>
-                </ul>
-            </div>
-    </div>
+                    <ul>
+                        <li>
+                        保護団体さまと里親を希望される方のコミュニケーションは、アンドキャットのチャット機能を通じて行うことができます。
+                        </li>
+                        <li>
+                        募集中の猫が一覧で見られるだけでなく、イベント情報の発信や、団体のさまの活動紹ページとしてご利用していただくことも可能です。
+                        </li>
+                    </ul>
+                </div>
+        </div>
 
        <div class="container-text" >
         <div class="title-box2">
@@ -108,10 +114,6 @@
                 書類審査・お見合いの日程調整・トライアルの調整を行ってください。また、里親希望の方へは、応募フォームから申し込みが入ると、登録したメールアドレスに応募完了のお知らせメールが送信されます。 </p>
           </div>
        </div>
-
-
-
-
 
 
         <div class="footer">
