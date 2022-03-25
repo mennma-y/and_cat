@@ -3,7 +3,7 @@
 @section('main')
 <div class="register-box">
     <h3>保護猫編集</h3>
-    <form action="/admin/cat/edit" method="post">
+    <form action="/admin/cat/edit" method="post" enctype="multipart/form-data">
         @csrf
         <input type="hidden" name="id" value="{{ $cat->id }}">
 
@@ -43,7 +43,7 @@
             <label for="age" class="form-label">年齢</label>
             <div class="custom-box">
                 <select name="age" id="age" class="form-select">
-                    <option value="" selected>{{ $cat->cat_age }}</option>
+                    <option value="{{ $cat->age }}" selected>{{ $cat->cat_age }}</option>
                     <option value="1">0ヶ月</option>
                     <option value="2">1ヶ月</option>
                     <option value="3">2ヶ月</option>
@@ -92,7 +92,7 @@
             <label for="area" class="form-label">譲渡エリア</label>
             <div class="custom-box">
                 <select name="area" id="area" class="form-select">
-                    <option value="" selected>{{ $cat->area }}</option>
+                    <option value="{{ $cat->area }}" selected>{{ $cat->area }}</option>
                     <option value="北海道">北海道</option>
                     <option value="青森県">青森県</option>
                     <option value="岩手県">岩手県</option>

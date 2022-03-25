@@ -59,26 +59,31 @@
     <div class="profile-text">
         <p class="main">●自己紹介</p>
         <p>{{ $cat->introduction }}</p>
-        <a href="#">
+        <!-- <a href="#">
             <div class="user-home">
                 <p>保護団体のHPへ</p>
                 <div class="black-cat">
                     <img src="{{ asset('/img/cat_black.png') }}" alt="黒猫アイコン">
                 </div>
             </div>
-        </a>
+        </a> -->
     </div>
 </div>
 <div class="green-box">
     <div class="arrow"></div>
+
     @if($user->admin_confirmation === 1 && $user->id === $cat->user_id)
     <div class="next-form">
         <a href="/admin/cat/edit/{{ $cat->id }}">編集</a>
     </div>
     @else
     <div class="next-form">
-        <a href="#">応募フォームへ</a>
+        <a href="/form/{{$cat->id}}">応募フォームへ</a>
     </div>
     @endif
+
 </div>
+
 @endsection
+
+@include('question')

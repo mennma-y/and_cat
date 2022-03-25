@@ -74,6 +74,7 @@
                 @endif
 
         </div>
+@yield('child')
 
 </body>
 

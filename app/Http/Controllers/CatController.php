@@ -5,9 +5,9 @@ namespace App\Http\Controllers;
 use App\Cat;
 use App\Image;
 use App\Like;
-
+use App\Question;
 use Illuminate\Support\Facades\Auth;
-
+use App\Validator;
 use Illuminate\Support\Str;
 
 use Illuminate\Http\Request;
@@ -89,7 +89,7 @@ class CatController extends Controller
 
     /**
      *  保護猫プロフィール表示
-     *
+     *  質問表示
      *  @param Request $request
      *  @return Response
      */
@@ -97,13 +97,48 @@ class CatController extends Controller
     {
         $user = Auth::user();
         $cat = Cat::find($request->id);
+     
+        $questions = Question::join('users', 'questions.user_id', '=', 'users.id')
+        ->join('cats', 'cats.id', 'questions.cat_id')
+        ->select('users.name', 'questions.question', 'questions.reply', 'questions.id', 'cats.user_id', 'questions.created_at')
+        ->orderby('questions.created_at', 'desc')
+        ->paginate(5);
 
         return view('main.cat_profile', [
             'user' => $user,
             'cat' => $cat,
+            'questions' => $questions,
         ]);
     }
+    /**
+     *  質問の保存
+     *  @param Request $request
+     *  @return Response
+     */
+    public function store(Request $request)
+    {
+     
+        $rules = [
+            'question' => 'required|string|max:255',
 
+        ];
+        $message = [
+            'question.required' => '質問を入力してください',
+            'question.max:255' => '文字数に制限があります',
+        ];
+        $validator = Validator::make($request->all(), $rules, $message);
+        if ($validator->fails()) {
+            return redirect('/cat/profile/'.$request->id)
+                ->withErrors($validator);
+        }
+        $questions = new Question;
+        $questions->user_id = Auth::user()->id;
+        $questions->cat_id = $request->id;
+        $questions->question = $request->input('question');
+        $questions->save();
+        
+        return redirect('/cat/profile/'.$request->id);
+    }
     /**
      *  保護猫いいね！済表示
      *
@@ -123,8 +158,43 @@ class CatController extends Controller
             'user' => $user,
         ]);
     }
+      /**
+     *  質問のリプライ保存
+     *  @param Request $request
+     *  @return Response
+     */
+    public function replystore(Request $request)
+    { 
+        $rules = [
+            'reply' => 'required|string|max:255',
 
-
+        ];
+        $message = [
+            'reply.required' => '返信を入力してください',
+            'reply.max:255' => '文字数に制限があります',
+        ];
+        $validator = Validator::make($request->all(), $rules, $message);
+        if ($validator->fails()) {
+            return redirect('/cat/profile/'.$request->reid)
+                ->withErrors($validator);
+        }
+        $replys = Question::where('id', '=', $request->id)->first();
+        $replys->reply = $request->reply;
+        $replys->save();
+  
+        return redirect('/cat/profile/'.$request->reid);
+    }
+    /**
+     *  質問の削除
+     *  @param Request $request
+     *  @return Response
+     */
+    public function delete(Request $request)
+    {
+        $questions = Question::where('id', '=', $request->id)->first();
+        $questions->delete();
+        return redirect( '/cat/profile/'.$request->reid);
+    }
 
     // 保護猫団体ページ
 
@@ -210,6 +280,7 @@ class CatController extends Controller
 
         $this->validate($request, Cat::$rules);
         $cat = Cat::find($request->id);
+        $cat->name = $request->name;
         $cat->type = $request->type;
         $cat->gender = $request->gender;
         $cat->age = $request->age;
@@ -219,11 +290,14 @@ class CatController extends Controller
 
         if(isset($request->age_about)){
             $cat->age_about = 1;
+        }else{
+            $cat->age_about = 0;
         }
 
         $cat->save();
 
-        return redirect('/admin/cat/edit');
+        return back();
+        // return redirect()->route('/admin/cat/edit', [$cat]);
     }
 
     /**
