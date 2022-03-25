@@ -1,6 +1,7 @@
 @extends('head')
 
 @section('main')
+<div class="container" style="width: 900px; flex-direction:column; ">
 <div class="like-top">
     <h2>お気に入り</h2>
     <p class="page">すべて<span>（{{ $like_count }}件）</span></p>
@@ -47,6 +48,7 @@
         </div>
     </div>
     @endforeach
+</div>
 </div>
 @endif
 @endsection
