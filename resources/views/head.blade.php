@@ -42,17 +42,18 @@
 
                     <img src="{{ Auth::user()->img_url }}">
 
-                    <figcaption><a class="name">{{ Auth::user()->name }}</a>さん</figcaption></figure>
+                  <figcaption><a class="name">{{ Auth::user()->name }}</a>さん</figcaption>
+                </figure>
                    <ul>
-                    <li ><a href="{{ route('logout') }}" onclick="event.preventDefault();
-                                             document.getElementById('logout-form').submit();">
-                                {{ __('ログアウト') }}</a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" >
-                            @csrf
-                        </form>
-                    </li>
-                    <li ><a href="{{ url('user') }}" class="member">プロフィール</a></li>
-                    <li ><a href="{{ url('cat/like') }}" class="like" >☆お気に入り</a></li>
+                        <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">
+                                    {{ __('ログアウト') }}</a>
+                            <form class="d-none" id="logout-form" action="{{ route('logout') }}" method="POST" >
+                                @csrf
+                            </form>
+                        </li>
+                        <li><a href="{{ url('user') }}" class="member">プロフィール</a></li>
+                        <li><a href="{{ url('cat/like') }}" class="like" >☆お気に入り</a></li>
                    </ul>
                 </div>
         </div>
@@ -74,7 +75,8 @@
                 @endif
 
         </div>
-@yield('child')
+
+@yield('event')
 
 </body>
 
