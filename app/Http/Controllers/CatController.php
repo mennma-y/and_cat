@@ -97,6 +97,7 @@ class CatController extends Controller
      
         $questions = Question::join('users', 'questions.user_id', '=', 'users.id')
         ->join('cats', 'cats.id', 'questions.cat_id')
+        ->where('questions.cat_id','=',$request->id)
         ->select('users.name', 'questions.question', 'questions.reply', 'questions.id', 'cats.user_id', 'questions.created_at')
         ->orderby('questions.created_at', 'desc')
         ->simplepaginate(5);
