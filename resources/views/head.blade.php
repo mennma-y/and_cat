@@ -77,6 +77,8 @@
         </div>
 
 @yield('event')
+@yield('child')
+@yield('main')
 
 </body>
 

@@ -3,7 +3,7 @@
 @extends('head')
 
 @section('event')
-    <div>
+    <div class="container" style="width: 900px; flex-direction:column; ">
         <div class="event-title" style="margin-top:70px;">
                 <h4 style="text-align: center; font-weight:bold;">イベント情報一覧</h4>
         </div>

@@ -97,7 +97,7 @@ class CatController extends Controller
     {
         $user = Auth::user();
         $cat = Cat::find($request->id);
-     
+
         $questions = Question::join('users', 'questions.user_id', '=', 'users.id')
         ->join('cats', 'cats.id', 'questions.cat_id')
         ->select('users.name', 'questions.question', 'questions.reply', 'questions.id', 'cats.user_id', 'questions.created_at')
@@ -117,7 +117,7 @@ class CatController extends Controller
      */
     public function store(Request $request)
     {
-     
+
         $rules = [
             'question' => 'required|string|max:255',
 
@@ -136,7 +136,7 @@ class CatController extends Controller
         $questions->cat_id = $request->id;
         $questions->question = $request->input('question');
         $questions->save();
-        
+
         return redirect('/cat/profile/'.$request->id);
     }
     /**
@@ -164,7 +164,7 @@ class CatController extends Controller
      *  @return Response
      */
     public function replystore(Request $request)
-    { 
+    {
         $rules = [
             'reply' => 'required|string|max:255',
 
@@ -181,7 +181,7 @@ class CatController extends Controller
         $replys = Question::where('id', '=', $request->id)->first();
         $replys->reply = $request->reply;
         $replys->save();
-  
+
         return redirect('/cat/profile/'.$request->reid);
     }
     /**
@@ -206,6 +206,7 @@ class CatController extends Controller
      */
     public function catRegister(Request $request)
     {
+        // $user = Auth::user();
 
         //ファイルの保存
         if(isset($request->cat_image_main)){
@@ -252,6 +253,9 @@ class CatController extends Controller
         }
 
         return redirect('/admin/cat/register');
+        // return view('/admin/cat/register',[
+        //     'user' => $user,
+        // ]);
     }
 
     /**
