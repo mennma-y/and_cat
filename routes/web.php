@@ -42,11 +42,6 @@ Route::get('/andcat','DantaiController@andcat')->name('andcat.andcat');
 Route::get('/dantai','DantaiController@index')->name('dantai.index');
 
 
-// //ホーム画面→ 保護猫を探す ページ
-// Route::get('/search','DantaiController@cat')->name('cat.cat');
-
-
-
 Auth::routes();
 
 Route::group(['middleware'=>'auth'],function(){

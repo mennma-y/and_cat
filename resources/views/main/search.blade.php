@@ -1,6 +1,7 @@
 @extends('head')
 
 @section('main')
+<div class="container" style="width: 900px; flex-direction:column; ">
 <div class="search-top">
     <h3>絞り込み検索</h3>
     <div class="forms-box">
@@ -472,5 +473,6 @@
         @endif
     </div>
     @endforeach
+</div>
 </div>
 @endsection
