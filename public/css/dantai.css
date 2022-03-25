@@ -115,6 +115,7 @@ body .nav .pan{
     margin: 0 auto;
     display: flex;
     vertical-align: middle;
+    white-space: pre;
 }
 
 body .nav .pan a{
@@ -124,6 +125,7 @@ body .nav .pan a{
     list-style: none;
     font-size: 13px;
     padding-top: 10px;
+
 }
 
 .main-photo img{
@@ -144,7 +146,7 @@ body .nav .pan a{
     color: rgb(70, 70, 70);
     font-size: 35px;
     top: 120px;
-    right: 20%;
+    right: 33%;
 
 }
 
@@ -152,14 +154,10 @@ body .nav .pan a{
     position: absolute;
     width: 300px;
     height: 400px;
-    top: 180px;
+    top: 33%;
     left: 23%;
-
 }
 
-.select p{
-    list-style: none;
-}
 .main-photo .select .cat {
    background-color: rgba(255,255,255,0.5);
    /* border-radius: 30%; */
@@ -224,22 +222,22 @@ body .nav .pan a{
 .main-photo .select .dantai a{
     color: rgb(0, 0, 0);
     font-size: 24px;
-    list-style: none;
     margin-bottom: 2px;
+    text-decoration: none;
+
 }
 
 .main-photo .select .cat a{
 
     color: rgb(0, 0, 0);
     font-size: 24px;
-    list-style: none;
-
+    text-decoration: none;
 }
 
 .main-photo .select .info a{
     color: rgb(0, 0, 0);
     font-size: 24px;
-    list-style: none;
+    text-decoration: none;
 }
 
 .container-nav{
@@ -297,11 +295,6 @@ body .nav .pan a{
     font-weight: bold;
     font-family: "筑紫B丸ゴシック";
     width: 200px;
-
-
-    /* list-style-position: outside;
-    list-style: none; */
-
 }
 
 
@@ -404,6 +397,11 @@ body .nav .pan a{
     display: flex;
     /* text-align: center; */
 
+}
+
+.container-nav .box4 p{
+    font-size: 9px;
+    margin-left: 23px;
 }
 
 .container-nav .box4 img{

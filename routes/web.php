@@ -20,7 +20,7 @@ Route::get('/', function () {
 });
 
 
-
+//作成用
 Route::get('/home1', function () {
     return view('/home1');
 });
@@ -32,14 +32,18 @@ Route::get('/head', function () {
 Route::get('/head1', function () {
     return view('/head1');
 });
-//アンドキャットとは（説明）のページ
-Route::get('/andcat', function () {
-    return view('/andcat');
-});
-//保護猫団体のページ
-Route::get('/dantai', function () {
-    return view('/dantai');
-});
+
+
+//ホーム画面→ アンドキャットとは（説明）のページ
+Route::get('/andcat','DantaiController@andcat')->name('andcat.andcat');
+
+
+//ホーム画面→ 保護猫団体のページ
+Route::get('/dantai','DantaiController@index')->name('dantai.index');
+
+
+// //ホーム画面→ 保護猫を探す ページ
+// Route::get('/search','DantaiController@cat')->name('cat.cat');
 
 
 

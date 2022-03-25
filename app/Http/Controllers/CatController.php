@@ -49,6 +49,7 @@ class CatController extends Controller
      */
     public function getSearch(Request $request)
     {
+        $user = Auth::user();
         $area = null;
         $gender = null;
         $age_more = null;
@@ -74,12 +75,14 @@ class CatController extends Controller
                 'age_more' => $age_more,
                 'age_less' => $age_less,
                 'type' => $type,
+                'user' => $user,
             ]);
         }else{
             $cats = $query->orderBy('created_at', 'desc')->simplePaginate(50);
 
             return view('main.search', [
                 'cats' => $cats,
+                'user' => $user,
             ]);
         }
     }
@@ -152,6 +155,7 @@ class CatController extends Controller
         return view('main.like', [
             'cats' => $cats,
             'like_count' => $like_count,
+            'user' => $user,
         ]);
     }
       /**
