@@ -99,7 +99,3 @@ Route::post('/send', 'FormController@store');
 Route::post('/question_send', 'CatController@store');
 Route::post('/reply', 'CatController@replystore');
 Route::post('/delete','CatController@delete');
-// Route::post('/send', function () {
-//     echo "こんにちは";
-//     exit;
-// });

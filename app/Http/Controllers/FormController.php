@@ -14,7 +14,7 @@ class FormController extends Controller
 {
     public function index()
     {
-
+        $user = Auth::user();
         $forms = Form::Join('cats', 'forms.cat_id', '=',  'cats.id')
             ->join('users', 'forms.user_id', '=', 'users.id')
             ->where('cats.user_id',  Auth::id())
@@ -22,8 +22,11 @@ class FormController extends Controller
             'forms.telephone','cats.name as cname','cats.age as cage','cats.type as ctype','cats.area as carea', 'forms.created_at')
             ->orderby('forms.created_at', 'desc')
             ->paginate(5);
-      
-        return view('admin', compact('forms'));
+
+        return view('admin', [
+            'user' => $user,
+            'forms' => $forms,
+        ]);
     }
     public function form(Request $request)
     {
