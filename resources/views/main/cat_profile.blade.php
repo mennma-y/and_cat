@@ -59,14 +59,14 @@
     <div class="profile-text">
         <p class="main">●自己紹介</p>
         <p>{{ $cat->introduction }}</p>
-        <a href="#">
+        <!-- <a href="#">
             <div class="user-home">
                 <p>保護団体のHPへ</p>
                 <div class="black-cat">
                     <img src="{{ asset('/img/cat_black.png') }}" alt="黒猫アイコン">
                 </div>
             </div>
-        </a>
+        </a> -->
     </div>
 </div>
 <div class="green-box">
