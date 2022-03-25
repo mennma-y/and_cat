@@ -99,7 +99,7 @@ class CatController extends Controller
         ->join('cats', 'cats.id', 'questions.cat_id')
         ->select('users.name', 'questions.question', 'questions.reply', 'questions.id', 'cats.user_id', 'questions.created_at')
         ->orderby('questions.created_at', 'desc')
-        ->paginate(5);
+        ->simplepaginate(5);
 
         return view('main.cat_profile', [
             'user' => $user,
@@ -114,14 +114,14 @@ class CatController extends Controller
      */
     public function store(Request $request)
     {
-     
+        
         $rules = [
             'question' => 'required|string|max:255',
 
         ];
         $message = [
             'question.required' => '質問を入力してください',
-            'question.max:255' => '文字数に制限があります',
+            'question.max' => '文字数に制限があります',
         ];
         $validator = Validator::make($request->all(), $rules, $message);
         if ($validator->fails()) {
@@ -167,7 +167,7 @@ class CatController extends Controller
         ];
         $message = [
             'reply.required' => '返信を入力してください',
-            'reply.max:255' => '文字数に制限があります',
+            'reply.max' => '文字数に制限があります',
         ];
         $validator = Validator::make($request->all(), $rules, $message);
         if ($validator->fails()) {

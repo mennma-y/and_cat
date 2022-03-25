@@ -10,6 +10,7 @@
 
 <div class="question-box">
 
+
     <h2 class="question-title">質問はこちらから</h2>
     @if ($errors->any())
     <div class="alertdanger">
@@ -20,18 +21,18 @@
         </ul>
     </div>
     @endif
-  
-    <form action="/question_send" method="post">
-      
+
+    <form action="/question_send" method="post" id="queform">
+
         @csrf
         <textarea name="question" id="" cols="50" rows="4" class="question"></textarea>
         <input type="hidden" name="id" value="{{$cat->id}}">
         <div class="submit-question">
-            <input type="submit" value="質問する" class="question-submit">
+            <input type="submit" value="質問する" class="question-submit" id="qubtn">
         </div>
 
     </form>
-   
+
     @foreach($questions as $question)
     <div class="card">
         <div class="board">
@@ -44,14 +45,14 @@
                     <input type="text" name="reply">
                 </div>
                 <div class="submit">
-                    <input type="submit" value="返信" >
+                    <input type="submit" value="返信">
                 </div>
             </form>
             @endif
-           
-            <p ><span class="question-user">「{{$question -> name}}」</span>さんからの質問です</p>
+
+            <p><span class="question-user">「{{$question -> name}}」</span>さんからの質問です</p>
             <p class="questio-title">「{{$question -> question}}」</p>
-       
+
             @if(Auth::id()==$question->user_id)
             <form action="/delete" method="post">
                 @csrf
@@ -73,8 +74,16 @@
     </div>
     @endforeach
     <div class="paginate">
-        {{ $questions->links() }}
+        {{ $questions->onEachSide(3)->links() }}
     </div>
 </div>
+<script>
 
+
+    document.getElementById('qubtn').addEventListener('click', () => {
+       
+        document.getElementById('qubtn').disabled=true;
+        document.getElementById('queform').submit();
+    });
+</script>
 @endsection
