@@ -200,6 +200,21 @@ class CatController extends Controller
     // 保護猫団体ページ
 
     /**
+     *  保護猫登録画面表示
+     *
+     *  @param Request $request
+     *  @return Response
+     */
+    public function getCatRegister(Request $request)
+    {
+        $user = Auth::user();
+
+        return view('admin.cat_register', [
+            'user' => $user,
+        ]);
+    }
+
+    /**
      *  保護猫登録
      *
      *  @param Request $request
