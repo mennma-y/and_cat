@@ -30,7 +30,7 @@
             <p>〜携帯電話〜</p>
             <input type="text" name="telephone" value="{{ old('telephone')}}"><br>
             <p>〜備考〜</p>
-            <textarea name="memo" id="" cols="40" rows="10" class="memo" value="{{ old('memo')}}"></textarea>
+            <textarea name="memo" id="" cols="40" rows="10" class="memo" >{{ old('memo')}}</textarea>
             <input type="hidden" name="forid" value="{{old('forid',$id)}}">
             <input type="hidden" name="id" value="{{$cat->id}}">
             <div class="submit">

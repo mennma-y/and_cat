@@ -14,7 +14,7 @@ class UsersTableSeeder extends Seeder
         \DB::table('users')->insert([
             [
                 'id' => '1',
-                'name' => '一般太郎',
+                'name' => 'テストデータ1(一般)',
                 'email' => 'a@g.taro',
                 'password' => Hash::make('tarotaro'),
                 'admin_confirmation' =>'0',
@@ -24,7 +24,7 @@ class UsersTableSeeder extends Seeder
              ],
              [
                 'id' => '2',
-                'name' => '団体太郎',
+                'name' => 'テストデータ2(団体)',
                 'email' => 'a@g.dantaitaro',
                 'password' => Hash::make('tarotaro'),
                 'admin_confirmation' =>'1',
@@ -34,7 +34,7 @@ class UsersTableSeeder extends Seeder
              ],
              [
                 'id' => '3',
-                'name' => '団体次郎',
+                'name' => 'テストデータ3(団体)',
                 'email' => 'a@g.dantaijiro',
                 'password' => Hash::make('tarotaro'),
                 'admin_confirmation' =>'1',

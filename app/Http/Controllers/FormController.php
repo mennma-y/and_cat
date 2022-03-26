@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Form;
-
+use Illuminate\Support\Facades\Validator;
 use App\Cat;
 use Dotenv\Validator as DotenvValidator;
-use Validator;
+
 
 class FormController extends Controller
 {
@@ -21,19 +21,22 @@ class FormController extends Controller
             ->select('users.email', 'forms.id', 'forms.name', 'cats.user_id', 'forms.memo', 
             'forms.telephone','cats.name as cname','cats.age as cage','cats.type as ctype','cats.area as carea', 'forms.created_at')
             ->orderby('forms.created_at', 'desc')
-            ->paginate(5);
+            ->simplepaginate(5);
 
         return view('admin', [
             'user' => $user,
             'forms' => $forms,
         ]);
     }
+
     public function form(Request $request)
     {
+        $user = Auth::user();
         $cat = Cat::find($request->id);
         return view('form',[
             'id'=>$request->id,
             'cat' => $cat,
+            'user' =>$user,
         ]);
     }
     public function store(Request $request)

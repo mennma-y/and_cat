@@ -25,7 +25,7 @@
     <form action="/question_send" method="post" id="queform">
 
         @csrf
-        <textarea name="question" id="" cols="50" rows="4" class="question"></textarea>
+        <textarea name="question" id="" cols="50" rows="4" class="question" >{{ old('question')}}</textarea>
         <input type="hidden" name="id" value="{{$cat->id}}">
         <div class="submit-question">
             <input type="submit" value="質問する" class="question-submit" id="qubtn">

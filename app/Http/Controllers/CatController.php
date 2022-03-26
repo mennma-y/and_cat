@@ -7,7 +7,8 @@ use App\Image;
 use App\Like;
 use App\Question;
 use Illuminate\Support\Facades\Auth;
-use App\Validator;
+
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 
 use Illuminate\Http\Request;
@@ -130,7 +131,8 @@ class CatController extends Controller
         $validator = Validator::make($request->all(), $rules, $message);
         if ($validator->fails()) {
             return redirect('/cat/profile/'.$request->id)
-                ->withErrors($validator);
+                ->withErrors($validator)
+                ->withInput();
         }
         $questions = new Question;
         $questions->user_id = Auth::user()->id;
