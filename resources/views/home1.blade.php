@@ -35,7 +35,7 @@
 <body>
 
         <div class="container">
-                <div class="logomoji"><ruby><img src="img/logomoji.png" alt="アンドキャットのロゴです"><rt>アンドキャット</rt></ruby></div>
+                <div class="logomoji"><ruby><img src="/img/logomoji.png" alt="アンドキャットのロゴです"><rt>アンドキャット</rt></ruby></div>
                 <div class="box text1"><a>猫の里親募集情報サイト</a><br><p>保護猫と飼い主をつなぐ</p></div>
                 <div class="box text2">
                 <figure>
@@ -60,16 +60,24 @@
         <div class="nav"><div class="pan"><a href="{{ url('home') }} ">ホーム</a></div></div>
 
          <div class="main-photo">
-         <img src="img/main1.jpg" alt="">
+         <img src="/img/main1.jpg" alt="">
          <h1>保護猫を我が家に<br>ねこと暮らす</h1>
          </div>
 
         <div class="container-nav">
-            <div class="logo"><img src="img/logo1.png"  alt="アンドキャットのロゴです"></div>
+            <div class="logo"><a href="{{ url('home') }}"><img src="/img/logo1.png"  alt="アンドキャットのロゴです"></div>
             <div class="box box1"><a href="{{ url('andcat') }} ">アンドキャット<br>とは</a></div>
-            <div class="box box2"><ul><li><img src="img/serch.png"></li><li><a href="{{ url('/search') }}">保護猫を探す</li></div>
-            <div class="box box3"><ul><li><img src="img/serch.png"></li><li><a href="{{ url('event') }}">譲渡会<br>イベントを探す</a></li></div>
-            <div class="box box4"><ul><li><img src="img/hogoneko.png"></li><li><a href="{{ url('dantai') }}">保護猫団体の方へ</a></li><li><p>登録団体専用ページです</p></li></div>
+            <div class="box box2"><ul><li><img src="/img/serch.png"></li><li><a href="{{ url('search') }}">保護猫を探す</li></div>
+            <div class="box box3"><ul><li><img src="/img/serch.png"></li><li><a href="{{ url('event') }}">譲渡会<br>イベントを探す</a></li></div>
+
+                @if($user->admin_confirmation === 1)
+                <div class="box box4"><ul><li><img src="/img/hogoneko.png"></li>
+                    <li><a><a href="{{ url('dantai') }}">保護猫団体の方へ</a></li><li><p>登録団体専用ページです</p></li></div>
+                @else
+                <div class="circle box5"><ul><li><img src="/img/people1.png"></li>
+                    <a href="{{ url('home') }}"></a></ul></div>
+                @endif
+
         </div>
 
         <div class="main">

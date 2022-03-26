@@ -60,7 +60,6 @@
                         </div>
 
                         <div class="form-group row" style="margin-bottom: 10px; justify-content: center;">
-                            {{-- <label for="password" class="col-md-4 col-form-label text-md-right"></label> --}}
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror"
@@ -75,7 +74,6 @@
                         </div>
 
                         <div class="form-group row" style="margin-bottom: 10px; justify-content: center;">
-                            {{-- <label for="password-confirm" class="col-md-4 col-form-label text-md-right"></label> --}}
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control"
@@ -84,15 +82,15 @@
                         </div>
 
                         <div class="form-group row" style="margin-top:15px; margin-bottom:0; justify-content: center; vertical-align:middle">
-                            <div class="col-md-6" style="">
-                                <input type="radio" style=" height: 10px; margin-left:10px; margin-right:10px; transform:scale(2.0);" id="admin-comfirmation" name="admin_confirmation" value="admin_confirmation">
-                                <label for="admin-confirmation" class="" style="font-size:16px; padding-right:0; padding-top:12px ;" >保護猫団体の方はこちら</label>
-                            </div>
-                                {{-- <input type="checkbox" value="2" style="transform:scale(2.0);height: 10px;">
+                            <div class="col-md-6" style="display:flex;">
+                                <input type="checkbox" name="admin_confirmation" value="admin_confirmation" style="transform:scale(2.0);height: 10px;margin-top:8%">
                                 <label for="admin-confirmation" class="" style="font-size:14px; margin-left:10px; padding-right:0; padding-top:12px ;" >保護猫団体の方はこちらをチェックしてください
-                                </label> --}}
+                                </label>
 
-                            {{-- <label for="admin-confirmation" class="col-md-4 col-form-label text-md-right;"> --}}
+                                <!--<input type="radio" style=" height: 10px; margin-left:10px; margin-right:10px; transform:scale(2.0);" id="admin-comfirmation" name="admin_confirmation" value="admin_confirmation">
+                                <label for="admin-confirmation" class="" style="font-size:16px; padding-right:0; padding-top:12px ;" >保護猫団体の方はこちら</label>-->
+                            </div>
+
                         </div>
 
                         <div class="form-group row mb-0">

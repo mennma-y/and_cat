@@ -1,6 +1,7 @@
-@extends('home1')
+@extends('head')
 
 @section('main')
+<div class="container" style="width: 900px; flex-direction:column; ">
 <div class="search-top">
     <h3>絞り込み検索</h3>
     <div class="forms-box">
@@ -412,7 +413,7 @@
     <p>新着の保護猫</p>
 </div>
 <div class="cats-box">
-    @foreach($cats as $cat)  
+    @foreach($cats as $cat)
     <div class="cat-box">
         <a href="/cat/profile/{{ $cat->id }}">
             <div class="cat-image">
@@ -472,5 +473,6 @@
         @endif
     </div>
     @endforeach
+</div>
 </div>
 @endsection
