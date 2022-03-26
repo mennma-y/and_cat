@@ -73,9 +73,7 @@ Route::get('/cat/like', 'CatController@getCatLike');
 Route::get('/search', 'CatController@getSearch');
 
 // 保護猫団体閲覧ページ
-Route::get('/admin/cat/register', function () {
-    return view('admin.cat_register');
-});
+Route::get('/admin/cat/register', 'CatController@getCatRegister');
 
 Route::post('/admin/cat/register', 'CatController@catRegister');
 
