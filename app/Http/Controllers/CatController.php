@@ -271,6 +271,7 @@ class CatController extends Controller
 
         return view('admin.cat_edit', [
             'cat' => $cat,
+
         ]);
     }
 

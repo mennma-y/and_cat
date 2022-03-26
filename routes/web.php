@@ -88,8 +88,8 @@ Route::post('/admin/cat/delete', 'CatController@catDelete');
 
 
 
-Route::get('/form/{id}', 'FormController@form');
-Route::get('/admin', 'FormController@index');
+Route::get('/form/{id}', 'FormController@form')->middleware('auth');
+Route::get('/admin', 'FormController@index')->middleware('auth');
 Route::post('/send', 'FormController@store');
 Route::post('/question_send', 'CatController@store');
 Route::post('/reply', 'CatController@replystore');
