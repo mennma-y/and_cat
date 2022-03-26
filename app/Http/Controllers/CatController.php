@@ -7,7 +7,8 @@ use App\Image;
 use App\Like;
 use App\Question;
 use Illuminate\Support\Facades\Auth;
-use App\Validator;
+
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 
 use Illuminate\Http\Request;
@@ -100,9 +101,10 @@ class CatController extends Controller
 
         $questions = Question::join('users', 'questions.user_id', '=', 'users.id')
         ->join('cats', 'cats.id', 'questions.cat_id')
+        ->where('questions.cat_id','=',$request->id)
         ->select('users.name', 'questions.question', 'questions.reply', 'questions.id', 'cats.user_id', 'questions.created_at')
         ->orderby('questions.created_at', 'desc')
-        ->paginate(5);
+        ->simplepaginate(5);
 
         return view('main.cat_profile', [
             'user' => $user,
@@ -124,12 +126,13 @@ class CatController extends Controller
         ];
         $message = [
             'question.required' => '質問を入力してください',
-            'question.max:255' => '文字数に制限があります',
+            'question.max' => '文字数に制限があります',
         ];
         $validator = Validator::make($request->all(), $rules, $message);
         if ($validator->fails()) {
             return redirect('/cat/profile/'.$request->id)
-                ->withErrors($validator);
+                ->withErrors($validator)
+                ->withInput();
         }
         $questions = new Question;
         $questions->user_id = Auth::user()->id;
@@ -171,7 +174,7 @@ class CatController extends Controller
         ];
         $message = [
             'reply.required' => '返信を入力してください',
-            'reply.max:255' => '文字数に制限があります',
+            'reply.max' => '文字数に制限があります',
         ];
         $validator = Validator::make($request->all(), $rules, $message);
         if ($validator->fails()) {
@@ -285,6 +288,7 @@ class CatController extends Controller
 
         return view('admin.cat_edit', [
             'cat' => $cat,
+
         ]);
     }
 
