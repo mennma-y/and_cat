@@ -27,7 +27,7 @@ class QuestionController extends Controller
         ];
         $message = [
             'question.required' => '質問を入力してください',
-            'question.max:255' => '文字数に制限があります',
+            'question.max:255'=>'メッセージは:max文字以内で入力してください。',
         ];
         $validator = Validator::make($request->all(), $rules, $message);
         if ($validator->fails()) {
