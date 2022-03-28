@@ -1,4 +1,5 @@
 @extends('head')
+@section('title','保護猫投稿フォーム')
 
 @section('main')
 <div class="register-box" style="width: 900px">
