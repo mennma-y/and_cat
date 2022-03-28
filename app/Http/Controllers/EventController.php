@@ -27,7 +27,7 @@ class EventController extends Controller
         $event = Event::find($id);   
         
 
-        return view('event.event_detail')->with(['event'=>$event])->with(['events'=>$events]); 
+        return view('event.event_detail')->with(['event'=>$event])->with(['events'=>$events]);
     }  
 
     public function create()
