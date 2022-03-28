@@ -29,14 +29,9 @@ Route::get('/head', function () {
     return view('/head');
 });
 
-Route::get('/head1', function () {
-    return view('/head1');
-});
-
 
 //ホーム画面→ アンドキャットとは（説明）のページ
 Route::get('/andcat','DantaiController@andcat')->name('andcat.andcat');
-
 
 //ホーム画面→ 保護猫団体のページ
 Route::get('/dantai','DantaiController@index')->name('dantai.index');

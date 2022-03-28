@@ -4,7 +4,7 @@
 <div class="image-box">
     <div class="image-main">
         <div class="image">
-            <img src="{{ Storage::url($cat->catImageMain()->image_path) }}" class="cat-main" alt="メインフォト">
+            <img src="{{ Storage::url(optional($cat->catImageMain())->image_path) }}" class="cat-main" alt="メインフォト">
         </div>
     </div>
     <div class="image-sub-box">
