@@ -38,7 +38,7 @@
 
           <div class="container" style="display:flex; justify-content: space-between;">
               <!-- Side Of Navbar -->
-                <div class="box b1" style="width: 600px"><img src="img/logomoji.png"; style="width:14%; height:auto; margin-left:10px;" alt="アンドキャットのロゴです" ></div>
+                <div class="box b1" style="width: 600px"><a href="{{url('home')}}"><img src="img/logomoji.png"; style="width:14%; height:auto; margin-left:10px;" alt="アンドキャットのロゴです" ></a></div>
                 <div class="box b2" style="margin:0 auto; " >
                     <ul style="margin-bottom:0px; display:flex; flex-direction:row; justify-content: space-between;">
                     <!-- Authentication Links -->
