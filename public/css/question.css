@@ -17,11 +17,13 @@ h2 {
     border-radius: 60px;
 
 }
-.paginate{
-margin-left: 87%;
-
+.paginate li a{
+background-color: #84D9D0;
+color: white;
 }
-
+.paginate{
+    margin-left: 81%;
+}
 .question-box {
     text-align: center;
     background-color: #FAE7F6;

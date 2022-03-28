@@ -7,7 +7,8 @@ use App\Image;
 use App\Like;
 use App\Question;
 use Illuminate\Support\Facades\Auth;
-use App\Validator;
+
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 
 use Illuminate\Http\Request;
@@ -49,6 +50,7 @@ class CatController extends Controller
      */
     public function getSearch(Request $request)
     {
+        $user = Auth::user();
         $area = null;
         $gender = null;
         $age_more = null;
@@ -74,12 +76,14 @@ class CatController extends Controller
                 'age_more' => $age_more,
                 'age_less' => $age_less,
                 'type' => $type,
+                'user' => $user,
             ]);
         }else{
             $cats = $query->orderBy('created_at', 'desc')->simplePaginate(50);
 
             return view('main.search', [
                 'cats' => $cats,
+                'user' => $user,
             ]);
         }
     }
@@ -94,12 +98,13 @@ class CatController extends Controller
     {
         $user = Auth::user();
         $cat = Cat::find($request->id);
-     
+
         $questions = Question::join('users', 'questions.user_id', '=', 'users.id')
         ->join('cats', 'cats.id', 'questions.cat_id')
+        ->where('questions.cat_id','=',$request->id)
         ->select('users.name', 'questions.question', 'questions.reply', 'questions.id', 'cats.user_id', 'questions.created_at')
         ->orderby('questions.created_at', 'desc')
-        ->paginate(5);
+        ->simplepaginate(5);
 
         return view('main.cat_profile', [
             'user' => $user,
@@ -114,26 +119,27 @@ class CatController extends Controller
      */
     public function store(Request $request)
     {
-     
+
         $rules = [
             'question' => 'required|string|max:255',
 
         ];
         $message = [
             'question.required' => '質問を入力してください',
-            'question.max:255' => '文字数に制限があります',
+            'question.max' => '文字数に制限があります',
         ];
         $validator = Validator::make($request->all(), $rules, $message);
         if ($validator->fails()) {
             return redirect('/cat/profile/'.$request->id)
-                ->withErrors($validator);
+                ->withErrors($validator)
+                ->withInput();
         }
         $questions = new Question;
         $questions->user_id = Auth::user()->id;
         $questions->cat_id = $request->id;
         $questions->question = $request->input('question');
         $questions->save();
-        
+
         return redirect('/cat/profile/'.$request->id);
     }
     /**
@@ -152,6 +158,7 @@ class CatController extends Controller
         return view('main.like', [
             'cats' => $cats,
             'like_count' => $like_count,
+            'user' => $user,
         ]);
     }
       /**
@@ -160,14 +167,14 @@ class CatController extends Controller
      *  @return Response
      */
     public function replystore(Request $request)
-    { 
+    {
         $rules = [
             'reply' => 'required|string|max:255',
 
         ];
         $message = [
             'reply.required' => '返信を入力してください',
-            'reply.max:255' => '文字数に制限があります',
+            'reply.max' => '文字数に制限があります',
         ];
         $validator = Validator::make($request->all(), $rules, $message);
         if ($validator->fails()) {
@@ -177,7 +184,7 @@ class CatController extends Controller
         $replys = Question::where('id', '=', $request->id)->first();
         $replys->reply = $request->reply;
         $replys->save();
-  
+
         return redirect('/cat/profile/'.$request->reid);
     }
     /**
@@ -195,6 +202,21 @@ class CatController extends Controller
     // 保護猫団体ページ
 
     /**
+     *  保護猫登録画面表示
+     *
+     *  @param Request $request
+     *  @return Response
+     */
+    public function getCatRegister(Request $request)
+    {
+        $user = Auth::user();
+
+        return view('admin.cat_register', [
+            'user' => $user,
+        ]);
+    }
+
+    /**
      *  保護猫登録
      *
      *  @param Request $request
@@ -202,6 +224,7 @@ class CatController extends Controller
      */
     public function catRegister(Request $request)
     {
+        // $user = Auth::user();
 
         //ファイルの保存
         if(isset($request->cat_image_main)){
@@ -248,6 +271,9 @@ class CatController extends Controller
         }
 
         return redirect('/admin/cat/register');
+        // return view('/admin/cat/register',[
+        //     'user' => $user,
+        // ]);
     }
 
     /**
@@ -262,6 +288,7 @@ class CatController extends Controller
 
         return view('admin.cat_edit', [
             'cat' => $cat,
+
         ]);
     }
 

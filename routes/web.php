@@ -20,7 +20,7 @@ Route::get('/', function () {
 });
 
 
-
+//作成用
 Route::get('/home1', function () {
     return view('/home1');
 });
@@ -32,15 +32,14 @@ Route::get('/head', function () {
 Route::get('/head1', function () {
     return view('/head1');
 });
-//アンドキャットとは（説明）のページ
-Route::get('/andcat', function () {
-    return view('/andcat');
-});
-//保護猫団体のページ
-Route::get('/dantai', function () {
-    return view('/dantai');
-});
 
+
+//ホーム画面→ アンドキャットとは（説明）のページ
+Route::get('/andcat','DantaiController@andcat')->name('andcat.andcat');
+
+
+//ホーム画面→ 保護猫団体のページ
+Route::get('/dantai','DantaiController@index')->name('dantai.index');
 
 
 Auth::routes();
@@ -73,9 +72,7 @@ Route::get('/cat/like', 'CatController@getCatLike');
 Route::get('/search', 'CatController@getSearch');
 
 // 保護猫団体閲覧ページ
-Route::get('/admin/cat/register', function () {
-    return view('admin.cat_register');
-});
+Route::get('/admin/cat/register', 'CatController@getCatRegister');
 
 Route::post('/admin/cat/register', 'CatController@catRegister');
 
@@ -88,11 +85,14 @@ Route::post('/admin/cat/edit', 'CatController@catEdit');
 Route::post('/admin/cat/delete', 'CatController@catDelete');
 
 
-
-Route::get('/form/{id}', 'FormController@form');
-Route::get('/admin', 'FormController@index');
+//保護猫応募機能
+Route::get('/form/{id}', 'FormController@form')->middleware('auth');
 Route::post('/send', 'FormController@store');
+
+//保護猫応募者一覧ページ
+Route::get('/admin', 'FormController@index')->middleware('auth');
+
+//保護猫質問機能
 Route::post('/question_send', 'CatController@store');
 Route::post('/reply', 'CatController@replystore');
 Route::post('/delete','CatController@delete');
-

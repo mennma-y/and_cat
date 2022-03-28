@@ -28,6 +28,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
+
 </head>
 
 <body style="background-image: url(/img/login.jpg);background-size: cover;">
