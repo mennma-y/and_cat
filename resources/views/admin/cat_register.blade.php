@@ -1,7 +1,7 @@
-@extends('home1')
+@extends('head')
 
 @section('main')
-<div class="register-box">
+<div class="register-box" style="width: 900px">
     <h3>保護猫新規登録</h3>
     <form action="/admin/cat/register" method="post" enctype="multipart/form-data">
         @csrf
@@ -28,7 +28,7 @@
             <label for="type" class="form-label">種類</label>
             <input type="text" class="form-control" name="type" id="type" placeholder="例）雑種" value="{{ old('type') }}" required>
         </div>
-        
+
         <div class="form-group">
             <p>性別</p>
             <div class="gender">
@@ -42,7 +42,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="form-group">
             <label for="age" class="form-label">年齢</label>
             <div class="custom-box">
@@ -87,7 +87,7 @@
                 <input type="checkbox" name="age_about" id="about">
             </div>
         </div>
-        
+
         <div class="form-group">
             <label for="area" class="form-label">譲渡エリア</label>
             <div class="custom-box">
@@ -148,7 +148,7 @@
             <label for="slogan" class="form-label">キャッチコピー</label>
             <input type="text" class="form-control" name="slogan" id="slogan" placeholder="例）元気いっぱいの男の子！"  value="{{ old('slogan') }}" required>
         </div>
-        
+
         <div class="form-group">
             <label for="introduction" class="form-label">自己紹介文</label>
             <textarea name="introduction" class="form-control" id="introduction" required>{{ old('introduction') }}</textarea>
