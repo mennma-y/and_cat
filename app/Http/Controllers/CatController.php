@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 use Illuminate\Http\Request;
 
@@ -244,6 +245,10 @@ class CatController extends Controller
 
             $cat->save();
 
+            if(!file_exists('/public/storage/cat_images')){
+                Storage::makeDirectory('/public/cat_images');
+            }
+
             $cat_image_main = $request->file('cat_image_main');
             $image_name = Str::random(20).'.'.$cat_image_main->getClientOriginalExtension();
             \Image::make($cat_image_main)->resize(400, null, function ($constraint) {$constraint->aspectRatio();})->save(public_path('storage/cat_images/' . $image_name));
@@ -254,6 +259,10 @@ class CatController extends Controller
             $image->save();
 
             if(isset($request->cat_image)){
+                if(!file_exists('/public/storage/s')){
+                    Storage::makeDirectory('/public/s');
+                }
+                
                 $cat_images = $request->file('cat_image');
                 foreach($cat_images as $cat_image){
                     $image_name = Str::random(20).'.'.$cat_image->getClientOriginalExtension();
