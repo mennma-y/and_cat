@@ -46,7 +46,7 @@ class Cat extends Model
         }
     }
 
-    public function scopeGender($query, $str)
+    public function scopeGender($query, $str)  
     {
         if($str != ''){
             return $query->where('gender', $str);

@@ -94,7 +94,7 @@ class RegisterController extends Controller
                 Storage::putFileAs('public/images',$request->file('image'),$fileName);       //リクエストされたファイルを$fileNameという名でpublic/imagesに保存する
                 $fullFilePath = '/storage/images/'.$fileName;
             }else{
-                $fullFilePath = '/storage/images/defaultImage.png';
+                $fullFilePath = '/img/defaultimage.png';
             }
 
 
