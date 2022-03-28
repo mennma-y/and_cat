@@ -76,11 +76,14 @@
 
         </div>
 
-        @yield('event')
-        @yield('child')
-        @yield('form')
-        @yield('main')
-        
-    </body>
+@yield('event')
+@yield('child')
+@yield('form')
+<div class="main">
+    @yield('main')
+</div>
+</body>
+
 </html>
+
 
