@@ -79,6 +79,8 @@
 @yield('event')
 @yield('child')
 @yield('form')
-@yield('main')
+<div class="main">
+    @yield('main')
+</div>
 </body>
 
