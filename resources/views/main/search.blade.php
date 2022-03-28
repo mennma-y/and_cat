@@ -417,7 +417,7 @@
     <div class="cat-box">
         <a href="/cat/profile/{{ $cat->id }}">
             <div class="cat-image">
-                <img src="{{ Storage::url($cat->catImageMain()->image_path) }}" class="cat-main" alt="メインフォト">
+                <img src="{{ Storage::url(optional($cat->catImageMain())->image_path) }}" class="cat-main" alt="メインフォト">
             </div>
         </a>
         @if($cat->gender === 0)
