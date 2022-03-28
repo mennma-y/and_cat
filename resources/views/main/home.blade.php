@@ -1,4 +1,4 @@
-@extends('head')
+@extends('home1')
 
 @section('main')
 <div class="new">
