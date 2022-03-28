@@ -5,7 +5,7 @@
 <div class="container" style="width: 900px; heigt:900px" >
     <div class="row justify-content-center" style="height: 800px;">
         <div class="col-md-8" >
-            <div class="card" style=" height: 450px;
+            <div class="card" style=" height: 460px;
                                     background-color: white;
                                     border-bottom-left-radius: 20px 20px;
                                     border-bottom-right-radius: 20px 20px;
@@ -31,7 +31,7 @@
 
 {{-- {{ Auth::user()->img_url }} --}}
 
-                        <table class="table " style=" border:solid 1px rgb(216, 216, 216); width: 60%; margin:auto;">
+                        <table class="table " style=" border:solid 1px rgb(216, 216, 216); width: 70%; margin:auto;">
                             <tr>
                             <th style="background-color: rgb(237, 253, 94);">ニックネーム</th>
                             <td style="background-color: #fff; font-size:18px;">{{$user->name}}</td>
@@ -47,7 +47,7 @@
                         {{-- table-striped --}}
 
 
-                            <div class="button" style="width: 80%;"><button type="button" class="btn" style="float: right; margin-top:10px; background-color: #84D9D0;border: solid 1px darkgray;color:#fff; margin-bottom:20px;" data-bs-toggle="modal" data-bs-target="#js-modal">プロフィールを編集</button></div>
+                            <div class="button" style="width: 80%;"><button type="button" class="btn" style="float: right; margin-top:20px; background-color: #84D9D0;border: solid 1px darkgray;color:#fff; margin-bottom:20px;" data-bs-toggle="modal" data-bs-target="#js-modal">プロフィールを編集</button></div>
                                <div class="modal fade" id="js-modal" tabindex="-1" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
