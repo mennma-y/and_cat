@@ -14,7 +14,6 @@ body{
 .logomoji ruby img {
     width: 230px;
     height: auto;
-
 }
 
 .text1{
@@ -46,7 +45,6 @@ body{
     border-radius: 10px;
     display: flex;
     margin-left: 100px;
-
 }
 
 
@@ -63,25 +61,23 @@ body{
     border: darkgrey;
 }
 
-
 .text2 a{
     font-size: 14px;
     color: black;
     text-decoration: none;
 }
+
 .text2 ul{
     flex-direction: column;
     margin-top: 6px;
     margin-right: 2px;
     list-style: none;
-
 }
 
 .text2 li .name{
     text-align: center;
     font-size: 14px;
     color: black;
-
 }
 
 .text2 li .member{
@@ -89,7 +85,6 @@ body{
     font-size: 14px;
     color: black;
     text-decoration: none;
-
 }
 
 .text2 li .like{
@@ -97,9 +92,7 @@ body{
     font-size: 14px;
     color: black;
     text-decoration: none;
-
 }
-
 
 body .nav{
     background-color:#84D9D0;
@@ -125,7 +118,6 @@ body .nav .pan a{
     padding-top: 10px;
 }
 
-
 .main-photo img{
     position: relative;
     margin-left: 100px;
@@ -135,7 +127,6 @@ body .nav .pan a{
     align-items: flex-start;
     margin: 0 auto;
     margin-bottom: 10px;
-
 }
 
 .main-photo h1{
@@ -145,17 +136,13 @@ body .nav .pan a{
     color: #fff;
     top: 150px;
     right: 28%;
-
 }
 
 .container-nav{
-    /* margin-left: 200px; */
     width: 900px;
     height: auto;
     display: flex;
-    flex: 1;
     flex-direction: row;
-    /* justify-content: center; */
     justify-content: space-between;
     flex-wrap: nowrap;
     align-content: flex-start;
@@ -165,14 +152,11 @@ body .nav .pan a{
 .container-nav .logo img{
     width: 130px;
     height: auto;
-    /* margin-left: 100px; */
     display: flex ;
-    /* margin: 0 auto; */
-
 }
 
 .container-nav .box:hover {/*ホバー*/
-    background: rgba(225, 250, 1, 0.3);  
+    background: rgba(225, 250, 1, 0.3);
 }
 
 .container-nav .box ul{
@@ -181,25 +165,14 @@ body .nav .pan a{
     margin-top: 10%;
 }
 
-<<<<<<< HEAD
-.container-nav .box2 li{  
-    /* text-decoration: none;
-    color: black;
-    font-size: 20px;
-    font-weight: bold;
-    font-family: "筑紫B丸ゴシック";
-    width: 200px; */
-=======
 .container-nav .box2 li{
->>>>>>> fa4afa449dd1580e5c6a5e378b226def25f8352d
     list-style-position: outside;
     list-style: none;
     text-align: center;
     margin-left: -33px;
     margin-top: 8px;
-
-
 }
+
 .container-nav .box2 a{
     text-decoration: none;
     color: black;
@@ -207,11 +180,7 @@ body .nav .pan a{
     font-weight: bold;
     font-family: "筑紫B丸ゴシック";
     width: 200px;
-
-
 }
-
-
 
 .container-nav .box3 li{
     text-decoration: none;
@@ -224,7 +193,6 @@ body .nav .pan a{
     list-style-position: outside;
     list-style: none;
     text-align: center;
-
 }
 
 .container-nav .box4 li{
@@ -238,7 +206,6 @@ body .nav .pan a{
     margin-top: 5px;
     list-style-position: outside;
     list-style: none;
-
 }
 
 .container-nav .box a{
@@ -259,7 +226,6 @@ body .nav .pan a{
     align-items: center;
     justify-content: center;
     display: flex;
-
 }
 
 .container-nav .box2{
@@ -267,26 +233,20 @@ body .nav .pan a{
     height: 180px;
     border-radius: 50%;
     background-color: #FAE7F6;
-    /* align-items: center; */
     justify-content: center;
     display: flex;
-    /* text-align: center; */
-
 }
 
 .container-nav .box2 img{
     width: 30px;
     margin-top: 10px;
     text-align: center;
-    /* margin-left: 60px; */
 }
 
 .container-nav .box3 img{
     width: 30px;
     margin-top: 10px;
     text-align: center;
-    /* margin-left: 60px; */
-
 }
 
 .container-nav .box3{
@@ -294,11 +254,8 @@ body .nav .pan a{
     height: 180px;
     border-radius: 50%;
     background-color: #84D9D0;
-    /* align-items: center; */
     justify-content: center;
     display: flex;
-    /* text-align: center; */
-
 }
 
 .container-nav .box4{
@@ -306,16 +263,12 @@ body .nav .pan a{
     height: 180px;
     border-radius: 50%;
     background-color: #FAE7F6;
-    /* align-items: center; */
     justify-content: center;
     display: flex;
-    /* text-align: center; */
-
 }
 
 .container-nav .box4 img{
     width: 50px;
-    /* margin-top: 10px; */
     text-align: center;
     margin-left: 60px;
 }
@@ -362,8 +315,6 @@ body .nav .pan a{
     list-style: none;
     justify-content: space-between;
     font-size: 3px;
-    /* padding-left: 200px;
-    padding-right: 200px; */
     padding-top: 10px;
 }
 

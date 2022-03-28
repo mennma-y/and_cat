@@ -1,4 +1,5 @@
 @extends('head')
+@section('title','保護猫を探す')
 
 @section('main')
 <div class="container" style="width: 900px; flex-direction:column; ">
