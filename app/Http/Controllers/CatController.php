@@ -224,7 +224,6 @@ class CatController extends Controller
      */
     public function catRegister(Request $request)
     {
-        // $user = Auth::user();
 
         //ファイルの保存
         if(isset($request->cat_image_main)){
@@ -258,10 +257,11 @@ class CatController extends Controller
                 $cat_images = $request->file('cat_image');
                 foreach($cat_images as $cat_image){
                     $image_name = Str::random(20).'.'.$cat_image->getClientOriginalExtension();
-                    \Image::make($cat_image)->resize(400, null, function ($constraint) {$constraint->aspectRatio();})->save(public_path('storage/cat_images/' . $image_name));
+                    \Image::make($cat_image)->resize(400, null, function ($constraint) {$constraint->aspectRatio();})->save(public_path('storage/s/' . $image_name));
 
                     $image = new Image;
-                    $image->image_path = 'cat_images/' . $image_name;
+                    $image->image_path = 's/' . $image_name;
+                    // $image->image_path = 'cat_images/' . $image_name;
                     $image->cat_id = $cat->id;
                     $image->status = 'sub';
                     $image->save();
@@ -271,9 +271,6 @@ class CatController extends Controller
         }
 
         return redirect('/admin/cat/register');
-        // return view('/admin/cat/register',[
-        //     'user' => $user,
-        // ]);
     }
 
     /**
