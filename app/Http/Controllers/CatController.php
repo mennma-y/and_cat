@@ -262,7 +262,7 @@ class CatController extends Controller
                 if(!file_exists('/public/storage/s')){
                     Storage::makeDirectory('/public/s');
                 }
-                
+
                 $cat_images = $request->file('cat_image');
                 foreach($cat_images as $cat_image){
                     $image_name = Str::random(20).'.'.$cat_image->getClientOriginalExtension();
@@ -290,10 +290,12 @@ class CatController extends Controller
      */
     public function getCatEdit(Request $request)
     {
+        $user = Auth::user();
         $cat = Cat::find($request->id);
 
         return view('admin.cat_edit', [
             'cat' => $cat,
+            'user' => $user,
 
         ]);
     }
@@ -306,7 +308,6 @@ class CatController extends Controller
      */
     public function catEdit(Request $request)
     {
-
         $this->validate($request, Cat::$rules);
         $cat = Cat::find($request->id);
         $cat->name = $request->name;

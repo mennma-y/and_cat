@@ -1,6 +1,5 @@
-<title>イベント画面</title>
-
 @extends('head')
+@section('title','イベント情報')
 
 @section('event')
     <div class="container" style="width: 900px; flex-direction:column; ">

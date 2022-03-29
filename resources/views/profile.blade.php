@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="container" style="width: 900px; heigt:900px" >
+<div class="container" style="width: 900px; height:900px" >
     <div class="row justify-content-center" style="height: 800px;">
         <div class="col-md-8" >
             <div class="card" style=" height: 460px;
@@ -24,9 +24,9 @@
                         border-radius: 50%;
                         border:darkgray;
                         background-color: rgba();" >
-                      <figcaption>
-                        <a class="name" style=" font-size:16px; margin: 0 1rem;">{{ Auth::user()->name }}</a>さん
-                      </figcaption>
+                        <figcaption>
+                            <a class="name" style=" font-size:16px; margin: 0 1rem;">{{ Auth::user()->name }}</a>さん
+                        </figcaption>
                     </figure>
 
 {{-- {{ Auth::user()->img_url }} --}}
@@ -48,7 +48,7 @@
 
 
                             <div class="button" style="width: 80%;"><button type="button" class="btn" style="float: right; margin-top:20px; background-color: #84D9D0;border: solid 1px darkgray;color:#fff; margin-bottom:20px;" data-bs-toggle="modal" data-bs-target="#js-modal">プロフィールを編集</button></div>
-                               <div class="modal fade" id="js-modal" tabindex="-1" aria-hidden="true">
+                                <div class="modal fade" id="js-modal" tabindex="-1" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <form action="{{route('user.update')}}" method="POST" enctype="multipart/form-data">
@@ -76,7 +76,7 @@
                                         </form>
                                     </div>
                                 </div>
-                               </div>
+                            </div>
                             </div>
 
             </div>
