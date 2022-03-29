@@ -8,9 +8,10 @@
 <header>
 
     @extends('head')
+    
 @section('form')
     @if ($errors->any())
- 
+
         <ul class="form-danger">
             @foreach ($errors->all() as $error)
             <li>{{ $error }}</li>
@@ -19,10 +20,10 @@
     @endif
 </header>
 
-<body>  
+<body>
 
     <section>
-        
+
         <form method="post" action="/send">
             @csrf
             <p>〜名前〜</p>
@@ -36,7 +37,7 @@
             <div class="submit">
                 <input type="submit" value="応募を確定する" class="confilm">
             </div>
-            
+
         </form>
     </section>
     @endsection
