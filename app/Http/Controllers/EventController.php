@@ -35,7 +35,7 @@ class EventController extends Controller
     {
         $user=Auth::user();
 
-        return view('event.create_event', ['user' => $user]);
+        return view('event.create_event', ['user' => $user]);  
     }
 
     public function store(EventRequest $request)
@@ -48,7 +48,7 @@ class EventController extends Controller
         $event->event_date = $request->event_date;
         $event->address = $request->address;
         $event->parttime = $request->parttime;
-        $event->detail = $request->detail;
+        $event->detail = $request->detail;  
 
         $event->save();
 

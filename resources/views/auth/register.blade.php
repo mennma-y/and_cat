@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container" style="width: 900px; heigt:900px" >
+<div class="container" style="width: 900px; height:900px" >
     <div class="row justify-content-center" style="height: 800px;">
         <div class="col-md-8">
             <div class="card" style=" height: 680px;
@@ -21,6 +21,7 @@
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                         @csrf
+                        
 
                         <div class="form-group row" style="width:700px; margin-bottom: 10px; justify-content:center;">
                             {{-- <label for="img_url" class="col-md-4 col-form-label text-md-right" >画像</label> --}}
@@ -30,11 +31,11 @@
                         </div>
 
                         <div class="form-group row" style="margin-bottom: 10px; justify-content: center;">
-                            {{-- <label for="name" class="col-md-4 col-form-label text-md-right"></label> --}}
+                            {{-- <label for="name" class="col-md-4 col-form-label text-md-right"></label> --}}  
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
-                                name="name" value="{{ old('name') }}" style="border-radius: 10px; margin-bottom: auto" required autocomplete="name" autofocus placeholder="ニックネーム">
+                                name="name" value="{{ old('name') }}" style="border-radius: 10px; margin-bottom: auto" required autocomplete="name" autofocus placeholder="ニックネーム（5文字以内）">
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
