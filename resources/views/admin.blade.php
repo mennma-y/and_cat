@@ -13,7 +13,8 @@ rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3
 
 @section('title','里親募集応募者リスト')
 @section('child')
-<main>
+{{-- <main> --}}
+<div class="main">
 <h1> 里親募集応募者リスト </h1>
     <table border="1"class="table table-bordered" style="max-width: 80%;" >
         <tr class="title">
@@ -47,7 +48,8 @@ rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3
         </div>
     </div>
  @endsection
-</main>
+</div>
+{{-- </main> --}}
 </body>
 
 </html>
