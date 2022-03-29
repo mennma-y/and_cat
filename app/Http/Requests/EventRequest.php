@@ -49,7 +49,7 @@ class EventRequest extends FormRequest
             'detail.min'=>'イベントの詳細は10文字以上入力してください',
             'event_date.required'=>'日時を入力してください',
             'address.required'=>'イベント会場の住所を入力してください',
-            'parttime.required'=>'イベントの時間を入力してください',
+            'parttime.required'=>'イベントの時間を入力してください',  
             
 
         ];
