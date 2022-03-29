@@ -321,7 +321,7 @@ class CatController extends Controller
         if(isset($request->age_about)){
             $cat->age_about = 1;
         }else{
-            $cat->age_about = 0;
+            $cat->age_about = null;
         }
 
         $cat->save();
