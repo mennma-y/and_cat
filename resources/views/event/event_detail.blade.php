@@ -1,25 +1,30 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
     <title>イベント詳細画面</title>
-</head>
-<body>
+</head> --}}
+
+@extends('head')
+@section('title','イベント詳細')
+
+@section('detail')
+{{-- <body>
         <header>
             <div class="event-header" style="width: 100%; background-color:#84D9D0;">
                 <h4 style="width:30%; margin-left :90px;">&cat > イベント > 詳細</h4>
             </div>
         </header>
     <div class="container" style="width: 900px;">
-        <div class="box-container" style="display: flex;">   
+        <div class="box-container" style="display: flex;">
             <div class="logo-image" style="width: 10%;margin-right:10px;">
                 <img src="/images/register_logo.png" alt="" style="width: 100%;">
 
@@ -42,7 +47,8 @@
             </div>
 
 
-        </div>
+        </div> --}}
+    <div class="container"  style="width: 900px; flex-direction:column">
         <div class="event-title" style="margin-top:70px;">
                 <h4 style="text-align: center; font-weight:bold;">イベント情報　　詳細</h4>
         </div>
@@ -54,7 +60,7 @@
             <div class="text-content" style="padding-top:20px; margin-right:100px;">
                 <h4>日時 : {{$event->event_date}}</h4>
                 <p style="margin-left: 50px; font-size:18px;">場所 : {{$event->address}}
-                    
+
                 </p>
                 <p style="margin-right: 50px;font-size:18px;">{{$event->parttime}}</p>
                 <div class="organaize-title" style="float: right;position: relative;bottom: 50px;left: 40px;border: solid 1px #fff;height: 50px;
@@ -76,7 +82,7 @@
         <div class="event-map">
             <div class="event-title" style="margin-top:70px; height:50px;border-bottom:solid 5px #FAE7F6; ">
                         <h4 style="font-weight:bold;">会場マップ</h4>
-                        
+
             </div>
             <div class="event-adress" style="margin:10px 0 0 20px; text-align:center; font-size:20px; font-weight:bold;">
                 <p style="font-size:20px;font-weight:bold;">{{$event->address}}</p>
@@ -88,23 +94,24 @@
         <div class="other-event">
             <div class="event-title" style="margin-top:70px; height:50px;border-bottom:solid 5px #FAE7F6; ">
                         <h4 style="font-weight:bold;">その他のイベント</h4>
-                        
+
             </div>
             @include('common.table')
             <div class="event-pagination" style="width: 20%; margin:30px auto;">
-                {{$events->links()}} 
+                {{$events->links()}}
             </div>
         </div>
         <div class="font-yajirusi" style="text-align: center;height:125px;">
             <p style="font-size: 100px; font-weight:bold;">↓</p>
         </div>
         <div class="event-form-button" style="text-align: center;">
-            <div class="event-form-button-detail"  style="width:60%; margin:auto; border: solid 1px #eef;padding: 20px; border-radius: 30px; 
+            <div class="event-form-button-detail"  style="width:60%; margin:auto; border: solid 1px #eef;padding: 20px; border-radius: 30px;
                 background-color: #84D9D0;">
                 <a href="{{route('event.form',['id'=>$event->id])}}" style="text-decoration: none; color:#fff; font-size:20px; font-weight:bold;">参加応募フォームへ</a>
             </div>
         </div>
-
     </div>
-</body>
-</html>
+    {{-- </div> --}}
+@endsection
+{{-- </body>
+</html> --}}

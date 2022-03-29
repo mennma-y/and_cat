@@ -1,4 +1,5 @@
 @extends('head')
+@section('title','お気に入り')
 
 @section('main')
 <div class="container" style="width: 900px; flex-direction:column; ">

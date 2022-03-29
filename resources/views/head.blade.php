@@ -7,7 +7,8 @@
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>& Cat 保護猫情報サイト</title>
+        <title>@yield('title')</title>
+        {{-- <title>& Cat 保護猫情報サイト</title> --}}
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
@@ -80,10 +81,11 @@
 @yield('event')
 @yield('child')
 @yield('form')
+@yield('detail')
 <div class="main">
     @yield('main')
 </div>
-<div class="que"> 
+<div class="que">
     @yield('ques')
 </div>
 </body>
