@@ -186,7 +186,7 @@ class CatController extends Controller
         $replys->reply = $request->reply;
         $replys->save();
 
-        return redirect('/cat/profile/'.$request->reid);
+        return redirect('/cat/profile/'.$request->reid);  
     }
     /**
      *  質問の削除
