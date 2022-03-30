@@ -1,25 +1,33 @@
+.container{
+    width: 900px;
+    margin: 0 auto;
+}
+
+.question-box{
+    width: 900px;
+    margin: 0 auto;
+}
 
 h2 {
     background-color: #FFCCFF;
     max-width: 80%;
-    margin-left: 10%;
+    margin: 0 auto;
+    /* margin-left: 10%; */
     margin-bottom: auto;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     border-radius: 15px;
     padding: 3%;
 }
-.question-box{
-    margin-bottom: 10%;
-}
+
 .question-box .card {
     width: 60%;
     border-radius: 60px;
 
 }
 .paginate li a{
-background-color: #84D9D0;
-color: white;
+    background-color: #84D9D0;
+    color: white;
 }
 .paginate{
     margin-left: 81%;
@@ -70,7 +78,7 @@ color: white;
     border-color: #FFCCFF;
     height: 15%;
     float: left;
-  
+
 }
 
 .submit input {
@@ -101,7 +109,7 @@ color: white;
 .question-table td {
     border: solid 1px;
     width: 60%;
-    
+
 } */
 .question-title{
 
@@ -115,7 +123,7 @@ color: white;
     color: #84D9D0;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 700;
- 
+
 }
 
 .question-submit {
@@ -154,11 +162,11 @@ color: white;
 .delete input{
    background-color: #FF2D2D;
     border-radius: 15px;
-  
+
    padding-left: 3%;
    padding-right: 3%;
    color: whitesmoke;
    font-family: Arial, Helvetica, sans-serif;
-  
+
    font-weight: bold;
 }

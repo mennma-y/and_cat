@@ -1,53 +1,8 @@
-{{-- <!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
-    <title>イベント詳細画面</title>
-</head> --}}
-
 @extends('head')
 @section('title','イベント詳細')
 
 @section('detail')
-{{-- <body>
-        <header>
-            <div class="event-header" style="width: 100%; background-color:#84D9D0;">
-                <h4 style="width:30%; margin-left :90px;">&cat > イベント > 詳細</h4>
-            </div>
-        </header>
-    <div class="container" style="width: 900px;">
-        <div class="box-container" style="display: flex;">
-            <div class="logo-image" style="width: 10%;margin-right:10px;">
-                <img src="/images/register_logo.png" alt="" style="width: 100%;">
 
-            </div>
-            <div class="and-cat" style="margin:auto;border: solid 1px #eef;border-radius: 50%;
-                background-color: #84D9D0;padding: 50px 10px 50px 10px;">
-                <a href="{{url('andcat')}}" style="text-decoration: none; color:black; font-weight:bold; ">アンドキャットとは</a>
-            </div>
-            <div class="serch-hogoneko" style="margin:auto;border: solid 1px #eef;border-radius: 50%;
-                background-color: #FAE7F6;padding: 50px 40px 50px 40px;">
-                <a href="{{ url('/search') }}"style="text-decoration: none;color:black;font-weight:bold;">保護猫を探す</a>
-            </div>
-            <div class="serch-event" style="margin:auto;border: solid 1px #eef;border-radius: 50%;
-                background-color:  #84D9D0;padding: 30px 40px 50px 40px;">
-                <a href="{{route('event.index')}}"style="text-decoration: none;color:black;font-weight:bold;">譲渡会<br>イベントを探す</a>
-            </div>
-            <div class="adminer" style="margin:auto;border: solid 1px #eef;border-radius: 50%;
-                background-color: #FAE7F6;padding: 50px 40px 50px 40px;">
-                <a href="{{ url('dantai') }}"style="text-decoration: none;color:black;font-weight:bold;">保護団体の方へ</a>
-            </div>
-
-
-        </div> --}}
     <div class="container"  style="width: 900px; flex-direction:column">
         <div class="event-title" style="margin-top:70px;">
                 <h4 style="text-align: center; font-weight:bold;">イベント情報　　詳細</h4>

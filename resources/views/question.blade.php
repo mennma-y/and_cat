@@ -8,10 +8,13 @@
 
 @section('ques')
 
+<div class="container">
 <div class="question-box">
 
-
-    <h2 class="question-title">質問はこちらから</h2>
+    {{-- <h2 class="question-title">質問はこちらから</h2> --}}
+    <div class="question-title">
+        <h2>質問はこちらから</h2>
+    </div>
     @if ($errors->any())
     <div class="alertdanger">
         <ul class="form-danger">
@@ -77,11 +80,12 @@
         {{ $questions->onEachSide(3)->links() }}
     </div>
 </div>
+</div>
 <script>
 
 
     document.getElementById('qubtn').addEventListener('click', () => {
-       
+
         document.getElementById('qubtn').disabled=true;
         document.getElementById('queform').submit();
     });

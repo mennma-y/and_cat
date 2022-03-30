@@ -11,6 +11,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
     <title>イベントお問い合わせ画面</title>
+    <!-- ファビコン -->
+    <link rel="icon" href="{{ asset('favicon2.ico') }}">
 </head>
 <body>
     <div class="container">

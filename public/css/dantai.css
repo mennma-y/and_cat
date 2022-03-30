@@ -465,7 +465,6 @@ body .nav .pan a{
 .container-text{
         width: 900px;
         height: auto;
-        /* display: flex; */
         flex: 1;
         flex-direction: row;
         margin: 0 auto;
@@ -480,6 +479,7 @@ body .nav .pan a{
     position: relative;
     border: 1px solid #81d4fa;
     background-color: #e1f5fe;
+    margin-bottom: 30px;
 
   }
 
