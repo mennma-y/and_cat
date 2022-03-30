@@ -158,7 +158,7 @@ class CatController extends Controller
 
         return view('main.like', [
             'cats' => $cats,
-            'like_count' => $like_count,
+            'like_count' => $like_count,  
             'user' => $user,
         ]);
     }

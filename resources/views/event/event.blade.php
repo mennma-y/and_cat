@@ -19,8 +19,8 @@
         @endif
 
         @include('common.table')
-        <div class="event-pagination" style="width: 20%; margin:30px auto;">
-            {{$events->links()}}
+        <div class="event-pagination" style="width: 20%; margin:30px auto;">  
+            {{$events->links()}}  
         </div>
     </div>
 @endsection

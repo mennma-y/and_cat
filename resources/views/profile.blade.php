@@ -23,7 +23,8 @@
                         margin-top: 10px;
                         border-radius: 50%;
                         border:darkgray;
-                        background-color: rgba();" >
+                        background-color: rgba();
+                        object-fit:contain;">
                         <figcaption>
                             <a class="name" style=" font-size:16px; margin: 0 1rem;">{{ Auth::user()->name }}</a>さん
                         </figcaption>
@@ -59,13 +60,13 @@
                                             </div>
                                             <div class="modal-body">
                                                 <div class="image" style="width: 15%; margin:auto;"><img src="{{$user->img_url}}" alt=""
-                                                style="width: 100%; margin-bottom:20px; border:solid 1px darkgray; border-radius: 50%;"></div>
+                                                style="width: 100%; margin-bottom:20px; border:solid 1px darkgray; border-radius: 50%;object-fit:contain;"></div>
                                                 <div class="mb-3">
                                                     <label for="" class="mb-1">プロフィール写真</label>
                                                     <input type="file" class="form-control form-control-sm" name="image" accept="image/jpeg,image/png">
                                                 </div>
-                                                <input type="text" class="form-control mb-4" name="nickname" value="" placeholder="ニックネーム（5文字以内で入力してください）" max-length="50" required >
-                                                <input type="email" class="form-control mb-4" name="email" value="" placeholder="メールアドレス" max-length="254" required >
+                                                <input type="text" class="form-control mb-4" name="nickname" value="{{$user->name}}" placeholder="ニックネーム（5文字以内で入力してください）" max-length="50" required >
+                                                <input type="email" class="form-control mb-4" name="email" value="{{$user->email}}" placeholder="メールアドレス" max-length="254" required >
                                                 <input type="password" class="form-control mb-4" name="password" value="" placeholder="パスワードを変更する場合ご入力ください" min-length="4" max-length="128" >
                                             </div>
 

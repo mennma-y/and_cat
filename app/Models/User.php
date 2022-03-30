@@ -46,4 +46,9 @@ class User extends Authenticatable
     {
         return $this->belongsTo('App\Like');
     }
+
+    public function event()
+    {
+        return $this ->belongsTo('App\Event');
+    }
 }
