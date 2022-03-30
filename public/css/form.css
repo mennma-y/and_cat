@@ -8,12 +8,17 @@
     display: inline-block;
 }
 
+h1 {
+    text-align: left;
+    border-bottom: 50px solid;
+    border-color: #40e0d0;
+    border-width: 900%;
+}
 
 .satooya-container{
     width: 900px;
     height: auto;
     margin: 0 auto;
-    margin-left: 15%;
     /* background-color: #FAE7F6; */
 }
 
