@@ -1,20 +1,35 @@
-/* ページ送りを中央寄せ */
+ページ送りを中央寄せ
 .pagination {
     text-align: center;
 }
 
-/* ページ送りを横並びに */
+ページ送りを横並びに
 .pagination li {
     display: inline-block;
 }
 
-h1 {
-    text-align: left;
-    border-bottom: 50px solid;
-    border-color: #40e0d0;
-    border-width: 900%;
-
+.satooya-container{
+    width: 900px;
+    height: auto;
+    margin: 0 auto;
+    /* background-color: #FAE7F6; */
 }
+
+.satooya-sub-container{
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 5%;
+    background-color:#FAE7F6 ;
+    padding-top: 3%;
+    margin-bottom: 5%;
+    text-align: center;
+    /* background-color: #FFCCFF; */
+    border-radius: 30px;
+    margin-right: 20%;
+    margin-left: 20%;
+    font-size: large;
+}
+
 
 .submit .confilm {
     padding: 1%;
@@ -24,36 +39,44 @@ h1 {
     padding: 1%;
     font-family: Arial, Helvetica, sans-serif;
     background-color: #40e0d0;
+    margin: 0 auto;
 }
 
 section {
+    margin: 0 auto;
     margin-top: 5%;
+    margin-bottom: 5%;
     text-align: center;
-    background-color: #FFCCFF;
+    /* background-color: #FFCCFF; */
     border-radius: 30px;
-    margin-right: 20%;
-    margin-left: 20%;
+    /* margin-right: 20%;
+    margin-left: 20%; */
     font-size: large;
+    padding-bottom: 5%;
 
 }
 
-section p {
-    font-size: 25px;
+.satooya-container p {
+    font-size: 20px;
+    margin-bottom: 1px;
+
 }
 
-input {
+.satooya-container input {
     border-radius: 15px;
     height: 50px;
+    border: darkgray;
+    margin-bottom: 10px;
 }
 
-textarea {
+.satooya-container textarea {
     border-radius: 15px;
     text-align: center;
-    margin-bottom: 40px;
-    margin-left: 190px;
-    height: 30%;
-    width: 40%;
-
+    border: darkgrey;
+    /* margin-bottom: 40px; */
+    /* margin-left: 190px; */
+    height: 10%;
+    width: 80%;
 }
 
 .submit.confilm {
@@ -64,6 +87,11 @@ textarea {
     background-color: #030505;
 }
 
+.satooya-sub-container.submit{
+    /* padding: 1%; */
+    /* margin-left: 60%; */
+    margin: 0 auto;
+}
 
 .form-danger {
     text-align: center;

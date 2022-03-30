@@ -1,44 +1,57 @@
-.main{
-    width:900px;
+.main-container {
+    width: 900px;
+    margin: 0 auto;
     background-color: #FAE7F6;
-    margin-left: 5%;
-    margin-right: 5%;
     border-radius: 15px;
     padding-top: 3px;
 }
 
-h1{
-    text-align: center;
+.sub-container {
+    margin: 0 auto;
     background-color: #FFCCFF;
     border-radius: 15px;
-    max-width: 80%;
-    margin-left: 10%;
-    height: 20%;
-    font-weight: bold;
-    font-family:"ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru Gothic Pro","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
-    padding-top: 3%;
+    max-width: 70%;
+    height: 15%;
+    height: 10%;
+    margin-bottom: 5%;
+    margin-top: 3%;
 
 }
-.form{
+
+h1 {
+    text-align: center;
+    height: 15%;
+    font-weight: bold;
+    font-family: "ヒラギノ丸ゴ Pro W4", "ヒラギノ丸ゴ Pro", "Hiragino Maru Gothic Pro", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "HG丸ｺﾞｼｯｸM-PRO", "HGMaruGothicMPRO";
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+.form {
     display: flex;
 }
-table{
+
+table {
     margin-top: 5%;
     text-align: center;
-    margin-left: 10%;
+    margin: 0 auto;
+    width: 90%;
+    background-color: white;
+    table-layout: auto;
 
-    width: 75%;
-    border-collapse: collapse;
-    table-layout: fixed;
-
-    overflow: hidden;
-    border-radius: 15px;
-
-background-color: white;
 }
-.title{
-   background-color:  #84D9D0;
+
+/* table td {
+    white-space: nowrap;
+} */
+
+.title {
+    background-color: #84D9D0;
+  
 }
-.links{
-margin-left: 90%;
+.memo{
+    max-width: 450px;
+}
+.links {
+    margin-left: 90%;
 }
