@@ -49,6 +49,7 @@ class EventController extends Controller
         $event->address = $request->address;
         $event->parttime = $request->parttime;
         $event->detail = $request->detail;  
+        $event->user_id = Auth::user()->id;
 
         $event->save();
 
