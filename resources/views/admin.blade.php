@@ -30,7 +30,7 @@ rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3
             <th>猫の住んでいる都道府県</th>
         </tr>
         @foreach($forms as $form)
-        <tr class="form_data">
+        <tr >
             <td>{{$form->name}}</td>
             <td>{{$form->telephone}}</td>
             <td>{{$form->email}}</td>
