@@ -1,4 +1,5 @@
 @extends('head')
+@section('title','保護猫プロフィール')
 
 @section('main')
 <div class="image-box">

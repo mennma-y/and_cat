@@ -14,17 +14,20 @@
         <script src="{{ asset('js/app.js') }}" defer></script>
 
         <!-- ファビコン -->
-        <link rel="icon" href="favicon2.ico">
+        <link rel="icon" href="{{ asset('favicon2.ico') }}">
 
         <!-- Fonts -->
         <link rel="dns-prefetch" href="//fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
         <!-- Styles -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link href="{{ asset('css/head.css') }}" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('/css/cat.css') }}">
         <link rel="stylesheet" href="{{ asset('css/question.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/form.css') }}">
 
         <!-- JS -->
         <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous" defer></script>

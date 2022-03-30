@@ -7,7 +7,7 @@
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>保護猫情報サイトアンドキャットとは</title>
+        <title>保護猫情報サイト・アンドキャットとは</title>
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
