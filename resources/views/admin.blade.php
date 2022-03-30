@@ -18,7 +18,7 @@ rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3
     <div class="sub-container">
     <h1> 里親募集応募者リスト </h1>
     </div>
-    <table border="1" class="table table-bordered" style="max-width: 98%;" >
+    <table border="1" class="table table-bordered"  style="max-width: 98%;">
         <tr class="title">
             <th >名前</th>
             <th>電話番号</th>
@@ -30,11 +30,11 @@ rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3
             <th>猫の住んでいる都道府県</th>
         </tr>
         @foreach($forms as $form)
-        <tr>
+        <tr class="form_data">
             <td>{{$form->name}}</td>
             <td>{{$form->telephone}}</td>
             <td>{{$form->email}}</td>
-            <td >{{$form->memo}}</td>
+            <td class= "memo">{{$form->memo}}</td>
             <td>{{$form->cname}}</td>
             <td>{{$form->cat_age}}</td>
             <td>{{$form->ctype}}</td>
