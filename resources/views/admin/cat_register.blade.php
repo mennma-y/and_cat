@@ -35,7 +35,7 @@
             <div class="gender">
                 <div class="gender-box">
                     <label for="male" class="form-check-label">オス</label>
-                    <input type="radio" class="form-check-input" name="gender" id="male" value="0">
+                    <input type="radio" class="form-check-input" name="gender" id="male" value="0" required>
                 </div>
                 <div class="gender-box">
                     <label for="scalpel" class="form-check-label">メス</label>

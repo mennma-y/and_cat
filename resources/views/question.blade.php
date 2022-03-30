@@ -62,7 +62,7 @@
                 <input type="hidden" name="id" value="{{$question->id}}">
                 <input type="hidden" name="reid" value="{{$cat->id}}">
                 <div class="delete">
-                    <input type="submit" value="質問を削除">
+                    <input type="submit" value="質問を削除">  
                 </div>
             </form>
             @endif

@@ -64,14 +64,14 @@
                                                     <label for="" class="mb-1">プロフィール写真</label>
                                                     <input type="file" class="form-control form-control-sm" name="image" accept="image/jpeg,image/png">
                                                 </div>
-                                                <input type="text" class="form-control mb-4" name="nickname" value="" placeholder="ニックネーム" max-length="50" required >
+                                                <input type="text" class="form-control mb-4" name="nickname" value="" placeholder="ニックネーム（5文字以内で入力してください）" max-length="50" required >
                                                 <input type="email" class="form-control mb-4" name="email" value="" placeholder="メールアドレス" max-length="254" required >
                                                 <input type="password" class="form-control mb-4" name="password" value="" placeholder="パスワードを変更する場合ご入力ください" min-length="4" max-length="128" >
                                             </div>
 
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">キャンセル</button>
-                                                <button type="submit" class="btn" style="background-color: #84D9D0; border: solid 1px darkgray; color:#fff;">保存</button>
+                                                <button type="submit" class="btn" style="background-color: #84D9D0; border: solid 1px darkgray; color:#fff;">保存</button>  
                                             </div>
                                         </form>
                                     </div>

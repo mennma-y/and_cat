@@ -36,7 +36,7 @@ rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3
             <td>{{$form->email}}</td>
             <td >{{$form->memo}}</td>
             <td>{{$form->cname}}</td>
-            <td>{{$form->cage}}</td>
+            <td>{{$form->cat_age}}</td>
             <td>{{$form->ctype}}</td>
             <td>{{$form->carea}}</td>
         </tr>
