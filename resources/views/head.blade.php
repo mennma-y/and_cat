@@ -45,7 +45,7 @@
                 <div class="box text2">
                 <figure>
 
-                    <img src="{{ Auth::user()->img_url }}">
+                    <img src="{{ Auth::user()->img_url }}" style="object-fit:contain;">
 
                   <figcaption><a class="name">{{ Auth::user()->name }}</a>さん</figcaption>
                 </figure>
