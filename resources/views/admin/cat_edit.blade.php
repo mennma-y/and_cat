@@ -1,5 +1,6 @@
 @extends('home1')
 
+{{-- @section('title','保護猫編集画面') --}}
 @section('main')
 <div class="register-box">
     <h3>保護猫編集</h3>
@@ -16,7 +17,7 @@
             <label for="type" class="form-label">種類</label>
             <input type="text" class="form-control" name="type" id="type" placeholder="例）雑種" value="{{ $cat->type }}">
         </div>
-        
+
         <div class="form-group">
             <p>性別</p>
             <div class="gender">
@@ -38,7 +39,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="form-group">
             <label for="age" class="form-label">年齢</label>
             <div class="custom-box">
@@ -87,7 +88,7 @@
                 @endif
             </div>
         </div>
-        
+
         <div class="form-group">
             <label for="area" class="form-label">譲渡エリア</label>
             <div class="custom-box">
@@ -148,7 +149,7 @@
             <label for="slogan" class="form-label">キャッチコピー</label>
             <input type="text" class="form-control" name="slogan" id="slogan" placeholder="例）元気いっぱいの男の子！"  value="{{ $cat->slogan }}">
         </div>
-        
+
         <div class="form-group">
             <label for="introduction" class="form-label">自己紹介文</label>
             <textarea name="introduction" class="form-control" id="introduction">{{ $cat->introduction }}</textarea>

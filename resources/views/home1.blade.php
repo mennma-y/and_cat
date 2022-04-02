@@ -36,7 +36,7 @@
 <body>
 
         <div class="container">
-                <div class="logomoji"><ruby><img src="/img/logomoji.png" alt="アンドキャットのロゴです"><rt>アンドキャット</rt></ruby></div>
+                <div class="logomoji"><a href="{{ url('home') }} "><ruby><img src="/img/logomoji.png" alt="アンドキャットのロゴです"><rt>アンドキャット</rt></ruby></div>
                 <div class="box text1"><a>猫の里親募集情報サイト</a><br><p>保護猫と飼い主をつなぐ</p></div>
                 <div class="box text2">
                 <figure>
@@ -68,12 +68,12 @@
         <div class="container-nav">
             <div class="logo"><a href="{{ url('home') }}"><img src="/img/logo1.png"  alt="アンドキャットのロゴです"></div>
             <div class="box box1"><a href="{{ url('andcat') }} ">アンドキャット<br>とは</a></div>
-            <div class="box box2"><ul><li><img src="/img/serch.png"></li><li><a href="{{ url('search') }}">保護猫を探す</li></div>
-            <div class="box box3"><ul><li><img src="/img/serch.png"></li><li><a href="{{ url('event') }}">譲渡会<br>イベントを探す</a></li></div>
+            <div class="box box2"><ul><a href="{{ url('search') }}"><li><img src="/img/serch.png"></li><li>保護猫を探す</li></ul></div>
+            <div class="box box3"><ul><a href="{{ url('event') }}"><li><img src="/img/serch.png"></li><li>譲渡会<br>イベントを探す</a></li></ul></div>
 
                 @if($user->admin_confirmation === 1)
-                <div class="box box4"><ul><li><img src="/img/hogoneko.png"></li>
-                    <li><a><a href="{{ url('dantai') }}">保護猫団体の方へ</a></li><li><p>登録団体専用ページです</p></li></div>
+                <div class="box box4"><ul><a href="{{ url('dantai') }}"><li><img src="/img/hogoneko.png"></li>
+                    <li><a href="{{ url('dantai') }}">保護猫団体の方へ</a></li><li><p>登録団体専用ページです</p></li></ul></div>
                 @else
                 <div class="circle box5"><ul><li><img src="/img/people1.png"></li>
                     <a href="{{ url('home') }}"></a></ul></div>
