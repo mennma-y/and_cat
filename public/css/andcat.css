@@ -14,7 +14,10 @@ body{
 .logomoji ruby img {
     width: 230px;
     height: auto;
+}
 
+.logomoji ruby {
+    color: black;
 }
 
 .text1{
@@ -46,9 +49,7 @@ body{
     border-radius: 10px;
     display: flex;
     margin-left: 100px;
-
 }
-
 
 .text2 figure{
     font-size: 14px;
@@ -63,7 +64,6 @@ body{
     border: darkgrey;
     object-fit: contain;
 }
-
 
 .text2 a{
     font-size: 14px;
@@ -98,7 +98,6 @@ body{
     font-size: 14px;
     color: black;
     text-decoration: none;
-
 }
 
 
@@ -150,13 +149,11 @@ body .nav .pan a{
 }
 
 .container-nav{
-    /* margin-left: 200px; */
     width: 900px;
     height: auto;
     display: flex;
     flex: 1;
     flex-direction: row;
-    /* justify-content: center; */
     justify-content: space-between;
     flex-wrap: nowrap;
     align-content: flex-start;
@@ -166,10 +163,7 @@ body .nav .pan a{
 .container-nav .logo img{
     width: 130px;
     height: auto;
-    /* margin-left: 100px; */
     display: flex ;
-    /* margin: 0 auto; */
-
 }
 
 .container-nav .box:hover {/*ホバー*/
@@ -198,11 +192,7 @@ body .nav .pan a{
     font-weight: bold;
     font-family: "筑紫B丸ゴシック";
     width: 200px;
-
-
 }
-
-
 
 .container-nav .box3 li{
     text-decoration: none;
@@ -219,17 +209,16 @@ body .nav .pan a{
 }
 
 .container-nav .box4 li{
-    text-decoration: none;
+    /* text-decoration: none;
     color: black;
     font-size: 20px;
-    font-weight: bold;
+    font-weight: bold; */
     font-family: "筑紫B丸ゴシック";
     width: 200px;
     margin-left: 3px;
-    margin-top: 5px;
+    /* margin-top: 5px; */
     list-style-position: outside;
     list-style: none;
-
 }
 
 .container-nav .box a{
@@ -258,26 +247,20 @@ body .nav .pan a{
     height: 180px;
     border-radius: 50%;
     background-color: #FAE7F6;
-    /* align-items: center; */
     justify-content: center;
     display: flex;
-    /* text-align: center; */
-
 }
 
 .container-nav .box2 img{
     width: 30px;
     margin-top: 10px;
     text-align: center;
-    /* margin-left: 60px; */
 }
 
 .container-nav .box3 img{
     width: 30px;
     margin-top: 10px;
     text-align: center;
-    /* margin-left: 60px; */
-
 }
 
 .container-nav .box3{
@@ -285,10 +268,8 @@ body .nav .pan a{
     height: 180px;
     border-radius: 50%;
     background-color: #84D9D0;
-    /* align-items: center; */
     justify-content: center;
     display: flex;
-    /* text-align: center; */
 
 }
 
@@ -297,18 +278,13 @@ body .nav .pan a{
     height: 180px;
     border-radius: 50%;
     background-color: #FAE7F6;
-    /* align-items: center; */
     justify-content: center;
     display: flex;
-    /* text-align: center; */
-
 }
 
 .container-nav .box4 img{
     width: 50px;
-    /* margin-top: 10px; */
-    text-align: center;
-    margin-left: 60px;
+    margin-left: -30px;
 }
 
 .container-nav .box4 p{

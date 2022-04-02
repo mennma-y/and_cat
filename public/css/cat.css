@@ -2,12 +2,16 @@
     max-width: 900px;
     min-width: 900px;
     margin: 50px auto;
-    
+
 }
 
 /**
 保護猫プロフィール
 ****/
+h3{
+    text-align: center;
+}
+
 .image-box {
     margin: 30px 0;
 }
@@ -68,13 +72,13 @@
 
 .pink-box .like-box {
     width: 200px;
-    height: 60px;
+    height: 50px;
     background-color: #FAE7F6;
     padding: 5px 30px;
     color: #FA00E7;
     border-radius: 40px;
     margin: 50px 30px;
-    line-height: 50px;
+    line-height: 30px;
 }
 
 .pink-box .like-box p.pink{
@@ -88,7 +92,7 @@
 
 .pink-box .name-box {
     width: 330px;
-    height: 200px;
+    /* height: 200px; */
     background-color: #FAE7F6;
     border-radius: 40px;
     padding: 10px 40px;
@@ -314,8 +318,9 @@
 }
 
 .search-top h3 {
-    margin: 50px 0 30px;
-    font-size: 20px;
+    /* margin: 50px 0 30px; */
+    margin-bottom: 50px;
+    font-size: 24px;
 }
 
 .search-top .forms-box {
@@ -458,8 +463,8 @@
 
 .register-box h3 {
     text-align: center;
-    margin: 30px 0;
-    font-size: 20px;
+    /* margin: 30px 0; */
+    font-size: 24px;
 }
 
 .register-box .form-group {

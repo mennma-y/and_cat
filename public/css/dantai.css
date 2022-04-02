@@ -15,7 +15,10 @@ body{
 .logomoji ruby img {
     width: 230px;
     height: auto;
+}
 
+.logomoji ruby {
+    color: black;
 }
 
 .text1{
@@ -50,7 +53,6 @@ body{
 
 }
 
-
 .text2 figure{
     font-size: 14px;
     margin: 0 1rem;
@@ -64,7 +66,6 @@ body{
     border: darkgrey;
     object-fit: contain;
 }
-
 
 .text2 a{
     font-size: 14px;
@@ -270,25 +271,17 @@ body .nav .pan a{
 .container-nav .box ul{
     flex-direction: column;
     vertical-align: middle;
-    /* text-align: center; */
 }
 
 
 .container-nav .box2 li{
-    /* text-decoration: none;
-    color: black;
-    font-size: 20px;
-    font-weight: bold;
-    font-family: "筑紫B丸ゴシック";
-    width: 200px; */
     list-style-position: outside;
     list-style: none;
     text-align: center;
     margin-left: -33px;
     margin-top: 8px;
-
-
 }
+
 .container-nav .box2 a{
     text-decoration: none;
     color: black;
@@ -315,17 +308,16 @@ body .nav .pan a{
 }
 
 .container-nav .box4 li{
-    text-decoration: none;
+    /* text-decoration: none;
     color: black;
     font-size: 20px;
-    font-weight: bold;
+    font-weight: bold; */
     font-family: "筑紫B丸ゴシック";
     width: 200px;
     margin-left: 3px;
-    margin-top: 5px;
+    /* margin-top: 5px; */
     list-style-position: outside;
     list-style: none;
-
 }
 
 .container-nav .box a{
@@ -365,14 +357,12 @@ body .nav .pan a{
     width: 30px;
     margin-top: 10px;
     text-align: center;
-    /* margin-left: 60px; */
 }
 
 .container-nav .box3 img{
     width: 30px;
     margin-top: 10px;
     text-align: center;
-    /* margin-left: 60px; */
 
 }
 
@@ -381,11 +371,8 @@ body .nav .pan a{
     height: 180px;
     border-radius: 50%;
     background-color: #84D9D0;
-    /* align-items: center; */
     justify-content: center;
     display: flex;
-    /* text-align: center; */
-
 }
 
 .container-nav .box4{
@@ -393,11 +380,8 @@ body .nav .pan a{
     height: 180px;
     border-radius: 50%;
     background-color: #FAE7F6;
-    /* align-items: center; */
     justify-content: center;
     display: flex;
-    /* text-align: center; */
-
 }
 
 .container-nav .box4 p{
@@ -407,15 +391,10 @@ body .nav .pan a{
 
 .container-nav .box4 img{
     width: 50px;
-    /* margin-top: 10px; */
-    text-align: center;
-    margin-left: 60px;
+    margin-left: -30px;
 }
 
-
-
 .container-main{
-    /* margin-left: 200px; */
     width: 900px;
     height: auto;
     display: flex;

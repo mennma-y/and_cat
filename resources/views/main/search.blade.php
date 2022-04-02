@@ -4,7 +4,7 @@
 @section('main')
 <div class="container" style="width: 900px; flex-direction:column; ">
 <div class="search-top">
-    <h3>絞り込み検索</h3>
+    <h3>保護猫　絞り込み検索</h3>
     <div class="forms-box">
         <form action="/search" method="get">
             @csrf

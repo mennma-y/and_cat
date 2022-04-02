@@ -2,6 +2,7 @@
 @section('title','保護猫プロフィール')
 
 @section('main')
+<h3>保護猫のプロフィール</h3>
 <div class="image-box">
     <div class="image-main">
         <div class="image">
