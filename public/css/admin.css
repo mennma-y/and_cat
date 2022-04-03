@@ -30,16 +30,20 @@ h1 {
 .form {
     display: flex;
 }
-
+.memo{
+    max-width: 400px;
+}
 table {
     margin-top: 5%;
     text-align: center;
     margin: 0 auto;
     width: 90%;
     background-color: white;
-    table-layout: auto;
 
+  table-layout: fixed;
+    word-wrap: break-word;
 }
+
 
 /* table td {
     white-space: nowrap;
@@ -49,9 +53,7 @@ table {
     background-color: #84D9D0;
   
 }
-.memo{
-    max-width: 450px;
-}
+
 .links {
     margin-left: 90%;
 }

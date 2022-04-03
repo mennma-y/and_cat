@@ -23,7 +23,7 @@ rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3
             <th >名前</th>
             <th>電話番号</th>
             <th>メールアドレス</th>
-            <th >備考</th>
+            <th width="300" >備考</th>
             <th>猫の名前</th>
             <th>猫の年齢</th>
             <th>猫の種類</th>
@@ -36,7 +36,7 @@ rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3
             <td>{{$form->email}}</td>
             <td class= "memo">{{$form->memo}}</td>
             <td>{{$form->cname}}</td>
-            <td>{{$form->cat_age}}</td>
+            <td class="age">{{$form->cat_age}}</td>
             <td>{{$form->ctype}}</td>
             <td>{{$form->carea}}</td>
         </tr>
