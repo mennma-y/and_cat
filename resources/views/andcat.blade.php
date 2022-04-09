@@ -27,7 +27,7 @@
 <body>
 
     <div class="container">
-        <div class="logomoji"><ruby><img src="/img/logomoji.png" alt="アンドキャットのロゴです"><rt>アンドキャット</rt></ruby></div>
+        <div class="logomoji"><a href="{{ url('home') }} "><ruby><img src="/img/logomoji.png" alt="アンドキャットのロゴです"><rt>アンドキャット</rt></ruby></div>
         <div class="box text1"><a>猫の里親募集情報サイト</a><br><p>保護猫と飼い主をつなぐ</p></div>
         <div class="box text2">
         <figure>
@@ -58,18 +58,17 @@
 
          <div class="container-nav">
             <div class="logo"><a href="{{ url('home') }}"><img src="/img/logo1.png"  alt="アンドキャットのロゴです"></div>
-            <div class="box box1"><a href="{{ url('andcat') }} ">アンドキャット<br>とは</a></div>
-            <div class="box box2"><ul><li><img src="/img/serch.png"></li><li><a href="{{ url('search') }}">保護猫を探す</li></div>
-            <div class="box box3"><ul><li><img src="/img/serch.png"></li><li><a href="{{ url('event') }}">譲渡会<br>イベントを探す</a></li></div>
+                <div class="box box1"><a href="{{ url('andcat') }} ">アンドキャット<br>とは</a></div>
+                <div class="box box2"><ul><a href="{{ url('search') }}"><li><img src="/img/serch.png"></li><li>保護猫を探す</li></ul></div>
+                <div class="box box3"><ul><a href="{{ url('event') }}"><li><img src="/img/serch.png"></li><li>譲渡会<br>イベントを探す</a></li></ul></div>
 
-                @if($user->admin_confirmation === 1)
-                <div class="box box4"><ul><li><img src="/img/hogoneko.png"></li>
-                    <li><a><a href="{{ url('dantai') }}">保護猫団体の方へ</a></li><li><p>登録団体専用ページです</p></li></div>
-                @else
-                <div class="circle box5"><ul><li><img src="/img/people1.png"></li>
-                    <a href="{{ url('home') }}"></a></ul></div>
-                @endif
-
+                    @if($user->admin_confirmation === 1)
+                    <div class="box box4"><ul><a href="{{ url('dantai') }}"><li><img src="/img/hogoneko.png"></li>
+                        <li><a href="{{ url('dantai') }}">保護猫団体の方へ</a></li><li><p>登録団体専用ページです</p></li></ul></div>
+                    @else
+                    <div class="circle box5"><ul><li><img src="/img/people1.png"></li>
+                        <a href="{{ url('home') }}"></a></ul></div>
+                    @endif
         </div>
            <div class="container-main">
                 <div class="logomoji2"><img src="/img/logomoji.png"></div>
@@ -77,10 +76,10 @@
            </div>
 
            <div class="container-text">
-            <p>アンドキャットは、保護犬猫と迎えたい人を結ぶマッチングサイトです。
+            <p>アンドキャットは、保護猫と迎えたい人を結ぶマッチングサイトです。
 
                 <br>幸せな家族を結ぶことで、殺処分問題の解決につなげることが私たちのミッションです。
-                <br>私たちはアンドキャットが新しい家族に安心して出会える場所にすることで、
+                <br>私たちは、保護猫情報サイト「アンドキャット」を、新しい家族に安心して出会える場所にすることで、
                 <br>保護猫と迎えたい人が”一生の家族”として結ばれるためのお手伝いをしていきます。</p></div>
             </div>
 
@@ -94,9 +93,9 @@
                 <a>保護猫のいま</a>
             <div class="sub-photo">
                 <img src="/img/andcat_second.jpg" alt="">
-                <p class="main-text1">日本では年間3.3万匹もの犬猫が家族が見つからず、 殺処分されています(※1)。「保護犬猫」「殺処分」という言葉は知られるようになってきました。しかし、 実際に保護犬猫から迎えた方は犬7.4%、猫11.6%と、まだまだ主な選択肢ではない状況です。
-                    <br>
-                    ※1 R1 環境省「犬・猫の引取り及び負傷動物の収容状況」※2 H30 一般社団法人ペットフード協会「全国犬猫飼育実態調査」（シェルターからの譲渡・里親探しのマッチングサイトからの譲渡を合算した数値）
+                <p class="main-text1">現在、日本では犬や猫の殺処分数は減少傾向にありますが、ここ数年の統計でも年間2〜3万匹もの犬猫に家族が見つからず、 殺処分されています(※ 環境省HP「平成16～令和2年度の犬・猫の引取り及び処分の状況」より)。
+                    <br>特に猫については、犬に比べ殺処分数がまだまだ多く、実際に保護された約半分が殺処分されている状況です。
+                    近年、「保護犬猫」「殺処分」という言葉は知られるようになってきました。実際に保護犬猫を迎えられる方は増えてきています。けれども、まだまだペットとして迎え入れる主な選択肢ではない状況です。
                     <br>アンドキャットは、迎えたい人と保護猫が出逢える場所をお手伝いすることで、殺処分の問題解決にもつなげていきたいと考えています。
                 </p>
             </div>

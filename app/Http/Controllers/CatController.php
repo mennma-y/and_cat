@@ -326,8 +326,9 @@ class CatController extends Controller
 
         $cat->save();
 
-        return back();
-        // return redirect()->route('/admin/cat/edit', [$cat]);
+        // return back();
+        // return redirect()->route('/cat/profile', [$cat]);
+        return redirect( '/cat/profile/'.$request->id);
     }
 
     /**

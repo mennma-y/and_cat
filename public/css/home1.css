@@ -15,6 +15,9 @@ body{
     width: 230px;
     height: auto;
 }
+.logomoji ruby {
+    color: black;
+}
 
 .text1{
     color: black;
@@ -197,14 +200,14 @@ body .nav .pan a{
 }
 
 .container-nav .box4 li{
-    text-decoration: none;
+    /* text-decoration: none;
     color: black;
     font-size: 20px;
-    font-weight: bold;
+    font-weight: bold; */
     font-family: "筑紫B丸ゴシック";
     width: 200px;
     margin-left: 3px;
-    margin-top: 5px;
+    margin-top: 3px;
     list-style-position: outside;
     list-style: none;
 }
@@ -270,8 +273,7 @@ body .nav .pan a{
 
 .container-nav .box4 img{
     width: 50px;
-    text-align: center;
-    margin-left: 60px;
+    margin-left: -30px;
 }
 
 .container-nav .box4 p{
@@ -322,4 +324,5 @@ body .nav .pan a{
 .mark{
     font-size: 2px;
     text-align: center;
+    background: #FAE7F6;
 }
