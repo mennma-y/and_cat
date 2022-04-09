@@ -14,7 +14,7 @@
 
         @if($user->admin_confirmation === 1)
             <div class="create-event">
-                    <a href="{{ route('event.create') }}" class="btn btn-primary">新規作成</a>
+                    <a href="{{ route('event.create') }}" class="btn btn-primary">新規イベント作成</a>
             </div>
         @endif
 
